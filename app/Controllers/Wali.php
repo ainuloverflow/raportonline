@@ -63,11 +63,11 @@ class Wali extends Resources\Controller
         }    
     }
 
-    public function tambahsiswakelas() {
+    public function tambah_siswa_kelas() {
         if($this->cek() == true){         
 
             $data = array (
-                    'datasiswa' => $this->walimodel->tambahdatasiswa(),
+                    'datasiswa' => $this->walimodel->tambahsiswakelas(),
                     'namaCTRL' => 'TAMBAH DATA SISWA KELAS',
                     'nama' => $this->session->getValue('username'),
                     'url' => $this->uri->baseUri

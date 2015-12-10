@@ -12,7 +12,7 @@ class M_wali {
     	Return $result = $this->db->results("SELECT * FROM table_siswa ORDER BY ID_SISWA ASC LIMIT $offset, $limit");
     }
     
-    public function tambahdatasiswa() {
+    public function tambahsiswakelas() {
             
     }
     

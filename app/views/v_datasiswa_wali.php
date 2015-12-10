@@ -177,7 +177,7 @@
                         </div>
               <!-- project team & activity end -->
 
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="btn btn-primary" href="#"><i class="icon_plus_alt2"></i></a>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="btn btn-primary" href="<?php echo $url;?>wali/tambah_siswa_kelas"><i class="icon_plus_alt2"></i></a>
               <br>
               <br>
               <div class="col-lg-12">
