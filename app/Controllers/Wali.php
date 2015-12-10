@@ -52,6 +52,7 @@ class Wali extends Resources\Controller
             $data = array (
                     'datasiswa' => $this->walimodel->bacadatasiswa($page, $limit), 
                     'namaCTRL' => 'DATA SISWA',
+                    'title' => 'Data Siswa',
                     'nama' => $this->session->getValue('username'),
                     'url' => $this->uri->baseUri
                     );
@@ -69,6 +70,7 @@ class Wali extends Resources\Controller
             $data = array (
                     'datasiswa' => $this->walimodel->tambahsiswakelas(),
                     'namaCTRL' => 'TAMBAH DATA SISWA KELAS',
+                    'title' => 'Tambah Siswa Kelas',
                     'nama' => $this->session->getValue('username'),
                     'url' => $this->uri->baseUri
                     );
