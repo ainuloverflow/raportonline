@@ -8,7 +8,7 @@
     <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
     <link rel="shortcut icon" href="<?php echo $url;?>assets/img/favicon.png">
 
-    <title></title>
+    <title><?php echo $title;?></title>
 
     <!-- Bootstrap CSS -->    
     <link href="<?php echo $url;?>assets/css/bootstrap.min.css" rel="stylesheet">

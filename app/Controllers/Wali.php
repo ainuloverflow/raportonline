@@ -52,7 +52,7 @@ class Wali extends Resources\Controller
             $data = array (
                     'datasiswa' => $this->walimodel->bacadatasiswa($page, $limit), 
                     'namaCTRL' => 'DATA SISWA',
-                    'title' => 'Data Siswa',
+                    'title' => 'Halaman Wali Kelas',
                     'nama' => $this->session->getValue('username'),
                     'url' => $this->uri->baseUri
                     );
@@ -70,12 +70,16 @@ class Wali extends Resources\Controller
             $data = array (
                     'datasiswa' => $this->walimodel->tambahsiswakelas(),
                     'namaCTRL' => 'TAMBAH DATA SISWA KELAS',
-                    'title' => 'Tambah Siswa Kelas',
+                    'title' => 'Halaman Wali Kelas',
                     'nama' => $this->session->getValue('username'),
                     'url' => $this->uri->baseUri
                     );
 
-            $this->output('v_addsiswa_wali', $data);
+            //$this->output('v_addsiswa_wali', $data);
+            $this->output('header_backend', $data);
+            $this->output('sidebar_backend', $data);
+            $this->output('wali_konten_tambahsiswa');
+            $this->output('footer_backend', $data);
         } 
         else {
             $this->redirect('home/login');
