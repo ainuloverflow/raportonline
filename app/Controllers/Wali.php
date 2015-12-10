@@ -63,7 +63,7 @@ class Wali extends Resources\Controller
         }    
     }
 
-    public function tambah_siswa_kelas() {
+    public function tambahsiswakelas() {
         if($this->cek() == true){         
 
             $data = array (
