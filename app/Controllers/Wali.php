@@ -72,6 +72,7 @@ class Wali extends Resources\Controller
                     'namaCTRL' => 'TAMBAH DATA SISWA KELAS',
                     'title' => 'Halaman Wali Kelas',
                     'nama' => $this->session->getValue('username'),
+                    'cururl' => $this->uri->baseUri,
                     'url' => $this->uri->baseUri
                     );
 

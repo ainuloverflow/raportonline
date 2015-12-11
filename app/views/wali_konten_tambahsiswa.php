@@ -5,10 +5,10 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<h3 class="page-header"><i class="icon_document_alt"></i><?php echo $namaCTRL;?></h3>
-					<!--<ol class="breadcrumb">
-						<li><i class="fa fa-home"></i><a href="">Home</a></li>
-						<li><i class="fa fa-laptop"></i><a href="">Wali Kelas</a></li>						  	
-					</ol>-->
+					<ol class="breadcrumb">
+						<li><i class="fa fa-home"></i><a href="<?php echo 'cururl';?>"></a></li>
+						<li><i class="fa fa-laptop"></i><a href="<?php echo 'url';?>">Tambah siswa</a></li>						  	
+					</ol>
 				</div>
 			</div>
               <!-- project team & activity end -->
@@ -20,7 +20,7 @@
                           </header>
                           <div class="panel-body">
                               <form class="form-horizontal " method="get">
-                                  <div class="form-group">
+                                  <!--<div class="form-group">
                                       <label class="col-sm-2 control-label">Default</label>
                                       <div class="col-sm-10">
                                           <input type="text" class="form-control">
@@ -32,14 +32,42 @@
                                           <input type="text" class="form-control">
                                           <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
                                       </div>
-                                  </div>
+                                  </div>-->
                                   <div class="form-group">
-                                      <label class="col-sm-2 control-label">Rounder</label>
-                                      <div class="col-sm-10">
+                                      <label class="col-sm-1 control-label">ID Siswa</label>
+                                      <div class="col-sm-7">
                                           <input type="text" class="form-control round-input">
                                       </div>
                                   </div>
+                                  
                                   <div class="form-group">
+                                      <label class="col-sm-1 control-label">Nama</label>
+                                      <div class="col-sm-7">
+                                          <input type="text" class="form-control round-input">
+                                      </div>
+                                  </div>
+                                  
+                                  <div class="form-group">
+                                      <label class="col-sm-1 control-label">Alamat</label>
+                                      <div class="col-sm-7">
+                                          <input type="text" class="form-control round-input">
+                                      </div>
+                                  </div>
+                                  
+                                  <div class="form-group">
+                                      <label class="col-sm-1 control-label">Nomor HP</label>
+                                      <div class="col-sm-7">
+                                          <input type="text" class="form-control round-input">
+                                      </div>
+                                  </div>
+                                  
+                                  <div class="form-group">
+                                      <label class="col-sm-1 control-label">Password</label>
+                                      <div class="col-sm-7">
+                                          <input type="text" class="form-control round-input">
+                                      </div>
+                                  </div>
+                                  <!--<div class="form-group">
                                       <label class="col-sm-2 control-label">Input focus</label>
                                       <div class="col-sm-10">
                                           <input class="form-control" id="focusedInput" type="text" value="This is focused...">
@@ -68,11 +96,11 @@
                                       <div class="col-lg-10">
                                           <p class="form-control-static">email@example.com</p>
                                       </div>
-                                  </div>
+                                  </div>-->
                               </form>
                           </div>
                       </section>
-                      <section class="panel">
+                      <!--<section class="panel">
                           <div class="panel-body">
                               <form class="form-horizontal " method="get">
                                   <div class="form-group has-success">
@@ -95,8 +123,8 @@
                                   </div>
                               </form>
                           </div>
-                      </section>
-                      <section class="panel">
+                      </section> -->
+                      <!--<section class="panel">
                           <div class="panel-body">
                               <form class="form-horizontal " method="get">
                                   <div class="form-group">
@@ -125,8 +153,8 @@
                                   </div>
                               </form>
                           </div>
-                      </section>
-                      <section class="panel">
+                      </section> -->
+                      <!--section class="panel">
                           <div class="panel-body">
                               <form class="form-horizontal " method="get">
                                   <div class="form-group">
@@ -217,7 +245,7 @@
 
                               </form>
                           </div>
-                      </section>
+                      </section>-->
                   </div>
               </div>
 
