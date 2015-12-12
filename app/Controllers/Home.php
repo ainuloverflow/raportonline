@@ -34,7 +34,7 @@ class Home extends Resources\Controller
 	
     public function login() {
         $salah = '';
-        if($_POST) {
+        if($_SERVER['REQUEST_METHOD'] == 'POST') {
         $username = $this->post->POST('username', FILTER_SANITIZE_MAGIC_QUOTES);
         $password = md5($this->post->POST('password', FILTER_SANITIZE_MAGIC_QUOTES));
 
