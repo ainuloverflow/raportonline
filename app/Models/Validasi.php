@@ -29,7 +29,7 @@ class Validasi extends Resources\Validation {
                     //'min' => 3,
                     //'max' => 15,
                     //'regex' => '/^([-a-z0-9_-])+$/i',
-                    'callback' => 'cekidsiswa'
+                    //'callback' => 'cekidsiswa'
                 ),
                 'label' => 'ID Siswa',
                 'filter' => array('trim', 'strtolower')
@@ -73,6 +73,7 @@ class Validasi extends Resources\Validation {
                 'rules' => array(
                     'required',
                     'min' => 5,
+                    'regex' => '/^([-a-z0-9_-])+$/i',
                     'compare' => 'verifikasipass'
                 ),
                 'label' => 'Password',
