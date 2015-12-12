@@ -6,8 +6,8 @@
 				<div class="col-lg-12">
 					<h3 class="page-header"><i class="icon_document_alt"></i><?php echo $namaCTRL;?></h3>
 					<ol class="breadcrumb">
-						<li><i class="fa fa-home"></i><a href="<?php echo 'cururl';?>"></a></li>
-						<li><i class="fa fa-laptop"></i><a href="<?php echo 'url';?>">Tambah siswa</a></li>						  	
+                                            <li><i class="icon_documents"></i><a href="<?php echo $url;?>wali/datasiswa">Data siswa</a></li>
+						<li><i class="icon_plus_alt2"></i><a href="<?php echo $url;?>wali/tambah_siswa_kelas">Tambah siswa</a></li>						  	
 					</ol>
 				</div>
 			</div>
@@ -19,7 +19,7 @@
                             <?php echo $namaCTRL;?> 
                           </header>
                           <div class="panel-body">
-                              <form class="form-horizontal " method="get">
+                              <form class="form-horizontal" action="<?php echo $url;?>wali/tambah_siswa_kelas" method="post">
                                   <!--<div class="form-group">
                                       <label class="col-sm-2 control-label">Default</label>
                                       <div class="col-sm-10">
@@ -34,37 +34,55 @@
                                       </div>
                                   </div>-->
                                   <div class="form-group">
-                                      <label class="col-sm-1 control-label">ID Siswa</label>
+                                      <label class="col-sm-2 control-label">ID Siswa</label>
                                       <div class="col-sm-7">
-                                          <input type="text" class="form-control round-input">
+                                          <input type="text" name="idsiswa" class="form-control round-input">
                                       </div>
                                   </div>
                                   
                                   <div class="form-group">
-                                      <label class="col-sm-1 control-label">Nama</label>
+                                      <label class="col-sm-2 control-label">Nama</label>
                                       <div class="col-sm-7">
-                                          <input type="text" class="form-control round-input">
+                                          <input type="text" name="nama" class="form-control round-input">
                                       </div>
                                   </div>
                                   
                                   <div class="form-group">
-                                      <label class="col-sm-1 control-label">Alamat</label>
+                                        <label class="col-sm-2 control-label">Jenis Kelamin</label>
+                                        <div class="col-sm-5">
+                                            <select name="jenkel" value="" class="btn btn-default dropdown-toggle">
+                                                <option value=""></option>
+                                                <option value="LAKI-LAKI">LAKI-LAKI</option>                                 
+                                                <option value="PEREMPUAN">PEREMPUAN</option>                                    
+                                            </select>
+                                        </div>
+                                  </div>
+                                  
+                                  <div class="form-group">
+                                      <label class="col-sm-2 control-label">Alamat</label>
                                       <div class="col-sm-7">
-                                          <input type="text" class="form-control round-input">
+                                          <input type="text" name="alamat" class="form-control round-input">
                                       </div>
                                   </div>
                                   
                                   <div class="form-group">
-                                      <label class="col-sm-1 control-label">Nomor HP</label>
+                                      <label class="col-sm-2 control-label">Nomor HP</label>
                                       <div class="col-sm-7">
-                                          <input type="text" class="form-control round-input">
+                                          <input type="text" name="nohp" class="form-control round-input">
                                       </div>
                                   </div>
                                   
                                   <div class="form-group">
-                                      <label class="col-sm-1 control-label">Password</label>
+                                      <label class="col-sm-2 control-label">Password</label>
                                       <div class="col-sm-7">
-                                          <input type="text" class="form-control round-input">
+                                          <input type="password" name="password" class="form-control round-input">
+                                      </div>
+                                  </div>
+                                  
+                                  <div class="form-group">
+                                      <label class="col-sm-2 control-label">Verifikasi Password</label>
+                                      <div class="col-sm-7">
+                                          <input type="password" name="verifikasipass" class="form-control round-input">
                                       </div>
                                   </div>
                                   <!--<div class="form-group">
@@ -97,6 +115,15 @@
                                           <p class="form-control-static">email@example.com</p>
                                       </div>
                                   </div>-->
+                                  <div class="form-group">
+                                      <label class="col-sm-2 control-label"></label>
+                                      <div class="col-sm-7">
+                                    <td>
+                                        <button <a class="btn btn-primary" name="login" type="submit" value="submit">Simpan</a></button>
+                                        <button <a class="btn btn-danger" name="reset" type="reset" value="reset">Reset</a></button>
+                                    </td>
+                                      </div>
+                                  </div>
                               </form>
                           </div>
                       </section>
