@@ -7,8 +7,10 @@ class Wali extends Resources\Controller
 {
     public function __construct(){
         parent::__construct();
+        $this->post = new Resources\Request;
         $this->session = new Resources\Session;
         $this->walimodel = new Models\M_wali;
+        $this->validasi = new Models\Validasi;
     }
 
     public function cek(){
@@ -65,14 +67,39 @@ class Wali extends Resources\Controller
     }
 
     public function tambah_siswa_kelas() {
-        if($this->cek() == true){         
-
+        if($this->cek() == true){          
+            
+            if($_SERVER['REQUEST_METHOD'] == 'POST') {    
+                
+                $wali = $this->session->getValue('ID_WALI');
+                $id_kelas = $this->walimodel->query($wali);
+                
+                //if($this->validasi->validate()) {                                                         
+                    $value = array (
+                        'ID_SISWA' => $this->post->POST('idsiswa',FILTER_SANITIZE_MAGIC_QUOTES),
+                        'NAMA_SISWA' => $this->post->POST('nama',FILTER_SANITIZE_MAGIC_QUOTES),
+                        'JENIS_KELAMIN' => $this->post->POST('jenkel',FILTER_SANITIZE_MAGIC_QUOTES),
+                        'ALAMAT' => $this->post->POST('alamat',FILTER_SANITIZE_MAGIC_QUOTES),
+                        'NO_TELP' => $this->post->POST('nohp',FILTER_SANITIZE_MAGIC_QUOTES),
+                        'PASSWORD' => md5($this->post->POST('password',FILTER_SANITIZE_MAGIC_QUOTES)),
+                        'ID_KELAS' => $id_kelas->ID_KELAS 
+                    );
+                    
+                    $tambahsiswa = $this->walimodel->tambahsiswakelas($value);
+                    if($tambahsiswa) {
+                        echo "<script>alert('Data berhasil dimasukan'); window.location = '' </script>";
+                    }
+                    else {
+                        echo "<script>alert('Data gagal dimasukan'); window.location = '' </script>";
+                    }
+                //}
+            }
+            
             $data = array (
-                    'datasiswa' => $this->walimodel->tambahsiswakelas(),
+                    //'validasi' => $this->validasi,
                     'namaCTRL' => 'TAMBAH DATA SISWA KELAS',
                     'title' => 'Halaman Wali Kelas',
                     'nama' => $this->session->getValue('username'),
-                    'cururl' => $this->uri->baseUri,
                     'url' => $this->uri->baseUri
                     );
 
@@ -86,8 +113,8 @@ class Wali extends Resources\Controller
             $this->redirect('home/login');
         }    
     }
-    
-     public function edit_siswa_kelas() {
+   
+    public function edit_siswa_kelas() {
         if($this->cek() == true){         
 
             $data = array (
