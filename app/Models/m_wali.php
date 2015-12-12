@@ -17,9 +17,9 @@ class M_wali {
         Return $result = $this->db->insert("table_siswa", $value);
     }
     
-    public function query($wali) {
+    public function query($idwali) {
         Return $this->db->row("SELECT ID_KELAS FROM table_wali_kelas AS wali INNER JOIN table_guru_mapel AS guru "
-                . "ON wali.ID_WALI = guru.ID_GURU WHERE wali.ID_WALI = $wali");
+                . "ON wali.ID_WALI = guru.ID_GURU WHERE wali.ID_WALI = $idwali");
     }
     
     public function editdatasiswa() {

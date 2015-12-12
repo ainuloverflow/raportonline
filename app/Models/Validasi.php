@@ -11,9 +11,7 @@ class Validasi extends Resources\Validation {
         $this->setRuleErrorMessages(
             array(
                 'required' => '%label% tidak boleh kosong',
-                'numeric' => '%label% Harus Berupa Angka',
-                'alpha' => '%label% Harus Berupa Karakter Alfabet',
-                
+                'numeric' => '%label% Harus Berupa Angka'
             )
         );
     }
@@ -29,7 +27,7 @@ class Validasi extends Resources\Validation {
                     //'min' => 3,
                     //'max' => 15,
                     //'regex' => '/^([-a-z0-9_-])+$/i',
-                    //'callback' => 'cekidsiswa'
+                    'callback' => 'cekidsiswa'
                 ),
                 'label' => 'ID Siswa',
                 'filter' => array('trim', 'strtolower')
@@ -39,7 +37,6 @@ class Validasi extends Resources\Validation {
                 'rules' => array(
                     'required',
                     'regex' => '/^([a-zA-Z .])+$/i'
-                    
                 ),
                 'label' => 'Nama',
                 'filter' => array('trim', 'strtolower')
@@ -56,7 +53,8 @@ class Validasi extends Resources\Validation {
             'nohp' => array(
                 'rules' => array(
                     'required',
-                    'numeric'
+                    'numeric',
+                    'callback' => 'cekhpsiswa'
                 ),
                 'label' => 'No. Handphone',
                 'filter' => array('trim', 'strtolower')
@@ -88,6 +86,30 @@ class Validasi extends Resources\Validation {
                 'filter' => array('trim')
             )
             );
+    }
+    
+    public function cekidsiswa($field, $value)
+    {
+         $result = $this->db->row("SELECT ID_SISWA FROM table_siswa WHERE ID_SISWA='".$value."' ");
+         
+         if( $result == null)
+         return true;
+         
+         $this->setErrorMessage($field, 'Username Sudah Terdaftar.');
+        
+         return false;
+    }
+    
+    public function cekhpsiswa($field, $value)
+    {
+         $result = $this->db->row("SELECT NO_TELP FROM table_siswa WHERE NO_TELP='".$value."' ");
+         
+         if( $result == null)
+         return true;
+         
+         $this->setErrorMessage($field, 'Nomor Hanphone Sudah Terdaftar.');
+        
+         return false;
     }
 }
 

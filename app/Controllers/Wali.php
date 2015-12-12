@@ -71,18 +71,19 @@ class Wali extends Resources\Controller
             
             if($_SERVER['REQUEST_METHOD'] == 'POST') {    
                 
-                $wali = $this->session->getValue('ID_WALI');
-                $id_kelas = $this->walimodel->query($wali);
+                $idwali = $this->session->getValue('ID_WALI');
+                $id_kelas = $this->walimodel->query($idwali);
                 
-                //if($this->validasi->validate()) {                                                         
+                if($this->validasi->validate()) {                                                         
                     $value = array (
                         'ID_SISWA' => $this->post->POST('idsiswa',FILTER_SANITIZE_MAGIC_QUOTES),
                         'NAMA_SISWA' => $this->post->POST('nama',FILTER_SANITIZE_MAGIC_QUOTES),
+                        'ID_KELAS' => $id_kelas->ID_KELAS,
                         'JENIS_KELAMIN' => $this->post->POST('jenkel',FILTER_SANITIZE_MAGIC_QUOTES),
                         'ALAMAT' => $this->post->POST('alamat',FILTER_SANITIZE_MAGIC_QUOTES),
                         'NO_TELP' => $this->post->POST('nohp',FILTER_SANITIZE_MAGIC_QUOTES),
                         'PASSWORD' => md5($this->post->POST('password',FILTER_SANITIZE_MAGIC_QUOTES)),
-                        'ID_KELAS' => $id_kelas->ID_KELAS 
+                         
                     );
                     
                     $tambahsiswa = $this->walimodel->tambahsiswakelas($value);
@@ -92,11 +93,11 @@ class Wali extends Resources\Controller
                     else {
                         echo "<script>alert('Data gagal dimasukan'); window.location = '' </script>";
                     }
-                //}
+                }
             }
             
             $data = array (
-                    //'validasi' => $this->validasi,
+                    'validasi' => $this->validasi,
                     'namaCTRL' => 'TAMBAH DATA SISWA KELAS',
                     'title' => 'Halaman Wali Kelas',
                     'nama' => $this->session->getValue('username'),
