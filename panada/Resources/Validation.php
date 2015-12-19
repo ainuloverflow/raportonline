@@ -496,7 +496,7 @@ class Validation
 	    'min' => '%label% need more then %size% character',
 	    'max' => '%label% need less then %size% character',
 	    'compare' => '%label% value did not match compare to %comparatorLabel%',
-	    'file' => '%label% can not be empty',
+            'file' => '%label% can not be empty',
 	    'regex' => '%label% input format not valid',
 	    'in' => '%label% did not match to any specified values',
 	    'url' => '%label% not valid URL format',

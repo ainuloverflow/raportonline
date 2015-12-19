@@ -22,8 +22,8 @@ class M_wali {
                 . "ON wali.ID_WALI = guru.ID_GURU WHERE wali.ID_WALI = $idwali");
     }
     
-    public function editdatasiswa() {
-            
+    public function editdatasiswa($value) {
+        Return $this->db->row("SELECT * FROM table_siswa WHERE ID_SISWA = $value ");
     }
     
     public function hapusdatasiswa() {

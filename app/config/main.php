@@ -18,12 +18,10 @@ return array(
     ),
 
     'alias' => array(
-        /*
         'controller' => array(
             'class' => 'Alias',
             'method' => 'index'
         ),
-        */
         'method' => 'alias'
     ),
 );

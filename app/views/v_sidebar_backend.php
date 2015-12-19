@@ -36,7 +36,7 @@
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
                       <ul class="sub">
-                          <li><a class="" href="<?php echo $url;?>wali/datasiswa">Data Siswa</a></li>                          
+                          <li><a class="" href="<?php echo $url;?>listsiswa">Data Siswa</a></li>                          
                           <li><a class="" href="">Nilai Siswa</a></li>
                           <li><a class="" href="">Rapot</a></li>
                       </ul>

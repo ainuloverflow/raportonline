@@ -59,7 +59,11 @@ class Wali extends Resources\Controller
                     'url' => $this->uri->baseUri
                     );
 
-            $this->output('v_datasiswa_wali', $data);
+            
+            $this->output('v_header_backend', $data);
+            $this->output('v_sidebar_backend', $data);
+            $this->output('Walikonten/v_wali_konten_listsiswa', $data);
+            $this->output('v_footer_backend', $data);
         } 
         else {
             $this->redirect('home/login');
@@ -102,30 +106,57 @@ class Wali extends Resources\Controller
                     'title' => 'Halaman Wali Kelas',
                     'nama' => $this->session->getValue('username'),
                     'url' => $this->uri->baseUri
-                    );
+            );
 
             //$this->output('v_addsiswa_wali', $data);
-            $this->output('header_backend', $data);
-            $this->output('sidebar_backend', $data);
-            $this->output('wali_konten_tambahsiswa');
-            $this->output('footer_backend', $data);
+            $this->output('v_header_backend', $data);
+            $this->output('v_sidebar_backend', $data);
+            $this->output('Walikonten/v_wali_konten_tambahsiswa');
+            $this->output('v_footer_backend', $data);
+        } 
+        else {
+            $this->redirect('home/login');
+        }    
+    }
+    
+    public function edit_siswa_kelas() {
+        if($this->cek() == true){         
+            $value = addslashes($this->resource->uri->path(1));
+            
+            $data = array (
+                    'editsiswa' => $this->walimodel->editdatasiswa($value),
+                    'validasi' =>$this->validasi,
+                    'namaCTRL' => 'EDIT DATA SISWA KELAS',
+                    'title' => 'Halaman Wali Kelas',
+                    'nama' => $this->session->getValue('username'),
+                    'url' => $this->uri->baseUri
+            );
+            $this->output('v_header_backend', $data);
+            $this->output('v_sidebar_backend', $data);
+            $this->output('Walikonten/v_wali_konten_editsiswa', $data);
+            $this->output('v_footer_backend', $data);
         } 
         else {
             $this->redirect('home/login');
         }    
     }
    
-    public function edit_siswa_kelas() {
+    public function validate_edit_siswa_kelas() {
         if($this->cek() == true){         
-
+            $value = addslashes($this->resource->uri->path(3));
+            
             $data = array (
-                    'datasiswa' => $this->walimodel->editdatasiswa(),
-                    'namaCTRL' => 'PERBARUI DATA SISWA KELAS',
+                    'editsiswa' => $this->walimodel->editdatasiswa($value),
+                    'validasi' =>$this->validasi,
+                    'namaCTRL' => 'EDIT DATA SISWA KELAS',
+                    'title' => 'Halaman Wali Kelas',
                     'nama' => $this->session->getValue('username'),
                     'url' => $this->uri->baseUri
-                    );
-
-            $this->output('v_addsiswa_wali', $data);
+            );
+            $this->output('v_header_backend', $data);
+            $this->output('v_sidebar_backend', $data);
+            $this->output('Walikonten/v_wali_konten_editsiswa');
+            $this->output('v_footer_backend', $data);
         } 
         else {
             $this->redirect('home/login');

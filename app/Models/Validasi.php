@@ -3,6 +3,9 @@ namespace Models;
 use Resources;
 
 class Validasi extends Resources\Validation {
+
+public $cekUserID = true;
+public $cekHP = true;
     
     public function __construct()
     {
@@ -11,7 +14,9 @@ class Validasi extends Resources\Validation {
         $this->setRuleErrorMessages(
             array(
                 'required' => '%label% tidak boleh kosong',
-                'numeric' => '%label% Harus Berupa Angka'
+                'numeric' => '%label% Harus Berupa Angka',
+                'compare' => '%label% harus samas dengan %comparatorLabel%',
+                'min' => '%label% harus lebih dari 5 karakter'
             )
         );
     }
@@ -28,6 +33,18 @@ class Validasi extends Resources\Validation {
                     //'max' => 15,
                     //'regex' => '/^([-a-z0-9_-])+$/i',
                     'callback' => 'cekidsiswa'
+                ),
+                'label' => 'ID Siswa'            
+            ),
+            
+            'idsiswa_edit' => array(
+                'rules' => array(
+                    'required',
+                    'numeric',
+                    //'min' => 3,
+                    //'max' => 15,
+                    //'regex' => '/^([-a-z0-9_-])+$/i',
+                    'callback' => 'idsiswa_edit'
                 ),
                 'label' => 'ID Siswa',
                 'filter' => array('trim', 'strtolower')
@@ -60,6 +77,16 @@ class Validasi extends Resources\Validation {
                 'filter' => array('trim', 'strtolower')
             ),
             
+            'nohp_edit' => array(
+                'rules' => array(
+                    'required',
+                    'numeric',
+                    'callback' => 'hpsiswa_edit'
+                ),
+                'label' => 'No. Handphone',
+                'filter' => array('trim', 'strtolower')
+            ),
+            
             'jenkel' => array(
                 'rules' => array(
                     'required',      
@@ -80,7 +107,8 @@ class Validasi extends Resources\Validation {
             
             'verifikasipass' => array(
                 'rules' => array(
-                    'required'
+                    'required',
+                    'min' => 5
                 ),
                 'label' => 'Konfirmasi Password',
                 'filter' => array('trim')
@@ -100,6 +128,22 @@ class Validasi extends Resources\Validation {
          return false;
     }
     
+    public function idsiswa_edit($field, $value)
+    {
+         $this->cekUserID = false;
+         $result = $this->db->row("SELECT ID_SISWA FROM table_siswa WHERE ID_SISWA='".$value."' ");
+         
+         if(! $this->cekUserID)
+         return true;
+         
+         if(! $result == null)
+         return true;
+         
+         $this->setErrorMessage($field, 'Username Sudah Terdaftar.');
+        
+         return false;
+    }
+    
     public function cekhpsiswa($field, $value)
     {
          $result = $this->db->row("SELECT NO_TELP FROM table_siswa WHERE NO_TELP='".$value."' ");
@@ -111,6 +155,21 @@ class Validasi extends Resources\Validation {
         
          return false;
     }
+    
+    public function hpsiswa_edit($field, $value)
+    {
+        $this->cekHP = false;
+        
+        $result = $this->db->row("SELECT NO_TELP FROM table_siswa WHERE NO_TELP='".$value."' ");
+        
+        if(! $this->cekHP)
+        return true;
+         
+        if(! $result == null)
+        return true;
+         
+        $this->setErrorMessage($field, 'Nomor Hanphone Sudah Terdaftar.');
+        return false;
+    }
 }
-
 ?>
