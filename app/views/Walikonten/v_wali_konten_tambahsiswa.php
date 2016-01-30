@@ -6,8 +6,7 @@
 				<div class="col-lg-12">
 					<h3 class="page-header"><i class="icon_document_alt"></i><?php echo $namaCTRL;?></h3>
 					<ol class="breadcrumb">
-                                            <li><i class="icon_documents"></i><a href="<?php echo $url;?>listsiswa">Data siswa</a></li>
-						<li><i class="icon_plus_alt2"></i><a href="<?php echo $url;?>tambahsiswa">Tambah siswa</a></li>						  	
+                                            <li><i class="icon_documents"></i><a href="<?php echo $url;?>listsiswa"><?php echo $breadcrumb;?></a></li>					  	
 					</ol>
 				</div>
 			</div>

@@ -1,7 +1,9 @@
-<!-- javascripts -->
-  <script src="<?php echo $url;?>assets/js/jquery.js"></script>
-	<script src="<?php echo $url;?>assets/js/jquery-ui-1.10.4.min.js"></script>
+    <!-- javascripts -->
+    <script src="<?php echo $url;?>assets/js/jquery.js"></script>
+    <script src="<?php echo $url;?>assets/js/jquery-ui-1.10.4.min.js"></script>
     <script src="<?php echo $url;?>assets/js/jquery-1.8.3.min.js"></script>
+    <!--Select2 JS-->
+    <script src="<?php echo $url;?>assets/dist/js/select2.min.js"></script>
     <script type="text/javascript" src="<?php echo $url;?>assets/js/jquery-ui-1.9.2.custom.min.js"></script>
     <!-- bootstrap -->
     <script src="<?php echo $url;?>assets/js/bootstrap.min.js"></script>
@@ -9,19 +11,19 @@
     <script src="<?php echo $url;?>assets/js/jquery.scrollTo.min.js"></script>
     <script src="<?php echo $url;?>assets/js/jquery.nicescroll.js" type="text/javascript"></script>
     <!-- charts scripts -->
-    <script src="<?php echo $url;?>assets/assets/jquery-knob/js/jquery.knob.js"></script>
+    <script src="<?php echo $url;?>assets/jquery-knob/js/jquery.knob.js"></script>
     <script src="<?php echo $url;?>assets/js/jquery.sparkline.js" type="text/javascript"></script>
-    <script src="<?php echo $url;?>assets/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
+    <script src="<?php echo $url;?>assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
     <script src="<?php echo $url;?>assets/js/owl.carousel.js" ></script>
     <!-- jQuery full calendar -->
-    <<script src="<?php echo $url;?>assets/js/fullcalendar.min.js"></script> <!-- Full Google Calendar - Calendar -->
+    <script src="<?php echo $url;?>assets/js/fullcalendar.min.js"></script> <!-- Full Google Calendar - Calendar -->
 	<script src="<?php echo $url;?>assets/assets/fullcalendar/fullcalendar/fullcalendar.js"></script>
     <!--script for this page only-->
     <script src="<?php echo $url;?>assets/js/calendar-custom.js"></script>
 	<script src="<?php echo $url;?>assets/js/jquery.rateit.min.js"></script>
     <!-- custom select -->
     <script src="<?php echo $url;?>assets/js/jquery.customSelect.min.js" ></script>
-	<script src="<?php echo $url;?>assets/assets/chart-master/Chart.js"></script>
+	<script src="<?php echo $url;?>assets/chart-master/Chart.js"></script>
    
     <!--custome script for all page-->
     <script src="<?php echo $url;?>assets/js/scripts.js"></script>
@@ -38,8 +40,94 @@
     <script src="<?php echo $url;?>assets/js/sparklines.js"></script>	
     <script src="<?php echo $url;?>assets/js/charts.js"></script>
     <script src="<?php echo $url;?>assets/js/jquery.slimscroll.min.js"></script>
-  <script>
-
+  
+    <!--<script>
+        $('#nama_siswa').autocomplete({
+	source: function( request, response ) {
+		$.ajax({
+			url: '<?php //echo $url;?>getsiswa',
+			dataType: "json",
+			method: 'post',
+			data: {
+				name_startsWith: request.term,
+				type: 'nama_siswa'
+			},
+			success: function( data ) {
+				response( $.map( data, function( item ) {
+					console.log(item);
+					//var code = item.split("|");
+						return {
+							label: item,
+							value: item,
+							data : item
+						}
+					}));
+				}
+			});
+	},
+	autoFocus: true,
+	minLength: 1,
+	select: function( event, ui ) {
+		//on select
+	}
+});
+    </script>-->
+      
+    <!--<script> 
+        $(document).ready(function () {
+        $(function () {
+            $( "#nama_siswa" ).autocomplete({
+                minLength:3,
+                source: function(request, response) {
+                    $.ajax({ 
+                        url: "<?php //echo $url;?>getsiswa",
+                        data: { term: $("#nama_siswa").val()},
+    
+                        dataType: "json",
+                        type: "POST",
+                        success: function(data){
+                            response(data);
+                        }    
+                    });
+                },
+            });
+        });
+    });
+    </script>-->
+    
+    <script>
+        var cariFas = [
+	<?php
+	foreach($sisall as $datasiswa)
+	{
+            echo "\"";
+            echo $datasiswa->ID_SISWA.' - '.$datasiswa->NAMA_SISWA;
+            echo "\",";							}
+	?>
+        ];
+        
+        $("#nama_siswa").autocomplete({
+	 source: cariFas
+	});
+    </script>
+    <!--<script>
+    $(document).ready(function() {
+        $('#nama_siswa').select2();
+        var district = $("#nama_siswa");
+        district.change(function() {
+            $.ajax({
+                type: "post",
+                url: "<?php //echo $url;?>getkelas"+district.val(),
+//                data: "country=" + country,
+                success: function(data) {
+                    $("#id_kelas").html(data);
+                }
+            });
+        });
+    });
+</script>-->
+       
+       <script>
       //knob
       $(function() {
         $(".knob").knob({

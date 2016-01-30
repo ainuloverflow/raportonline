@@ -12,7 +12,7 @@ public $cekHP = true;
         parent::__construct();
         $this->db = new Resources\Database;
         $this->setRuleErrorMessages(
-            array(
+            array (
                 'required' => '%label% tidak boleh kosong',
                 'numeric' => '%label% Harus Berupa Angka',
                 'compare' => '%label% harus samas dengan %comparatorLabel%',
@@ -23,40 +23,56 @@ public $cekHP = true;
     
     public function setRules()
     {
-        return array(
-            
-            'idsiswa' => array(
+        return array (
+            'id_orangtua' => array(
                 'rules' => array(
-                    'required',
-                    'numeric',
-                    //'min' => 3,
-                    //'max' => 15,
-                    //'regex' => '/^([-a-z0-9_-])+$/i',
-                    'callback' => 'cekidsiswa'
+                    'required'
+                ),
+                'label' => 'ID Orang Tua'            
+            ),
+            
+            'id_siswa' => array(
+                'rules' => array(
+                    'required'
                 ),
                 'label' => 'ID Siswa'            
             ),
             
-            'idsiswa_edit' => array(
+            'nissiswa' => array(
                 'rules' => array(
                     'required',
                     'numeric',
-                    //'min' => 3,
-                    //'max' => 15,
-                    //'regex' => '/^([-a-z0-9_-])+$/i',
-                    'callback' => 'idsiswa_edit'
+                    'callback' => 'ceknissiswa'
                 ),
-                'label' => 'ID Siswa',
-                'filter' => array('trim', 'strtolower')
+                'label' => 'NIS Siswa',
+                'filter' => array('trim')
             ),
             
-            'nama' => array(
+            'niksiswa_edit' => array(
+                'rules' => array(
+                    'required',
+                    'numeric',
+                    'callback' => 'nissiswa_edit'
+                ),
+                'label' => 'NIS Siswa',
+                'filter' => array('trim')
+            ),
+            
+            'nama_siswa' => array(
+                'rules' => array(
+                    'required'
+                ),
+                'label' => 'Nama Siswa',
+                'filter' => array('trim')
+            ),
+        
+            'nama_ortu' => array(
                 'rules' => array(
                     'required',
                     'regex' => '/^([a-zA-Z .])+$/i'
                 ),
-                'label' => 'Nama',
-                'filter' => array('trim', 'strtolower')
+                'label' => 'Nama Orang Tua',
+                'filter' => array('trim')
             ),
             
             'alamat' => array(
@@ -64,7 +80,7 @@ public $cekHP = true;
                     'required',
                 ),
                 'label' => 'Alamat',
-                'filter' => array('trim', 'strtolower')
+                'filter' => array('trim')
             ),
             
             'nohp' => array(
@@ -81,7 +97,7 @@ public $cekHP = true;
                 'rules' => array(
                     'required',
                     'numeric',
-                    'callback' => 'hpsiswa_edit'
+                    'callback' => 'nohp_edit'
                 ),
                 'label' => 'No. Handphone',
                 'filter' => array('trim', 'strtolower')
@@ -92,6 +108,13 @@ public $cekHP = true;
                     'required',      
                 ),
                 'label' => 'Jenis Kelamin'
+            ),
+            
+            'pekerjaan' => array(
+                'rules' => array(
+                    'required',      
+                ),
+                'label' => 'Pekerjaan'
             ),
             
             'password' => array(
@@ -113,25 +136,25 @@ public $cekHP = true;
                 'label' => 'Konfirmasi Password',
                 'filter' => array('trim')
             )
-            );
+        );
     }
     
-    public function cekidsiswa($field, $value)
+    public function ceknissiswa($field, $value)
     {
-         $result = $this->db->row("SELECT ID_SISWA FROM table_siswa WHERE ID_SISWA='".$value."' ");
+         $result = $this->db->row("SELECT NIK_SISWA FROM table_siswa WHERE NIK_SISWA='".$value."' ");
          
          if( $result == null)
          return true;
          
-         $this->setErrorMessage($field, 'Username Sudah Terdaftar.');
+         $this->setErrorMessage($field, 'NIS Sudah Terdaftar.');
         
          return false;
     }
     
-    public function idsiswa_edit($field, $value)
+    public function nissiswa_edit($field, $value)
     {
          $this->cekUserID = false;
-         $result = $this->db->row("SELECT ID_SISWA FROM table_siswa WHERE ID_SISWA='".$value."' ");
+         $result = $this->db->row("SELECT NIK_SISWA FROM table_siswa WHERE NIK_SISWA='".$value."' ");
          
          if(! $this->cekUserID)
          return true;
@@ -139,7 +162,7 @@ public $cekHP = true;
          if(! $result == null)
          return true;
          
-         $this->setErrorMessage($field, 'Username Sudah Terdaftar.');
+         $this->setErrorMessage($field, 'NIS Sudah Terdaftar.');
         
          return false;
     }
@@ -156,7 +179,7 @@ public $cekHP = true;
          return false;
     }
     
-    public function hpsiswa_edit($field, $value)
+    public function nohp_edit($field, $value)
     {
         $this->cekHP = false;
         

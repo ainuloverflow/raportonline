@@ -6,7 +6,7 @@
 				<div class="col-lg-12">
 					<h3 class="page-header"><i class="icon_document_alt"></i><?php echo $namaCTRL;?></h3>
 					<ol class="breadcrumb">
-                                            <li><i class="icon_documents"></i><a href="<?php echo $url;?>listsiswa"><?php echo $breadcrumb;?></a></li>
+                                            <li><i class="icon_documents"></i><a href="<?php echo $url;?>listsiswa"><?php echo $breadcrumb;?></a></li>					  	
 					</ol>
 				</div>
 			</div>
@@ -35,25 +35,28 @@
                                   <div class="form-group">
                                       <label class="col-sm-2 control-label">ID Siswa</label>
                                       <div class="col-sm-7">
-                                            <input type="text" value="<?php echo $editsiswa->ID_SISWA;?>" name="idsiswa_edit" class="form-control round-input">
+                                          <p><?php echo $validasi->errorMessages('idsiswa_edit', '<p style="color:red">', '</p>');?></p>
+                                          <input type="text" value="<?php echo $validasi->value('idsiswa_edit');?>" name="idsiswa_edit" class="form-control round-input">
                                       </div>
                                   </div>
                                   
                                   <div class="form-group">
                                       <label class="col-sm-2 control-label">Nama</label>
                                       <div class="col-sm-7">
-                                          <input type="text" value="<?php echo $editsiswa->NAMA_SISWA;?>" name="nama" class="form-control round-input">
+                                           <p><?php echo $validasi->errorMessages('nama', '<p style="color:red">', '</p>');?></p>
+                                          <input type="text" value="<?php echo $validasi->value('nama');?>" name="nama" class="form-control round-input">
                                       </div>
                                   </div>
                                   
                                   <div class="form-group">
                                         <label class="col-sm-2 control-label">Jenis Kelamin</label>
                                         <div class="col-sm-5">
-                                            <select name="jenkel" class="btn btn-default dropdown-toggle">
-                                                <option value="<?php echo $editsiswa->JENIS_KELAMIN;?>"><?php echo $editsiswa->JENIS_KELAMIN;?></option>
+                                            <p><?php echo $validasi->errorMessages('jenkel', '<p style="color:red">', '</p>');?></p>
+                                            <select name="jenkel" value="" class="btn btn-default dropdown-toggle">
+                                                <option value="<?php echo $validasi->value('jenkel');?>"><?php echo $validasi->value('jenkel');?></option>
                                                 <option value=""></option>
-                                                <option value="LAKI-LAKI"> LAKI-LAKI</option>
-                                                <option value="PEREMPUAN"> PEREMPUAN</option>
+                                                <option value="LAKI-LAKI">LAKI-LAKI</option>                                 
+                                                <option value="PEREMPUAN">PEREMPUAN</option>                                    
                                             </select>
                                         </div>
                                   </div>
@@ -61,28 +64,32 @@
                                   <div class="form-group">
                                       <label class="col-sm-2 control-label">Alamat</label>
                                       <div class="col-sm-7">
-                                          <input type="text" value="<?php echo $editsiswa->ALAMAT;?>" name="alamat" class="form-control round-input">
+                                          <p><?php echo $validasi->errorMessages('alamat', '<p style="color:red">', '</p>');?></p>
+                                          <input type="text" value="<?php echo $validasi->value('alamat');?>" name="alamat" class="form-control round-input">
                                       </div>
                                   </div>
                                   
                                   <div class="form-group">
                                       <label class="col-sm-2 control-label">Nomor HP</label>
                                       <div class="col-sm-7">
-                                          <input type="text" value="<?php echo $editsiswa->NO_TELP;?>" name="nohp_edit" class="form-control round-input">
+                                          <p><?php echo $validasi->errorMessages('nohp_edit', '<p style="color:red">', '</p>');?></p>
+                                          <input type="text" value="<?php echo $validasi->value('nohp_edit');?>" name="nohp_edit" class="form-control round-input">
                                       </div>
                                   </div>
                                   
                                   <div class="form-group">
                                       <label class="col-sm-2 control-label">Password</label>
                                       <div class="col-sm-7">
-                                          <input type="password" value="<?php ;?>" name="" class="form-control round-input">
+                                          <p></p>
+                                          <input type="password" value="" name="" class="form-control round-input">
                                       </div>
                                   </div>
                                   
                                   <div class="form-group">
                                       <label class="col-sm-2 control-label">Verifikasi Password</label>
                                       <div class="col-sm-7">
-                                          <input type="password" value="<?php ;?>" name="" class="form-control round-input">
+                                          <p></p>
+                                          <input type="password" value="" name="" class="form-control round-input">
                                       </div>
                                   </div>
                                   <!--<div class="form-group">

@@ -6,7 +6,7 @@
 				<div class="col-lg-12">
 					<h3 class="page-header"><i class="icon_document_alt"></i><?php echo $namaCTRL;?></h3>
 					<ol class="breadcrumb">
-                                            <li><i class="icon_documents"></i><a href="<?php echo $url;?>listsiswa"><?php echo $breadcrumb;?></a></li>
+                                            <li><i class="icon_documents"></i><a href="<?php echo $url;?>listortu"><?php echo $breadcrumb;?></a></li>						  	
 					</ol>
 				</div>
 			</div>
@@ -18,71 +18,54 @@
                             <?php echo $namaCTRL;?> 
                           </header>
                           <div class="panel-body">
-                              <form class="form-horizontal" action="<?php echo $url;?>validasieditsiswa" method="post">
-                                  <!--<div class="form-group">
-                                      <label class="col-sm-2 control-label">Default</label>
-                                      <div class="col-sm-10">
-                                          <input type="text" class="form-control">
-                                      </div>
-                                  </div>
+                          
+                              <form class="form-horizontal" action="<?php echo $url;?>tambahortu" method="post">
+                  
                                   <div class="form-group">
-                                      <label class="col-sm-2 control-label">Help text</label>
-                                      <div class="col-sm-10">
-                                          <input type="text" class="form-control">
-                                          <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
-                                      </div>
-                                  </div>-->
-                                  <div class="form-group">
-                                      <label class="col-sm-2 control-label">ID Siswa</label>
+                                      <label class="col-sm-2 control-label">Identitas Siswa</label>
                                       <div class="col-sm-7">
-                                            <input type="text" value="<?php echo $editsiswa->ID_SISWA;?>" name="idsiswa_edit" class="form-control round-input">
+                                          <p><?php echo $validasi->errorMessages('nama_siswa', '<p style="color:red">', '</p>');?></p>
+                                          <input id="nama_siswa" name="nama_siswa" type="text" placeholder="Ketikan Nama atau NIK Siswa" class="form-control round-input">
                                       </div>
                                   </div>
                                   
                                   <div class="form-group">
                                       <label class="col-sm-2 control-label">Nama</label>
                                       <div class="col-sm-7">
-                                          <input type="text" value="<?php echo $editsiswa->NAMA_SISWA;?>" name="nama" class="form-control round-input">
+                                           <p><?php echo $validasi->errorMessages('nama_ortu', '<p style="color:red">', '</p>');?></p>
+                                          <input type="text" value="<?php echo $validasi->value('nama_ortu');?>" name="nama_ortu" class="form-control round-input">
                                       </div>
-                                  </div>
-                                  
-                                  <div class="form-group">
-                                        <label class="col-sm-2 control-label">Jenis Kelamin</label>
-                                        <div class="col-sm-5">
-                                            <select name="jenkel" class="btn btn-default dropdown-toggle">
-                                                <option value="<?php echo $editsiswa->JENIS_KELAMIN;?>"><?php echo $editsiswa->JENIS_KELAMIN;?></option>
-                                                <option value=""></option>
-                                                <option value="LAKI-LAKI"> LAKI-LAKI</option>
-                                                <option value="PEREMPUAN"> PEREMPUAN</option>
-                                            </select>
-                                        </div>
                                   </div>
                                   
                                   <div class="form-group">
                                       <label class="col-sm-2 control-label">Alamat</label>
                                       <div class="col-sm-7">
-                                          <input type="text" value="<?php echo $editsiswa->ALAMAT;?>" name="alamat" class="form-control round-input">
+                                          <p><?php echo $validasi->errorMessages('alamat', '<p style="color:red">', '</p>');?></p>
+                                          <input type="text" value="<?php echo $validasi->value('alamat');?>" name="alamat" class="form-control round-input">
                                       </div>
                                   </div>
                                   
                                   <div class="form-group">
-                                      <label class="col-sm-2 control-label">Nomor HP</label>
+                                      <label class="col-sm-2 control-label">Pekerjaan</label>
                                       <div class="col-sm-7">
-                                          <input type="text" value="<?php echo $editsiswa->NO_TELP;?>" name="nohp_edit" class="form-control round-input">
+                                          <p><?php echo $validasi->errorMessages('pekerjaan', '<p style="color:red">', '</p>');?></p>
+                                          <input type="text" value="<?php echo $validasi->value('pekerjaan');?>" name="pekerjaan" class="form-control round-input">
                                       </div>
                                   </div>
                                   
                                   <div class="form-group">
                                       <label class="col-sm-2 control-label">Password</label>
                                       <div class="col-sm-7">
-                                          <input type="password" value="<?php ;?>" name="" class="form-control round-input">
+                                          <p><?php echo $validasi->errorMessages('password', '<p style="color:red">', '</p>');?></p>
+                                          <input type="password" value="<?php echo $validasi->value('password');?>" name="password" class="form-control round-input">
                                       </div>
                                   </div>
                                   
                                   <div class="form-group">
                                       <label class="col-sm-2 control-label">Verifikasi Password</label>
                                       <div class="col-sm-7">
-                                          <input type="password" value="<?php ;?>" name="" class="form-control round-input">
+                                          <p><?php echo $validasi->errorMessages('verifikasipass', '<p style="color:red">', '</p>');?></p>
+                                          <input type="password" value="<?php echo $validasi->value('verifikasipass');?>" name="verifikasipass" class="form-control round-input">
                                       </div>
                                   </div>
                                   <!--<div class="form-group">
@@ -118,10 +101,10 @@
                                   <div class="form-group">
                                       <label class="col-sm-2 control-label"></label>
                                       <div class="col-sm-7">
-                                    <td>
+                                    
                                         <button <a class="btn btn-primary" name="login" type="submit" value="submit">Simpan</a></button>
                                         <button <a class="btn btn-danger" name="reset" type="reset" value="reset">Reset</a></button>
-                                    </td>
+                                    
                                       </div>
                                   </div>
                               </form>

@@ -99,7 +99,7 @@ class Home extends Resources\Controller
     }
 	
     public function logout() {
-            $this->session->destroy();
-            $this->redirect('home/login');
+        $this->session->destroy();
+        $this->redirect('home/login');
     }
 }	
