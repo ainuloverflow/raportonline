@@ -101,12 +101,12 @@
 	foreach($sisall as $datasiswa)
 	{
             echo "\"";
-            echo $datasiswa->ID_SISWA.' - '.$datasiswa->NAMA_SISWA;
+            echo $datasiswa->ID_SISWA.' - '.$datasiswa->NIS_SISWA.' - '.$datasiswa->NAMA_SISWA;
             echo "\",";							}
 	?>
         ];
         
-        $("#nama_siswa").autocomplete({
+        $("#id_siswa").autocomplete({
 	 source: cariFas
 	});
     </script>

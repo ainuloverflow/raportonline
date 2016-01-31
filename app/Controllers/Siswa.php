@@ -24,4 +24,4 @@ class Siswa extends Resources\Controller
            $this->redirect('home/login');
         }    
     }
-}
+} 

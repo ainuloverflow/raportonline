@@ -48,7 +48,7 @@ public $cekHP = true;
                 'filter' => array('trim')
             ),
             
-            'niksiswa_edit' => array(
+            'nissiswa_edit' => array(
                 'rules' => array(
                     'required',
                     'numeric',
@@ -141,11 +141,11 @@ public $cekHP = true;
     
     public function ceknissiswa($field, $value)
     {
-         $result = $this->db->row("SELECT NIK_SISWA FROM table_siswa WHERE NIK_SISWA='".$value."' ");
+         $result = $this->db->row("SELECT NIS_SISWA FROM table_siswa WHERE NIS_SISWA='".$value."' ");
          
          if( $result == null)
          return true;
-         
+            
          $this->setErrorMessage($field, 'NIS Sudah Terdaftar.');
         
          return false;
@@ -154,7 +154,7 @@ public $cekHP = true;
     public function nissiswa_edit($field, $value)
     {
          $this->cekUserID = false;
-         $result = $this->db->row("SELECT NIK_SISWA FROM table_siswa WHERE NIK_SISWA='".$value."' ");
+         $result = $this->db->row("SELECT NIS_SISWA FROM table_siswa WHERE NIS_SISWA='".$value."' ");
          
          if(! $this->cekUserID)
          return true;

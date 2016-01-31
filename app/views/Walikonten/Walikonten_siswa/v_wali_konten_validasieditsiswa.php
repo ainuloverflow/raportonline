@@ -32,19 +32,21 @@
                                           <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
                                       </div>
                                   </div>-->
+                                  <input type="text" value="<?php echo $validasi->value('idsiswa_edit');?>" name="idsiswa_edit" class="form-control round-input hidden">
+
                                   <div class="form-group">
-                                      <label class="col-sm-2 control-label">ID Siswa</label>
+                                      <label class="col-sm-2 control-label">NIS Siswa</label>
                                       <div class="col-sm-7">
-                                          <p><?php echo $validasi->errorMessages('idsiswa_edit', '<p style="color:red">', '</p>');?></p>
-                                          <input type="text" value="<?php echo $validasi->value('idsiswa_edit');?>" name="idsiswa_edit" class="form-control round-input">
+                                          <p><?php echo $validasi->errorMessages('nissiswa_edit', '<p style="color:red">', '</p>');?></p>
+                                          <input type="text" value="<?php echo $validasi->value('nissiswa_edit');?>" name="nissiswa_edit" class="form-control round-input">
                                       </div>
                                   </div>
                                   
                                   <div class="form-group">
                                       <label class="col-sm-2 control-label">Nama</label>
                                       <div class="col-sm-7">
-                                           <p><?php echo $validasi->errorMessages('nama', '<p style="color:red">', '</p>');?></p>
-                                          <input type="text" value="<?php echo $validasi->value('nama');?>" name="nama" class="form-control round-input">
+                                           <p><?php echo $validasi->errorMessages('nama_siswa', '<p style="color:red">', '</p>');?></p>
+                                          <input type="text" value="<?php echo $validasi->value('nama_siswa');?>" name="nama_siswa" class="form-control round-input">
                                       </div>
                                   </div>
                                   
@@ -77,7 +79,7 @@
                                       </div>
                                   </div>
                                   
-                                  <div class="form-group">
+                                  <!--<div class="form-group">
                                       <label class="col-sm-2 control-label">Password</label>
                                       <div class="col-sm-7">
                                           <p></p>
@@ -91,7 +93,7 @@
                                           <p></p>
                                           <input type="password" value="" name="" class="form-control round-input">
                                       </div>
-                                  </div>
+                                  </div>-->
                                   <!--<div class="form-group">
                                       <label class="col-sm-2 control-label">Input focus</label>
                                       <div class="col-sm-10">

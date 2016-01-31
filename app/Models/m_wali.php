@@ -8,30 +8,30 @@ class M_wali {
         $this->db = new Resources\Database;
     }
     
-    public function bacaortu($page = 1, $limit = 10) {
+    public function bacaortu($page = 1, $limit = 10) { // read ortu
         $offset = ($limit * $page) - $limit;
     	Return $result = $this->db->results("SELECT ortu.ID_ORANGTUA, siswa.NAMA_SISWA, ortu.NAMA, ortu.ALAMAT, ortu.PEKERJAAN FROM table_orang_tua AS ortu INNER JOIN table_siswa AS siswa WHERE "
                 . "ortu.ID_SISWA = siswa.ID_SISWA ORDER BY ID_ORANGTUA ASC LIMIT $offset, $limit");
     }
     
-    public function bacasiswakelas($page = 1, $limit = 10) {
+    public function bacasiswakelas($page = 1, $limit = 10) { // read siswa
         $offset = ($limit * $page) - $limit;
     	Return $result = $this->db->results("SELECT * FROM table_siswa ORDER BY ID_SISWA ASC LIMIT $offset, $limit");
     }
     
-    public function tambahortusiswakelas($value) {
+    public function tambahortusiswakelas($value) { //insert data ortu siswa
         Return $this->db->insert("table_orang_tua", $value);
     }
     
-    public function tambahsiswakelas($value) {
+    public function tambahsiswakelas($value) { //insert data siswa
         Return $result = $this->db->insert("table_siswa", $value);
     }
    
-    public function geteditsiswakelas($value) {
+    public function geteditsiswakelas($value) { //edit siswa
         Return $this->db->row("SELECT * FROM table_siswa WHERE ID_SISWA = $value ");
     }
     
-    public function get_edit_ortusiswa_kelas($value) {
+    public function get_edit_ortusiswa_kelas($value) { //edit orang tua
         Return $this->db->row("SELECT * FROM table_orang_tua WHERE ID_ORANGTUA = $value ");
     }
     

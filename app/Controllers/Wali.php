@@ -54,6 +54,7 @@ class Wali extends Resources\Controller
         $this->output('v_footer_backend', $data);  
     }
     
+    /** baca orangtua siswa */
     public function data_orangtua($page = 1) {
         $this->cek();
         $page = (int) $page;
@@ -71,7 +72,9 @@ class Wali extends Resources\Controller
         $this->output('Walikonten/Walikonten_ortu/v_wali_konten_listortu', $data);
         $this->output('v_footer_backend', $data);
     }
-
+    /** end baca orangtua siswa */
+    
+    /** baca siswa */
     public function datasiswa($page = 1) {
         $this->cek();
         $page = (int) $page;
@@ -87,10 +90,12 @@ class Wali extends Resources\Controller
 
         $this->output('v_header_backend', $data);
         $this->output('v_sidebar_backend', $data);
-        $this->output('Walikonten/v_wali_konten_listsiswa', $data);
+        $this->output('Walikonten/Walikonten_siswa/v_wali_konten_listsiswa', $data);
         $this->output('v_footer_backend', $data);   
     }
-
+    /** end baca siswa */
+    
+    /** tambah siswa */
     public function tambah_siswa_kelas() {
         $this->cek();
         if($_SERVER['REQUEST_METHOD'] == 'POST') {    
@@ -100,8 +105,8 @@ class Wali extends Resources\Controller
             
             if($this->validasi->validate()) {                                                         
                 $value = array (
-                    'NIK_SISWA' => $this->post->POST('idsiswa',FILTER_SANITIZE_MAGIC_QUOTES),
-                    'NAMA_SISWA' => $this->post->POST('nama',FILTER_SANITIZE_MAGIC_QUOTES),
+                    'NIS_SISWA' => $this->post->POST('nissiswa',FILTER_SANITIZE_MAGIC_QUOTES),
+                    'NAMA_SISWA' => $this->post->POST('nama_siswa',FILTER_SANITIZE_MAGIC_QUOTES),
                     'ID_KELAS' => $id_kelas->ID_KELAS,
                     'JENIS_KELAMIN' => $this->post->POST('jenkel',FILTER_SANITIZE_MAGIC_QUOTES),
                     'ALAMAT' => $this->post->POST('alamat',FILTER_SANITIZE_MAGIC_QUOTES),
@@ -128,12 +133,87 @@ class Wali extends Resources\Controller
             'url' => $this->uri->baseUri
         );
 
-        //$this->output('v_addsiswa_wali', $data);
         $this->output('v_header_backend', $data);
         $this->output('v_sidebar_backend', $data);
-        $this->output('Walikonten/v_wali_konten_tambahsiswa');
+        $this->output('Walikonten/Walikonten_siswa/v_wali_konten_tambahsiswa', $data);
         $this->output('v_footer_backend', $data);   
     }
+    /** end tambah siswa */
+    
+    /** edit siswa */
+    public function edit_siswa_kelas() {
+        $this->cek();
+            $value = addslashes($this->resource->uri->path(1));
+            
+        $data = array (
+            'editsiswa' => $this->walimodel->geteditsiswakelas($value),
+            'validasi' =>$this->validasi,
+            'namaCTRL' => 'EDIT DATA SISWA KELAS',
+            'breadcrumb' => 'Data Siswa Kelas',
+            'title' => 'Halaman Wali Kelas',
+            'nama' => $this->session->getValue('username'),
+            'url' => $this->uri->baseUri
+        );
+        $this->output('v_header_backend', $data);
+        $this->output('v_sidebar_backend', $data);
+        $this->output('Walikonten/Walikonten_siswa/v_wali_konten_editsiswa', $data);
+        $this->output('v_footer_backend', $data);
+    }
+    /** end edit siswa */
+    
+    /** validasi edit siswa */
+    public function validate_edit_siswa_kelas() {
+        $this->cek();      
+        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+            if($this->validasi->validate()) {                                                         
+                $value = array (
+                    'NIS_SISWA' => $this->post->POST('nissiswa_edit',FILTER_SANITIZE_MAGIC_QUOTES),
+                    'NAMA_SISWA' => $this->post->POST('nama_siswa',FILTER_SANITIZE_MAGIC_QUOTES),
+                    'JENIS_KELAMIN' => $this->post->POST('jenkel',FILTER_SANITIZE_MAGIC_QUOTES),
+                    'ALAMAT' => $this->post->POST('alamat',FILTER_SANITIZE_MAGIC_QUOTES),
+                    'NO_TELP' => $this->post->POST('nohp_edit',FILTER_SANITIZE_MAGIC_QUOTES)
+                );
+
+                $where = array (
+                    'ID_SISWA' => $this->post->POST('idsiswa_edit',FILTER_SANITIZE_MAGIC_QUOTES)
+                );
+
+                $update = $this->walimodel->validate_edit_siswakelas($value, $where);
+
+                if($update) {
+                    echo "<script>alert('Data berhasil diperbarui'); window.location = 'listsiswa' </script>";
+                }
+                else {
+                    echo "<script>alert('Data gagal diperbarui'); window.location = 'listsiswa' </script>";
+                }
+            }
+        }
+        $data = array (
+            'validasi' =>$this->validasi,
+            'namaCTRL' => 'EDIT DATA SISWA KELAS',
+            'breadcrumb' => 'Data Siswa Kelas',
+            'title' => 'Halaman Wali Kelas',
+            'nama' => $this->session->getValue('username'),
+            'url' => $this->uri->baseUri
+        );
+        $this->output('v_header_backend', $data);
+        $this->output('v_sidebar_backend', $data);
+        $this->output('Walikonten/Walikonten_siswa/v_wali_konten_validasieditsiswa', $data);
+        $this->output('v_footer_backend', $data);
+    }
+    /** end validasi edit siswa */
+    
+    /** hapus siswa */
+    public function hapus_siswa_kelas() {
+        $this->cek();
+        $value = addslashes($this->resource->uri->path(1));
+        $where = array('ID_SISWA' => $value);
+        
+        $this->walimodel->hapus_siswakelas($where);
+        $this->redirect('listsiswa');
+    }
+    /** end hapus siswa */
     
     /*public function getsiswa_kelas() {
         $namasiswa = $this->post->POST('nama_siswa');
@@ -149,11 +229,12 @@ class Wali extends Resources\Controller
             echo json_encode($results);
     }**/
     
+    /** tambah orangtua siswa */
     public function tambah_ortusiswa_kelas() {
         $this->cek();
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
             
-            $idsiswa=$this->post->POST('nama_siswa',FILTER_SANITIZE_MAGIC_QUOTES);
+            $idsiswa=$this->post->POST('id_siswa',FILTER_SANITIZE_MAGIC_QUOTES);
             $ID_SISWA = explode(" ", $idsiswa);
 
             if($this->validasi->validate()) {                                                         
@@ -190,25 +271,7 @@ class Wali extends Resources\Controller
         $this->output('Walikonten/Walikonten_ortu/v_wali_konten_tambahortu');
         $this->output('v_footer_backend', $data);   
     }
-    
-    public function edit_siswa_kelas() {
-        $this->cek();
-            $value = addslashes($this->resource->uri->path(1));
-            
-        $data = array (
-            'editsiswa' => $this->walimodel->geteditsiswakelas($value),
-            'validasi' =>$this->validasi,
-            'namaCTRL' => 'EDIT DATA SISWA KELAS',
-            'breadcrumb' => 'Data Siswa Kelas',
-            'title' => 'Halaman Wali Kelas',
-            'nama' => $this->session->getValue('username'),
-            'url' => $this->uri->baseUri
-        );
-        $this->output('v_header_backend', $data);
-        $this->output('v_sidebar_backend', $data);
-        $this->output('Walikonten/v_wali_konten_editsiswa', $data);
-        $this->output('v_footer_backend', $data);
-    }
+    /** end orangtua siswa */
     
     public function edit_ortusiswa_kelas() {
         $this->cek();
@@ -228,57 +291,16 @@ class Wali extends Resources\Controller
         $this->output('Walikonten/Walikonten_ortu/v_wali_konten_editortu', $data);
         $this->output('v_footer_backend', $data);
     }
-   
-    public function validate_edit_siswa_kelas() {
-        $this->cek();      
-        if($_SERVER['REQUEST_METHOD'] == 'POST') {
-
-            if($this->validasi->validate()) {                                                         
-                $value = array (
-                    'ID_SISWA' => $this->post->POST('idsiswa_edit',FILTER_SANITIZE_MAGIC_QUOTES),
-                    'NAMA_SISWA' => $this->post->POST('nama',FILTER_SANITIZE_MAGIC_QUOTES),
-                    'JENIS_KELAMIN' => $this->post->POST('jenkel',FILTER_SANITIZE_MAGIC_QUOTES),
-                    'ALAMAT' => $this->post->POST('alamat',FILTER_SANITIZE_MAGIC_QUOTES),
-                    'NO_TELP' => $this->post->POST('nohp_edit',FILTER_SANITIZE_MAGIC_QUOTES)
-                );
-
-                $where = array (
-                    'ID_SISWA' => $this->post->POST('idsiswa_edit',FILTER_SANITIZE_MAGIC_QUOTES)
-                );
-
-                $update = $this->walimodel->validate_edit_siswakelas($value, $where);
-
-                if($update) {
-                    echo "<script>alert('Data berhasil diperbarui'); window.location = 'listsiswa' </script>";
-                }
-                else {
-                    echo "<script>alert('Data gagal diperbarui'); window.location = 'listsiswa' </script>";
-                }
-            }
-        }
-        $data = array (
-            'validasi' =>$this->validasi,
-            'namaCTRL' => 'EDIT DATA SISWA KELAS',
-            'breadcrumb' => 'Data Siswa Kelas',
-            'title' => 'Halaman Wali Kelas',
-            'nama' => $this->session->getValue('username'),
-            'url' => $this->uri->baseUri
-        );
-        $this->output('v_header_backend', $data);
-        $this->output('v_sidebar_backend', $data);
-        $this->output('Walikonten/v_wali_konten_validasieditsiswa', $data);
-        $this->output('v_footer_backend', $data);
-    }
     
     public function validate_edit_ortusiswa_kelas() {
         $this->cek();
         if($_SERVER['REQUEST_METHOD'] === 'POST') {    
-            $idsiswa=$this->post->POST('nama_siswa',FILTER_SANITIZE_MAGIC_QUOTES);
+            $idsiswa=$this->post->POST('id_siswa',FILTER_SANITIZE_MAGIC_QUOTES);
             $ID_SISWA = explode(" ", $idsiswa);
             if($this->validasi->validate()) { 
                 $value = array (
                     'ID_SISWA' => $ID_SISWA[0],
-                    'NAMA' => $this->post->POST('nama',FILTER_SANITIZE_MAGIC_QUOTES),
+                    'NAMA' => $this->post->POST('nama_ortu',FILTER_SANITIZE_MAGIC_QUOTES),
                     'ALAMAT' => $this->post->POST('alamat',FILTER_SANITIZE_MAGIC_QUOTES),
                     'PEKERJAAN' => $this->post->POST('pekerjaan',FILTER_SANITIZE_MAGIC_QUOTES)
                 );
@@ -316,14 +338,5 @@ class Wali extends Resources\Controller
         
         $this->walimodel->hapus_ortusiswa_kelas($where);
         $this->redirect('listortu');
-    }
-
-    public function hapus_siswa_kelas() {
-        $this->cek();
-        $value = addslashes($this->resource->uri->path(1));
-        $where = array('ID_SISWA' => $value);
-        
-        $this->walimodel->hapus_siswakelas($where);
-        $this->redirect('listsiswa');
     }
 }

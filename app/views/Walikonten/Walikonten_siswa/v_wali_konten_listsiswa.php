@@ -17,9 +17,10 @@
                           <table class="table table-striped table-advance table-hover">
                             <tbody>
                               <tr>
-                                 <th><i class="icon_id"></i> Nama</th>
+                                 <th><i class="icon_id"></i> NIS Siswa</th>
+                                 <th><i class="icon_id-2_alt"></i> Nama</th>
                                  <th><i class="icon_pin_alt"></i> Alamat</th>
-                                 <th><i class="icon_id-2_alt"></i> Jenis Kelamin</th>
+                                 <th><i class="icon_balance"></i> Jenis Kelamin</th>
                                  <th><i class="icon_mobile"></i> Nomor Handphone</th>
                                  <!--<th><i class="icon_cogs"></i> Kelas</th>-->
                                  <th><i class="icon_cogs"></i> Aksi</th>
@@ -27,6 +28,7 @@
                               <tr>
                             <?php if($datasiswa) : ?>
                                 <?php foreach ($datasiswa as $datasiswasiswi) :?>
+                                 <td><?php echo $datasiswasiswi->NIS_SISWA;?></td>
                                  <td><?php echo $datasiswasiswi->NAMA_SISWA;?></td>
                                  <td><?php echo $datasiswasiswi->ALAMAT;?></td>
                                  <td><?php echo $datasiswasiswi->JENIS_KELAMIN;?></td>
@@ -35,8 +37,10 @@
                                   <div class="btn-group">
                                       <a class="btn btn-success" href="<?php echo $url;?>editsiswa/<?php echo $datasiswasiswi->ID_SISWA;?>"><i class="icon_check_alt2"></i></a>
                                       <a class="btn btn-danger" href="<?php echo $url;?>hapusiswa/<?php echo $datasiswasiswi->ID_SISWA;?>"
-                                      data-toggle="tooltip" value="delete" class="btn btn-danger" onclick="javascript: return confirm('<?php echo "Hapus siswa ".$datasiswasiswi->NAMA_SISWA." ?";?>')">
-                                      <i class="icon_close_alt2"></i></a>
+                                      data-toggle="tooltip" value="delete" class="btn btn-danger" onclick="javascript: return confirm('<?php echo "Hapus ".$datasiswasiswi->NAMA_SISWA." ?";?>')"><i class="icon_close_alt2"></i></a>
+                                      </div>
+                                            <a class="btn btn-primary" href="<?php echo $url;?>editsiswa/<?php echo $datasiswasiswi->ID_SISWA;?>"><i class="icon_circle-slelected"></i></a>
+                                      </div>
                                   </div>
                                   </td>
                               </tr>

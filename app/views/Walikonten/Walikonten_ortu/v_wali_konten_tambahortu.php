@@ -22,10 +22,10 @@
                               <form class="form-horizontal" action="<?php echo $url;?>tambahortu" method="post">
                   
                                   <div class="form-group">
-                                      <label class="col-sm-2 control-label">Identitas Siswa</label>
+                                      <label class="col-sm-2 control-label">Nis atau Nama Siswa</label>
                                       <div class="col-sm-7">
-                                          <p><?php echo $validasi->errorMessages('nama_siswa', '<p style="color:red">', '</p>');?></p>
-                                          <input id="nama_siswa" name="nama_siswa" type="text" placeholder="Ketikan Nama atau NIK Siswa" class="form-control round-input">
+                                          <p><?php echo $validasi->errorMessages('id_siswa', '<p style="color:red">', '</p>');?></p>
+                                          <input id="id_siswa" name="id_siswa" type="text" placeholder="Ketikan Nama atau NIK Siswa" class="form-control round-input">
                                       </div>
                                   </div>
                                   

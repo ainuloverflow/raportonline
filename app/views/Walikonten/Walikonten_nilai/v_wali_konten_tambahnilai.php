@@ -6,7 +6,7 @@
 				<div class="col-lg-12">
 					<h3 class="page-header"><i class="icon_document_alt"></i><?php echo $namaCTRL;?></h3>
 					<ol class="breadcrumb">
-                                            <li><i class="icon_documents"></i><a href="<?php echo $url;?>listsiswa"><?php echo $breadcrumb;?></a></li>					  	
+                                            <li><i class="icon_documents"></i><a href="<?php echo $url;?>listortu"><?php echo $breadcrumb;?></a></li>						  	
 					</ol>
 				</div>
 			</div>
@@ -18,46 +18,23 @@
                             <?php echo $namaCTRL;?> 
                           </header>
                           <div class="panel-body">
-                              <form class="form-horizontal" action="<?php echo $url;?>tambahsiswa" method="post">
-                                  <!--<div class="form-group">
-                                      <label class="col-sm-2 control-label">Default</label>
-                                      <div class="col-sm-10">
-                                          <input type="text" class="form-control">
-                                      </div>
-                                  </div>
+                          
+                              <form class="form-horizontal" action="<?php echo $url;?>tambahortu" method="post">
+                  
                                   <div class="form-group">
-                                      <label class="col-sm-2 control-label">Help text</label>
-                                      <div class="col-sm-10">
-                                          <input type="text" class="form-control">
-                                          <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
-                                      </div>
-                                  </div>-->
-                                  <div class="form-group">
-                                      <label class="col-sm-2 control-label">ID Siswa</label>
+                                      <label class="col-sm-2 control-label">Nis atau Nama Siswa</label>
                                       <div class="col-sm-7">
-                                          <p><?php echo $validasi->errorMessages('idsiswa', '<p style="color:red">', '</p>');?></p>
-                                          <input type="text" value="<?php echo $validasi->value('idsiswa');?>" name="idsiswa" class="form-control round-input">
+                                          <p><?php echo $validasi->errorMessages('id_siswa', '<p style="color:red">', '</p>');?></p>
+                                          <input id="id_siswa" name="id_siswa" type="text" placeholder="Ketikan Nama atau NIK Siswa" class="form-control round-input">
                                       </div>
                                   </div>
                                   
                                   <div class="form-group">
                                       <label class="col-sm-2 control-label">Nama</label>
                                       <div class="col-sm-7">
-                                           <p><?php echo $validasi->errorMessages('nama', '<p style="color:red">', '</p>');?></p>
-                                          <input type="text" value="<?php echo $validasi->value('nama');?>" name="nama" class="form-control round-input">
+                                           <p><?php echo $validasi->errorMessages('nama_ortu', '<p style="color:red">', '</p>');?></p>
+                                          <input type="text" value="<?php echo $validasi->value('nama_ortu');?>" name="nama_ortu" class="form-control round-input">
                                       </div>
-                                  </div>
-                                  
-                                  <div class="form-group">
-                                        <label class="col-sm-2 control-label">Jenis Kelamin</label>
-                                        <div class="col-sm-5">
-                                            <p><?php echo $validasi->errorMessages('jenkel', '<p style="color:red">', '</p>');?></p>
-                                            <select name="jenkel" value="<?php echo $validasi->value('jenkel');?>" class="btn btn-default dropdown-toggle">
-                                                <option value=""></option>
-                                                <option value="LAKI-LAKI">LAKI-LAKI</option>                                 
-                                                <option value="PEREMPUAN">PEREMPUAN</option>                                    
-                                            </select>
-                                        </div>
                                   </div>
                                   
                                   <div class="form-group">
@@ -69,10 +46,10 @@
                                   </div>
                                   
                                   <div class="form-group">
-                                      <label class="col-sm-2 control-label">Nomor HP</label>
+                                      <label class="col-sm-2 control-label">Pekerjaan</label>
                                       <div class="col-sm-7">
-                                          <p><?php echo $validasi->errorMessages('nohp', '<p style="color:red">', '</p>');?></p>
-                                          <input type="text" value="<?php echo $validasi->value('nohp');?>" name="nohp" class="form-control round-input">
+                                          <p><?php echo $validasi->errorMessages('pekerjaan', '<p style="color:red">', '</p>');?></p>
+                                          <input type="text" value="<?php echo $validasi->value('pekerjaan');?>" name="pekerjaan" class="form-control round-input">
                                       </div>
                                   </div>
                                   
@@ -124,10 +101,10 @@
                                   <div class="form-group">
                                       <label class="col-sm-2 control-label"></label>
                                       <div class="col-sm-7">
-                                    <td>
+                                    
                                         <button <a class="btn btn-primary" name="login" type="submit" value="submit">Simpan</a></button>
                                         <button <a class="btn btn-danger" name="reset" type="reset" value="reset">Reset</a></button>
-                                    </td>
+                                    
                                       </div>
                                   </div>
                               </form>

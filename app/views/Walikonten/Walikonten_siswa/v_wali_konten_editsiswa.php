@@ -6,8 +6,8 @@
 				<div class="col-lg-12">
 					<h3 class="page-header"><i class="icon_document_alt"></i><?php echo $namaCTRL;?></h3>
 					<ol class="breadcrumb">
-                                            <li><i class="icon_documents"></i><a href="<?php echo $url;?>listortu"><?php echo $breadcrumb;?></a></li>					
-                                        </ol>
+                                            <li><i class="icon_documents"></i><a href="<?php echo $url;?>listsiswa"><?php echo $breadcrumb;?></a></li>
+					</ol>
 				</div>
 			</div>
               <!-- project team & activity end -->
@@ -18,7 +18,7 @@
                             <?php echo $namaCTRL;?> 
                           </header>
                           <div class="panel-body">
-                              <form class="form-horizontal" action="<?php echo $url;?>validasieditortu" method="post">
+                              <form class="form-horizontal" action="<?php echo $url;?>validasieditsiswa" method="post">
                                   <!--<div class="form-group">
                                       <label class="col-sm-2 control-label">Default</label>
                                       <div class="col-sm-10">
@@ -32,50 +32,49 @@
                                           <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
                                       </div>
                                   </div>-->
-                             
-                                  <input type="text" value="<?php echo $editortu->ID_ORANGTUA;?>" name="id_orangtua" class="form-control round-input hidden">
+                
+                                  <input type="text" value="<?php echo $editsiswa->ID_SISWA;?>" name="idsiswa_edit" class="form-control round-input hidden">
                                   
                                   <div class="form-group">
-                                      <label class="col-sm-2 control-label">NIS atau Nama Siswa</label>
+                                      <label class="col-sm-2 control-label">NIS Siswa</label>
                                       <div class="col-sm-7">
-                                          <input id="id_siswa" name="id_siswa" type="text" value="<?php echo $editortu->ID_SISWA;?>" placeholder="Ketikan Nama atau NIK Siswa" class="form-control round-input">
+                                            <input type="text" value="<?php echo $editsiswa->NIS_SISWA;?>" name="nissiswa_edit" class="form-control round-input">
                                       </div>
                                   </div>
                                   
                                   <div class="form-group">
-                                      <label class="col-sm-2 control-label">Nama Orang Tua</label>
+                                      <label class="col-sm-2 control-label">Nama</label>
                                       <div class="col-sm-7">
-                                          <input type="text" value="<?php echo $editortu->NAMA;?>" name="nama_ortu" class="form-control round-input">
+                                            <input type="text" value="<?php echo $editsiswa->NAMA_SISWA;?>" name="nama_siswa" class="form-control round-input">
                                       </div>
+                                  </div>
+                                  
+                                  <div class="form-group">
+                                        <label class="col-sm-2 control-label">Jenis Kelamin</label>
+                                        <div class="col-sm-5">
+                                            <select name="jenkel" class="btn btn-default dropdown-toggle">
+                                                <option value="<?php echo $editsiswa->JENIS_KELAMIN;?>"><?php echo $editsiswa->JENIS_KELAMIN;?></option>
+                                                <option value=""></option>
+                                                <option value="LAKI-LAKI"> LAKI-LAKI</option>
+                                                <option value="PEREMPUAN"> PEREMPUAN</option>
+                                            </select>
+                                        </div>
                                   </div>
                                   
                                   <div class="form-group">
                                       <label class="col-sm-2 control-label">Alamat</label>
                                       <div class="col-sm-7">
-                                          <input type="text" value="<?php echo $editortu->ALAMAT;?>" name="alamat" class="form-control round-input">
+                                          <input type="text" value="<?php echo $editsiswa->ALAMAT;?>" name="alamat" class="form-control round-input">
                                       </div>
                                   </div>
                                   
                                   <div class="form-group">
-                                      <label class="col-sm-2 control-label">Pekerjaan</label>
+                                      <label class="col-sm-2 control-label">Nomor HP</label>
                                       <div class="col-sm-7">
-                                          <input type="text" value="<?php echo $editortu->PEKERJAAN;?>" name="pekerjaan" class="form-control round-input">
+                                          <input type="text" value="<?php echo $editsiswa->NO_TELP;?>" name="nohp_edit" class="form-control round-input">
                                       </div>
                                   </div>
                                   
-                                  <!--<div class="form-group">
-                                      <label class="col-sm-2 control-label">Password</label>
-                                      <div class="col-sm-7">
-                                          <input type="password" value="" name="" class="form-control round-input">
-                                      </div>
-                                  </div>
-                                  
-                                  <div class="form-group">
-                                      <label class="col-sm-2 control-label">Verifikasi Password</label>
-                                      <div class="col-sm-7">
-                                          <input type="password" value="" name="" class="form-control round-input">
-                                      </div>
-                                  </div>
                                   <!--<div class="form-group">
                                       <label class="col-sm-2 control-label">Input focus</label>
                                       <div class="col-sm-10">
