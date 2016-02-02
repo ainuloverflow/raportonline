@@ -37,6 +37,9 @@
                                       <a class="btn btn-danger" href="<?php echo $url;?>hapusortu/<?php echo $dataorangtua->ID_ORANGTUA;?>"
                                       data-toggle="tooltip" value="delete" class="btn btn-danger" onclick="javascript: return confirm('<?php echo "Hapus ".$dataorangtua->NAMA." ?";?>')">
                                       <i class="icon_close_alt2"></i></a>
+                                      </div>
+                                            <a class="btn btn-primary" href="<?php //echo $url;?>editsiswa/<?php //echo $datasiswasiswi->ID_SISWA;?>"><i class="icon_circle-slelected"></i></a>
+                                      </div>
                                   </div>
                                   </td>
                               </tr>

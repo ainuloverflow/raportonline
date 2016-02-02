@@ -273,6 +273,7 @@ class Wali extends Resources\Controller
     }
     /** end orangtua siswa */
     
+    /** edit orangtua siswa */
     public function edit_ortusiswa_kelas() {
         $this->cek();
             $hasil = addslashes($this->resource->uri->path(1));
@@ -291,7 +292,9 @@ class Wali extends Resources\Controller
         $this->output('Walikonten/Walikonten_ortu/v_wali_konten_editortu', $data);
         $this->output('v_footer_backend', $data);
     }
+    /** end edit orangtua siswa */
     
+    /** validasi edit orangtua siswa */
     public function validate_edit_ortusiswa_kelas() {
         $this->cek();
         if($_SERVER['REQUEST_METHOD'] === 'POST') {    
@@ -330,7 +333,9 @@ class Wali extends Resources\Controller
         $this->output('Walikonten/Walikonten_ortu/v_wali_konten_validasieditortu', $data);
         $this->output('v_footer_backend', $data);
     }
+    /** validasi edit orangtua siswa */
     
+    /** hapus orangtua siswa */
     public function hapus_ortusiswa_kelas() {
         $this->cek();
         $value = addslashes($this->resource->uri->path(1));
@@ -338,5 +343,43 @@ class Wali extends Resources\Controller
         
         $this->walimodel->hapus_ortusiswa_kelas($where);
         $this->redirect('listortu');
+    }
+    /** end hapus orangtua siswa */
+    
+    /** tampil nilai */
+    public function tampil_nilai($page = 1){
+        $this->cek();
+        $page = (int) $page;
+        $limit = 10;
+        
+            $data = array (
+                'nilaisiswa' => $this->walimodel->bacanilaisiswa($page, $limit), 
+                'namaCTRL' => 'DATA NILAI SISWA',
+                'title' => 'Halaman Wali Kelas',
+                'nama' => $this->session->getValue('username'),
+                'url' => $this->uri->baseUri
+            );
+
+        $this->output('v_header_backend', $data);
+        $this->output('v_sidebar_backend', $data);
+        $this->output('Walikonten/Walikonten_nilai/v_wali_konten_listnilai', $data);
+        $this->output('v_footer_backend', $data);
+    }
+    /** end tampil nilai **/
+    
+    public function input_nilai(){
+        
+    }
+    
+    public function edit_nilai(){
+        
+    }
+    
+    public function validasi_edit_nilai(){
+        
+    }
+    
+    public function hapus_nilai(){
+        
     }
 }

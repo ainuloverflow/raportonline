@@ -9,7 +9,7 @@
                         </div>
               <!-- project team & activity end -->
 
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="btn btn-primary" href="<?php echo $url;?>tambahortu"><i class="icon_plus_alt2"></i></a>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="btn btn-primary" href="<?php echo $url;?>tambahnilai"><i class="icon_plus_alt2"></i></a>
               <br>
               <br>
               <div class="col-lg-12">
@@ -17,26 +17,33 @@
                           <table class="table table-striped table-advance table-hover">
                             <tbody>
                               <tr>
-                                 <th><i class="icon_id"></i> Nama Siswa</th>
-                                 <th><i class="icon_profile"></i> Nama Orang Tua</th>
-                                 <th><i class="icon_pin_alt"></i> Alamat</th>
-                                 <th><i class="icon_wallet"></i> Pekerjaan</th>
+                                 <th><i class="icon_id"></i> NIS Siswa</th>
+                                 <th><i class="icon_profile"></i> Nama Siswa</th>
+                                 <th><i class="icon_pin_alt"></i> Nama Mata Pelajaran</th>
+                                 <th><i class="icon_document_alt"></i> Nilai Praktikum</th>
+                                 <th><i class="icon_document_alt"></i> Nilai Kopetensi</th>
+                                 <th><i class="icon_document_alt"></i> Nilai Sikap</th>
                                  <th><i class="icon_cogs"></i> Aksi</th>
                               </tr>
                               <tr>
-                            <?php if($dataortu) : ?>
-                                <?php foreach ($dataortu as $dataorangtua) :?> 
-                                 <td><?php echo $dataorangtua->NAMA_SISWA;?></td>
-                                 <td><?php echo $dataorangtua->NAMA;?></td>
-                                 <td><?php echo $dataorangtua->ALAMAT;?></td>
-                                 <td><?php echo $dataorangtua->PEKERJAAN;?></td>
+                            <?php if($nilaisiswa) : ?>
+                                <?php foreach ($nilaisiswa as $nilai) :?>
+                                 <td><?php echo $nilai->NIS_SISWA;?></td>
+                                 <td><?php echo $nilai->NAMA_SISWA;?></td>
+                                 <td><?php echo $nilai->NAMA_MAPEL;?></td>
+                                 <td><?php echo $nilai->NILAI_PRAKTIKUM;?></td>
+                                 <td><?php echo $nilai->NILAI_KOPETENSI;?></td>
+                                 <td><?php echo $nilai->NILAI_SIKAP;?></td>
                                  <td>
                                   <div class="btn-group">
                                       <!--<a class="btn btn-primary" href="#"><i class="icon_plus_alt2"></i></a>-->
-                                      <a class="btn btn-success" href="<?php echo $url;?>editortu/<?php echo $dataorangtua->ID_ORANGTUA;?>"><i class="icon_check_alt2"></i></a>
-                                      <a class="btn btn-danger" href="<?php echo $url;?>hapusortu/<?php echo $dataorangtua->ID_ORANGTUA;?>"
-                                      data-toggle="tooltip" value="delete" class="btn btn-danger" onclick="javascript: return confirm('<?php echo "Hapus ".$dataorangtua->NAMA." ?";?>')">
+                                      <a class="btn btn-success" href="<?php echo $url;?>editortu/<?php echo $nilai->ID_NILAI;?>"><i class="icon_check_alt2"></i></a>
+                                      <a class="btn btn-danger" href="<?php echo $url;?>hapusortu/<?php echo $nilai->ID_NILAI;?>"
+                                      data-toggle="tooltip" value="delete" class="btn btn-danger" onclick="javascript: return confirm('<?php echo "Hapus ".$nilai->ID_NILAI." ?";?>')">
                                       <i class="icon_close_alt2"></i></a>
+                                      </div>
+                                            <a class="btn btn-primary" href="<?php //echo $url;?>editsiswa/<?php //echo $datasiswasiswi->ID_SISWA;?>"><i class="icon_circle-slelected"></i></a>
+                                      </div>
                                   </div>
                                   </td>
                               </tr>

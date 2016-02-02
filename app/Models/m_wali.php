@@ -19,6 +19,15 @@ class M_wali {
     	Return $result = $this->db->results("SELECT * FROM table_siswa ORDER BY ID_SISWA ASC LIMIT $offset, $limit");
     }
     
+    public function bacanilaisiswa($page = 1, $limit = 10) {
+        $offset = ($limit * $page) - $limit;
+    	Return $result = $this->db->results("SELECT * FROM table_nilai AS nilai "
+                . "INNER JOIN table_siswa AS siswa ON nilai.ID_SISWA = siswa.ID_SISWA "
+                . "INNER JOIN table_mapel AS mapel ON nilai.ID_MAPEL = mapel.ID_MAPEL "
+                . "INNER JOIN table_nilai_pengetahuan AS nilaip ON nilai.ID_NILAI_PENGETAHUAN = nilaip.ID_NILAI_PENGETAHUAN "
+                . "ORDER BY nilai.ID_NILAI ASC LIMIT $offset, $limit");
+    }
+    
     public function tambahortusiswakelas($value) { //insert data ortu siswa
         Return $this->db->insert("table_orang_tua", $value);
     }

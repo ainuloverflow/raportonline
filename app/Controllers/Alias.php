@@ -24,6 +24,11 @@ class Alias
             'method' => 'datasiswa'
         ],
         
+        'datanilai' => [
+            'class' => '\\Controllers\Wali',
+            'method' => 'tampil_nilai'
+        ],
+        
         'getsiswa' => [
             'class' => '\\Controllers\Wali',
             'method' => 'getsiswa_kelas'
@@ -37,6 +42,11 @@ class Alias
         'tambahortu' => [
             'class' => '\\Controllers\Wali',
             'method' => 'tambah_ortusiswa_kelas'
+        ],
+        
+        'nilaisiswa' => [
+            'class' => '\\Controllers\Wali',
+            'method' => 'tampil_nilai'
         ],
         
         'editsiswa' => [
@@ -72,12 +82,17 @@ class Alias
         'login' => [
             'class' => '\\Controllers\Home',
             'method' => 'login'
+        ],
+        
+        'logout' => [
+            'class' => '\\Controllers\Home',
+            'method' => 'logout'
         ]
     ];
 
-    if( in_array($args[0], ['dashboard_wali', 'listortu' ,'listsiswa', 'tambahsiswa', 'getsiswa', 
-       'tambahortu', 'editsiswa', 'hapusiswa', 'editortu', 'hapusortu', 'validasieditsiswa', 
-       'validasieditortu', 'login']) ) {
+    if( in_array($args[0], ['dashboard_wali', 'listortu' ,'listsiswa', 'datanilai','tambahsiswa', 'getsiswa', 
+       'tambahortu', 'nilaisiswa', 'editsiswa', 'hapusiswa', 'editortu', 'hapusortu', 'validasieditsiswa', 
+       'validasieditortu', 'login', 'logout']) ) {
 
         try {
             $route[$args[0]]['class'] = new $route[$args[0]]['class'];

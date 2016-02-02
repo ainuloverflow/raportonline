@@ -14,7 +14,7 @@ class Home extends Resources\Controller
     }
 	
     public function direct() {
-        $this->redirect('home/login');
+        $this->redirect('login');
     }
 	
     /*public function index(){
@@ -65,7 +65,7 @@ class Home extends Resources\Controller
                                 'ID_WALI' => $userguru->ID_WALI
                         );
                         $this->session->setValue($data);
-                        $this->redirect('wali/home');
+                        $this->redirect('dashboard_wali');
                 }
                 
                 else if($userguru) {
@@ -100,6 +100,6 @@ class Home extends Resources\Controller
 	
     public function logout() {
         $this->session->destroy();
-        $this->redirect('home/login');
+        $this->redirect('login');
     }
 }	

@@ -25,7 +25,7 @@
                       <ul class="sub">
                           <li><a class="" href="<?php echo $url;?>listsiswa">Data Siswa</a></li>
                           <li><a class="" href="<?php echo $url;?>listortu">Data Orang Tua Siswa</a></li>
-                          <li><a class="" href="">Data Nilai Siswa</a></li>
+                          <li><a class="" href="<?php echo $url;?>datanilai">Data Nilai Siswa</a></li>
                           <li><a class="" href="">Data Mata Pelajaran</a></li>
                           <li><a class="" href="">Data Ekstra kurikuler</a></li>
                           <li><a class="" href="">Data Guru Mapel</a></li>

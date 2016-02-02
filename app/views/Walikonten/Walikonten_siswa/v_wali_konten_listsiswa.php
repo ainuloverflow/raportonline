@@ -18,7 +18,7 @@
                             <tbody>
                               <tr>
                                  <th><i class="icon_id"></i> NIS Siswa</th>
-                                 <th><i class="icon_id-2_alt"></i> Nama</th>
+                                 <th><i class="icon_profile"></i> Nama</th>
                                  <th><i class="icon_pin_alt"></i> Alamat</th>
                                  <th><i class="icon_balance"></i> Jenis Kelamin</th>
                                  <th><i class="icon_mobile"></i> Nomor Handphone</th>
