@@ -6,7 +6,7 @@
 				<div class="col-lg-12">
 					<h3 class="page-header"><i class="icon_document_alt"></i><?php echo $namaCTRL;?></h3>
 					<ol class="breadcrumb">
-                                            <li><i class="icon_documents"></i><a href="<?php echo $url;?>listortu"><?php echo $breadcrumb;?></a></li>						  	
+                                            <li><i class="icon_documents"></i><a href="<?php echo $url;?>datanilai"><?php echo $breadcrumb;?></a></li>						  	
 					</ol>
 				</div>
 			</div>
@@ -19,10 +19,10 @@
                           </header>
                           <div class="panel-body">
                           
-                              <form class="form-horizontal" action="<?php echo $url;?>tambahortu" method="post">
+                              <form class="form-horizontal" action="<?php echo $url;?>tambahnilai" method="post">
                   
                                   <div class="form-group">
-                                      <label class="col-sm-2 control-label">Nis atau Nama Siswa</label>
+                                      <label class="col-sm-2 control-label">NIS atau Nama Siswa</label>
                                       <div class="col-sm-7">
                                           <p><?php echo $validasi->errorMessages('id_siswa', '<p style="color:red">', '</p>');?></p>
                                           <input id="id_siswa" name="id_siswa" type="text" placeholder="Ketikan Nama atau NIK Siswa" class="form-control round-input">
@@ -30,44 +30,61 @@
                                   </div>
                                   
                                   <div class="form-group">
-                                      <label class="col-sm-2 control-label">Nama</label>
+                                      <label class="col-sm-2 control-label">Nama Mata Pelajaran</label>
                                       <div class="col-sm-7">
-                                           <p><?php echo $validasi->errorMessages('nama_ortu', '<p style="color:red">', '</p>');?></p>
-                                          <input type="text" value="<?php echo $validasi->value('nama_ortu');?>" name="nama_ortu" class="form-control round-input">
+                                          <p><?php echo $validasi->errorMessages('id_mapel', '<p style="color:red">', '</p>');?></p>
+                                          <input id="id_mapel" name="id_mapel" type="text" placeholder="Ketikan Nama Mapel" class="form-control round-input">
                                       </div>
                                   </div>
                                   
                                   <div class="form-group">
-                                      <label class="col-sm-2 control-label">Alamat</label>
+                                      <label class="col-sm-2 control-label">Nilai Praktikum</label>
                                       <div class="col-sm-7">
-                                          <p><?php echo $validasi->errorMessages('alamat', '<p style="color:red">', '</p>');?></p>
-                                          <input type="text" value="<?php echo $validasi->value('alamat');?>" name="alamat" class="form-control round-input">
+                                           <p><?php echo $validasi->errorMessages('nilai_prak', '<p style="color:red">', '</p>');?></p>
+                                          <input type="text" value="<?php echo $validasi->value('nilai_prak');?>" name="nilai_prak" class="form-control round-input">
                                       </div>
                                   </div>
                                   
                                   <div class="form-group">
-                                      <label class="col-sm-2 control-label">Pekerjaan</label>
+                                      <label class="col-sm-2 control-label">Nilai Kopetensi</label>
                                       <div class="col-sm-7">
-                                          <p><?php echo $validasi->errorMessages('pekerjaan', '<p style="color:red">', '</p>');?></p>
-                                          <input type="text" value="<?php echo $validasi->value('pekerjaan');?>" name="pekerjaan" class="form-control round-input">
+                                          <p><?php echo $validasi->errorMessages('nilai_kop', '<p style="color:red">', '</p>');?></p>
+                                          <input type="text" value="<?php echo $validasi->value('nilai_kop');?>" name="nilai_kop" class="form-control round-input">
                                       </div>
                                   </div>
                                   
                                   <div class="form-group">
-                                      <label class="col-sm-2 control-label">Password</label>
+                                      <label class="col-sm-2 control-label">Nilai Sikap</label>
                                       <div class="col-sm-7">
-                                          <p><?php echo $validasi->errorMessages('password', '<p style="color:red">', '</p>');?></p>
-                                          <input type="password" value="<?php echo $validasi->value('password');?>" name="password" class="form-control round-input">
+                                          <p><?php echo $validasi->errorMessages('nilai_sikap', '<p style="color:red">', '</p>');?></p>
+                                          <input type="text" value="<?php echo $validasi->value('nilai_sikap');?>" name="nilai_sikap" class="form-control round-input">
                                       </div>
                                   </div>
                                   
                                   <div class="form-group">
-                                      <label class="col-sm-2 control-label">Verifikasi Password</label>
+                                      <label class="col-sm-2 control-label">Nilai Tugas</label>
                                       <div class="col-sm-7">
-                                          <p><?php echo $validasi->errorMessages('verifikasipass', '<p style="color:red">', '</p>');?></p>
-                                          <input type="password" value="<?php echo $validasi->value('verifikasipass');?>" name="verifikasipass" class="form-control round-input">
+                                          <p><?php echo $validasi->errorMessages('nilai_tugas', '<p style="color:red">', '</p>');?></p>
+                                          <input type="text" value="<?php echo $validasi->value('nilai_tugas');?>" name="nilai_tugas" class="form-control round-input">
                                       </div>
                                   </div>
+                                  
+                                  <div class="form-group">
+                                      <label class="col-sm-2 control-label">Nilai UTS</label>
+                                      <div class="col-sm-7">
+                                          <p><?php echo $validasi->errorMessages('nilai_uts', '<p style="color:red">', '</p>');?></p>
+                                          <input type="text" value="<?php echo $validasi->value('nilai_uts');?>" name="nilai_uts" class="form-control round-input">
+                                      </div>
+                                  </div>
+                                  
+                                  <div class="form-group">
+                                      <label class="col-sm-2 control-label">Nilai UAS</label>
+                                      <div class="col-sm-7">
+                                          <p><?php echo $validasi->errorMessages('nilai_uas', '<p style="color:red">', '</p>');?></p>
+                                          <input type="text" value="<?php echo $validasi->value('nilai_uas');?>" name="nilai_uas" class="form-control round-input">
+                                      </div>
+                                  </div>
+                                  
                                   <!--<div class="form-group">
                                       <label class="col-sm-2 control-label">Input focus</label>
                                       <div class="col-sm-10">

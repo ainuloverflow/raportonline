@@ -15,7 +15,9 @@ class Wali extends Resources\Controller
 
     private function cek(){ //Cek Session Login
         $ceklogin = $this->session->getValue('isLogin');
-        if ($ceklogin == true) {
+        $cekwali = $this->session->getValue('ID_WALI');
+        $cekelas = $this->session->getValue('ID_KELAS');
+        if ($ceklogin == true && $cekwali && $cekelas) {
             return true;
         } else {
             $this->redirect('login');
@@ -26,12 +28,12 @@ class Wali extends Resources\Controller
     public function index(){ // Dasbor atau Homebase Wali Kelas
         $this->cek();
         $data = array (
-        'nama' => $this->session->getValue('username'),
-        'title' => 'Dashboard Wali Kelas',
-        'header' => 'Dashboard Wali Kelas',
-        'kontendash' => 'Dashboard Wali Kelas',
-        'url' => $this->uri->baseUri
-        );
+            'nama' => $this->session->getValue('username'),
+            'title' => 'Dashboard Wali Kelas',
+            'header' => 'Dashboard Wali Kelas',
+            'kontendash' => 'Dashboard Wali Kelas',
+            'url' => $this->uri->baseUri
+            );
         $this->output('v_header_backend', $data);
         $this->output('v_sidebar_backend', $data);
         $this->output('v_home_wali', $data);   
@@ -42,12 +44,12 @@ class Wali extends Resources\Controller
     public function home(){ // Dasbor atau Homebase Wali Kelas
         $this->cek();
         $data = array (
-        'nama' => $this->session->getValue('username'),
-        'title' => 'Dashboard Wali Kelas',
-        'header' => 'Dashboard Wali Kelas',
-        'kontendash' => 'Dashboard Wali Kelas',
-        'url' => $this->uri->baseUri
-        );
+            'nama' => $this->session->getValue('username'),
+            'title' => 'Dashboard Wali Kelas',
+            'header' => 'Dashboard Wali Kelas',
+            'kontendash' => 'Dashboard Wali Kelas',
+            'url' => $this->uri->baseUri
+              );
         $this->output('v_header_backend', $data);
         $this->output('v_sidebar_backend', $data);
         $this->output('v_home_wali', $data);   
@@ -77,11 +79,12 @@ class Wali extends Resources\Controller
     /** baca siswa */
     public function datasiswa($page = 1) {
         $this->cek();
+        $id_kelas = $this->session->getValue('ID_KELAS');
         $page = (int) $page;
         $limit = 10;
         
             $data = array (
-                'datasiswa' => $this->walimodel->bacasiswakelas($page, $limit), 
+                'datasiswa' => $this->walimodel->bacasiswakelas($page, $limit, $id_kelas), 
                 'namaCTRL' => 'DATA SISWA',
                 'title' => 'Halaman Wali Kelas',
                 'nama' => $this->session->getValue('username'),
@@ -100,14 +103,14 @@ class Wali extends Resources\Controller
         $this->cek();
         if($_SERVER['REQUEST_METHOD'] == 'POST') {    
 
-            $idwali = $this->session->getValue('ID_WALI');
-            $id_kelas = $this->walimodel->query($idwali);
+            //$idwali = $this->session->getValue('ID_WALI');
+            //$id_kelas = $this->walimodel->query($idwali);
             
             if($this->validasi->validate()) {                                                         
                 $value = array (
                     'NIS_SISWA' => $this->post->POST('nissiswa',FILTER_SANITIZE_MAGIC_QUOTES),
                     'NAMA_SISWA' => $this->post->POST('nama_siswa',FILTER_SANITIZE_MAGIC_QUOTES),
-                    'ID_KELAS' => $id_kelas->ID_KELAS,
+                    'ID_KELAS' => $this->session->getValue('ID_KELAS'),
                     'JENIS_KELAMIN' => $this->post->POST('jenkel',FILTER_SANITIZE_MAGIC_QUOTES),
                     'ALAMAT' => $this->post->POST('alamat',FILTER_SANITIZE_MAGIC_QUOTES),
                     'NO_TELP' => $this->post->POST('nohp',FILTER_SANITIZE_MAGIC_QUOTES),
@@ -365,12 +368,55 @@ class Wali extends Resources\Controller
         $this->output('Walikonten/Walikonten_nilai/v_wali_konten_listnilai', $data);
         $this->output('v_footer_backend', $data);
     }
-    /** end tampil nilai **/
+    /** end tampil nilai */
     
+    /** input nilai */
     public function input_nilai(){
-        
+        $this->cek();
+        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+            
+            $idsiswa=$this->post->POST('id_siswa',FILTER_SANITIZE_NUMBER_FLOAT);
+            $ID_SISWA = explode(" ", $idsiswa);
+            $idmapel=$this->post->POST('id_mapel',FILTER_SANITIZE_NUMBER_FLOAT);
+            $ID_MAPEL = explode(" ", $idmapel);
+
+            if($this->validasi->validate()) {                                                         
+                $value = array (
+                    'ID_SISWA' => $ID_SISWA[0],
+                    'ID_MAPEL' => $ID_MAPEL[0],
+                    'NILAI_PRAKTIKUM' => $this->post->POST('nilai_prak',FILTER_SANITIZE_NUMBER_FLOAT),
+                    'NILAI_KOPETENSI' => $this->post->POST('nilai_kop',FILTER_SANITIZE_NUMBER_FLOAT),
+                    'NILAI_SIKAP' => $this->post->POST('nilai_sikap',FILTER_SANITIZE_NUMBER_FLOAT)
+                );
+                
+                $values = array(
+                    'ID_SISWA' => $ID_SISWA[0],
+                    'ID_MAPEL' => $ID_MAPEL[0],
+                    'NILAI_TUGAS' => $this->post->POST('nilai_tugas',FILTER_SANITIZE_NUMBER_FLOAT),
+                    'NILAI_UTS' => $this->post->POST('nilai_uts',FILTER_SANITIZE_NUMBER_FLOAT),
+                    'NILAI_UAS' => $this->post->POST('nilai_uas',FILTER_SANITIZE_NUMBER_FLOAT)
+                );
+                $this->ceknilaidobel($ID_MAPEL, $value, $values);
+            }
+        }
+        $data = array (
+            'validasi' => $this->validasi,
+            'sisall' => $this->walimodel->getnamasiswall(),
+            'mapelall' => $this->walimodel->getmapelall(),
+            'breadcrumb' => 'Data Nilai',
+            'namaCTRL' => 'TAMBAH DATA NILAI',
+            'title' => 'Halaman Wali Kelas',
+            'nama' => $this->session->getValue('username'),
+            'url' => $this->uri->baseUri
+        );
+        $this->output('v_header_backend', $data);
+        $this->output('v_sidebar_backend', $data);
+        $this->output('Walikonten/Walikonten_nilai/v_wali_konten_tambahnilai');
+        $this->output('v_footer_backend', $data);  
     }
+    /** end input nilai */
     
+    /** Edit Nilai */
     public function edit_nilai(){
         
     }
@@ -381,5 +427,25 @@ class Wali extends Resources\Controller
     
     public function hapus_nilai(){
         
+    }
+    
+    private function ceknilaidobel($nilai, $value, $values){
+        $this->cek();
+        $results = $this->walimodel->ceknilaidobel($nilai[0]);
+        
+        if($results==null) {
+             $tambahnilai = $this->walimodel->tambahnilai($value);
+             $tambahnilais = $this->walimodel->tambahnilais($values);
+             if($tambahnilai && $tambahnilais) {
+                    echo "<script>alert('Data berhasil dimasukan'); window.location = 'datanilai' </script>";
+                }
+                else {
+                    echo "<script>alert('Data gagal dimasukan'); window.location = 'datanilai' </script>";
+                }
+            return true;
+        } else {
+            echo "<script>alert('Error!! Nilai sudah ada'); window.location = 'datanilai' </script>";
+            return false;
+        }        
     }
 }

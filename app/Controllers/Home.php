@@ -62,7 +62,8 @@ class Home extends Resources\Controller
                         $data = array(
                                 'isLogin' => true,
                                 'username' => $userwali->NAMA_GURU,
-                                'ID_WALI' => $userguru->ID_WALI
+                                'ID_WALI' => $userwali->ID_WALI,
+                                'ID_KELAS' => $userwali->ID_KELAS
                         );
                         $this->session->setValue($data);
                         $this->redirect('dashboard_wali');
@@ -89,7 +90,7 @@ class Home extends Resources\Controller
                         $salah = "Maaf username dan password anda tidak terdaftar !!";
                 }
         }
-                echo "<script>alert('$salah'); window.location = 'direct' </script>";			
+                echo "<script>alert('$salah'); window.location = 'kembali' </script>";			
         }
 
         $title = 'Login Rapot Online SMKN 1 Krembung';

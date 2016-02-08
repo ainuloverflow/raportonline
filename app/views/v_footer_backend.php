@@ -102,11 +102,29 @@
 	{
             echo "\"";
             echo $datasiswa->ID_SISWA.' - '.$datasiswa->NIS_SISWA.' - '.$datasiswa->NAMA_SISWA;
-            echo "\",";							}
+            echo "\",";							   
+        }
 	?>
         ];
         
         $("#id_siswa").autocomplete({
+	 source: cariFas
+	});
+    </script>
+    
+    <script>
+        var cariFas = [
+	<?php
+	foreach($mapelall as $datamapel)
+	{
+            echo "\"";
+            echo $datamapel->ID_MAPEL.' - '.$datamapel->NAMA_MAPEL;
+            echo "\",";							
+        }
+	?>
+        ];
+        
+        $("#id_mapel").autocomplete({
 	 source: cariFas
 	});
     </script>

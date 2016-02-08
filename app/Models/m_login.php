@@ -17,7 +17,7 @@ class M_login {
     
     public function loginwali($username, $password){
         Return $result = $this->db->row("SELECT * FROM table_guru_mapel AS a JOIN table_wali_kelas AS b 
-                                         ON a.ID_WALI = b.ID_WALI WHERE a.NIP = '$username' AND a.PASSWORD ='$password' ");
+        ON a.ID_WALI = b.ID_WALI WHERE a.NIP = '$username' AND a.PASSWORD ='$password' ");
     }
     
     public function loginortu($username, $password){
