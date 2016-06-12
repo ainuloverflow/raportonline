@@ -17,21 +17,6 @@ class Home extends Resources\Controller
         $this->redirect('login');
     }
 	
-    /*public function index(){
-        $ceklogin=$this->session->getValue('isLogin');
-
-        if($ceklogin == true) {
-                 $data = array(			
-                    'nama' => $this->session->getValue('username'),
-                    'url' => $this->uri->baseUri
-                );
-                $this->output('dashboard', $data);
-        }
-        else {
-                $this->redirect('home/login');
-        }
-    }**/
-	
     public function login() {
         $salah = '';
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -39,60 +24,67 @@ class Home extends Resources\Controller
         $password = md5($this->post->POST('password', FILTER_SANITIZE_MAGIC_QUOTES));
 
         $usersiswa = $this->login->loginsiswa($username,$password);
-        $userguru = $this->login->loginguru($username,$password);
         $userwali = $this->login->loginwali($username,$password);
+        $userguru = $this->login->loginguru($username,$password);
         $userortu = $this->login->loginortu($username,$password);
 
         if(empty($username) OR empty($password)) {
                 $salah = "Maaf username dan password tidak boleh kosong !!";
         }
 
-        if ($salah == '') {
-                if($usersiswa) {
-                        // Username dan password sudah benar, simpan nilai ke dalam session
-                        $data = array(
-                                'isLogin' => true,
-                                'username' => $usersiswa->NAMA_SISWA
-                                );
-                        $this->session->setValue($data);
-                        $this->redirect('siswa');
-                }
-                
-                else if($userwali) {
-                        $data = array(
-                                'isLogin' => true,
-                                'username' => $userwali->NAMA_GURU,
-                                'ID_WALI' => $userwali->ID_WALI,
-                                'ID_KELAS' => $userwali->ID_KELAS
-                        );
-                        $this->session->setValue($data);
-                        $this->redirect('dashboard_wali');
-                }
-                
-                else if($userguru) {
-                        $data = array(
-                                'isLogin' => true,
-                                'username' => $userguru->NAMA_GURU
-                        );
-                        $this->session->setValue($data);
-                        $this->redirect('guru/dashboard');
-                }
-                
-                else if($userortu) {
-                        $data = array(
-                                'isLogin' => true,
-                                'username' => $userortu->NAMA
-                        );
-                        $this->session->setValue($data);
-                        $this->redirect('orangtua');
-                }
-                else {
-                        $salah = "Maaf username dan password anda tidak terdaftar !!";
-                }
+        if ($salah == '') {                                
+            if($usersiswa) {
+                // Username dan password sudah benar, simpan nilai ke dalam session
+                $data = array(
+                    'isLoginSiswa' => true,
+                    'username' => $usersiswa->NAMA_SISWA
+                    );
+                $this->session->setValue($data);
+                $this->redirect('siswa');
+            }
+
+            else if($userwali) {
+                $data = array(
+                    'isLoginWali' => true,
+                    'username' => $userwali->NAMA_GURU,
+                    'ID_GURU' => $userwali->ID_GURU,
+                    'ID_WALI' => $userwali->ID_WALI,
+                    'ID_KELAS' => $userwali->ID_KELAS,
+                    'NAMA_KELAS' => $userwali->NAMA_KELAS,
+                    'NAMA_MAPEL' => $userwali->NAMA_MAPEL,
+                    'ID_MAPEL' => $userwali->ID_MAPEL
+                );
+                $this->session->setValue($data);
+                $this->redirect('dashboard_wali');
+            }
+
+            else if($userguru) {
+                $data = array(
+                    'isLoginGuru' => true,
+                    'username' => $userguru->NAMA_GURU,
+                    'ID_GURU' => $userguru->ID_GURU,
+                    'ID_MAPEL' => $userguru->ID_MAPEL, 
+                    'ID_KELAS' => $userguru->ID_KELAS,
+                    'NAMA_MAPEL' => $userguru->NAMA_MAPEL,
+                );
+                $this->session->setValue($data);
+                $this->redirect('dashboard_guru');
+            }
+
+            else if($userortu) {
+                $data = array(
+                    'isLoginOrtu' => true,
+                    'username' => $userortu->USERNAME
+                );
+                $this->session->setValue($data);
+                $this->redirect('orangtua');
+            }
+            else {
+                $salah = "Maaf username dan password anda tidak terdaftar !!";
+            }
         }
                 echo "<script>alert('$salah'); window.location = 'kembali' </script>";			
         }
-
         $title = 'Login Rapot Online SMKN 1 Krembung';
         $data['title'] = $title;
 

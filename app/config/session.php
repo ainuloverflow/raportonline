@@ -12,7 +12,7 @@ return array(
         'driver' => 'native', /* The option is 'native', 'cookie', cache or 'database' */
         'driverConnection' => 'default',
         'storageName' => 'sessions',
-        'isEncrypt' => false,
+        'isEncrypt' => true,
         'secretKey' => 'tanyuda'
     ),
 );

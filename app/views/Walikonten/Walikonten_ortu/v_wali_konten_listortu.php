@@ -17,28 +17,33 @@
                           <table class="table table-striped table-advance table-hover">
                             <tbody>
                               <tr>
-                                 <th><i class="icon_id"></i> Nama Siswa</th>
-                                 <th><i class="icon_profile"></i> Nama Orang Tua</th>
+                                 <th>No.</th>
+                                 <th><i class="icon_id"></i> NIK Ayah</th>
+                                 <th><i class="icon_profile"></i> Nama Ayah</th>
+                                 <th><i class="icon_id"></i> NIK Ibu</th>
+                                 <th><i class="icon_profile"></i> Nama Ibu</th>
                                  <th><i class="icon_pin_alt"></i> Alamat</th>
-                                 <th><i class="icon_wallet"></i> Pekerjaan</th>
                                  <th><i class="icon_cogs"></i> Aksi</th>
                               </tr>
                               <tr>
-                            <?php if($dataortu) : ?>
-                                <?php foreach ($dataortu as $dataorangtua) :?> 
-                                 <td><?php echo $dataorangtua->NAMA_SISWA;?></td>
-                                 <td><?php echo $dataorangtua->NAMA;?></td>
+                            <?php if($dataortu) : $no=1;?>
+                                <?php foreach ($dataortu as $dataorangtua) :?>
+                                 <td><?php echo $no++.'.';?></td>
+                                 <td><?php echo $dataorangtua->NIK_AYAH;?></td>
+                                 <td><?php echo $dataorangtua->NAMA_AYAH;?></td>
+                                 <td><?php echo $dataorangtua->NIK_IBU;?></td>
+                                 <td><?php echo $dataorangtua->NAMA_IBU;?></td>
                                  <td><?php echo $dataorangtua->ALAMAT;?></td>
-                                 <td><?php echo $dataorangtua->PEKERJAAN;?></td>
                                  <td>
                                   <div class="btn-group">
                                       <!--<a class="btn btn-primary" href="#"><i class="icon_plus_alt2"></i></a>-->
-                                      <a class="btn btn-success" href="<?php echo $url;?>editortu/<?php echo $dataorangtua->ID_ORANGTUA;?>"><i class="icon_check_alt2"></i></a>
-                                      <a class="btn btn-danger" href="<?php echo $url;?>hapusortu/<?php echo $dataorangtua->ID_ORANGTUA;?>"
-                                      data-toggle="tooltip" value="delete" class="btn btn-danger" onclick="javascript: return confirm('<?php echo "Hapus ".$dataorangtua->NAMA." ?";?>')">
+                                      <a class="btn btn-success" href="<?php echo $url;?>editortu/<?php echo $this->enkripsi->safe_b64encode($dataorangtua->ID_ORANGTUA);?>"><i class="icon_check_alt2"></i></a>
+                                      <a class="btn btn-danger" href="<?php echo $url;?>hapusortu/<?php echo $this->enkripsi->safe_b64encode($dataorangtua->ID_ORANGTUA);?>"
+                                      data-toggle="tooltip" value="delete" class="btn btn-danger" onclick="javascript: return confirm('Hapus data ?')">
                                       <i class="icon_close_alt2"></i></a>
                                       </div>
-                                            <a class="btn btn-primary" href="<?php //echo $url;?>editsiswa/<?php //echo $datasiswasiswi->ID_SISWA;?>"><i class="icon_circle-slelected"></i></a>
+                                            <a class="btn btn-primary" href="<?php echo $url;?>resetpass-ortu/<?php echo $this->enkripsi->safe_b64encode($dataorangtua->ID_ORANGTUA);?>
+                                            "data-toggle="tooltip" value="delete" class="btn btn-danger" onclick="javascript: return confirm('<?php echo "Reset Password ?";?>')"><i class="icon_circle-slelected"></i></a>
                                       </div>
                                   </div>
                                   </td>
@@ -49,6 +54,15 @@
                                 <?php endif;?>                  
                            </tbody>
                         </table>
+                          <div class="container">                  
+                                <ul class="pager">
+                                    <?php if($pageLinks) : ?>
+                                        <?php foreach($pageLinks as $paging) :?>
+                                            <li><?php echo $paging;?></li>
+                                        <?php endforeach;?>
+                                    <?php endif;?>
+                                </ul>
+                          </div>
                       </section>
                   </div>
           </section>

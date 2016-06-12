@@ -36,16 +36,72 @@
                                   <input type="text" value="<?php echo $editortu->ID_ORANGTUA;?>" name="id_orangtua" class="form-control round-input hidden">
                                   
                                   <div class="form-group">
-                                      <label class="col-sm-2 control-label">NIS atau Nama Siswa</label>
+                                      <label class="col-sm-2 control-label">NIK Ayah</label>
                                       <div class="col-sm-7">
-                                          <input id="id_siswa" name="id_siswa" type="text" value="<?php echo $editortu->ID_SISWA;?>" placeholder="Ketikan Nama atau NIK Siswa" class="form-control round-input">
+                                          <input type="text" value="<?php echo $editortu->NIK_AYAH;?>" name="nik_ayah_edit" class="form-control round-input">
                                       </div>
                                   </div>
                                   
                                   <div class="form-group">
-                                      <label class="col-sm-2 control-label">Nama Orang Tua</label>
+                                      <label class="col-sm-2 control-label">Nama Ayah</label>
                                       <div class="col-sm-7">
-                                          <input type="text" value="<?php echo $editortu->NAMA;?>" name="nama_ortu" class="form-control round-input">
+                                          <input type="text" value="<?php echo $editortu->NAMA_AYAH;?>" name="nama_ayah" class="form-control round-input">
+                                      </div>
+                                  </div>
+                                  
+                                  <div class="form-group">
+                                      <label class="col-sm-2 control-label">Tempat Lahir Ayah</label>
+                                      <div class="col-sm-7">
+                                          <input type="text" value="<?php echo $editortu->TEMPAT_LAHIR_AYAH;?>" name="tempat_lahir_ayah" class="form-control round-input">
+                                      </div>
+                                  </div>
+                                  
+                                  <div class="form-group">
+                                      <label class="col-sm-2 control-label">Tanggal Lahir Ayah</label>
+                                      <div class="col-sm-7">
+                                          <input type="text" value="<?php echo $editortu->TGL_LAHIR_AYAH;?>" name="tgl_lahir_ayah" class="form-control round-input">
+                                      </div>
+                                  </div>
+                                  
+                                  <div class="form-group">
+                                      <label class="col-sm-2 control-label">Pekerjaan Ayah</label>
+                                      <div class="col-sm-7">
+                                          <input type="text" value="<?php echo $editortu->PEKERJAAN_AYAH;?>" name="pekerjaan_ayah" class="form-control round-input">
+                                      </div>
+                                  </div>
+                                  
+                                  <div class="form-group">
+                                      <label class="col-sm-2 control-label">NIK Ibu</label>
+                                      <div class="col-sm-7">
+                                          <input type="text" value="<?php echo $editortu->NIK_IBU;?>" name="nik_ibu_edit" class="form-control round-input">
+                                      </div>
+                                  </div>
+                                  
+                                  <div class="form-group">
+                                      <label class="col-sm-2 control-label">Nama Ibu</label>
+                                      <div class="col-sm-7">
+                                          <input type="text" value="<?php echo $editortu->NAMA_IBU;?>" name="nama_ibu" class="form-control round-input">
+                                      </div>
+                                  </div>
+                                  
+                                  <div class="form-group">
+                                      <label class="col-sm-2 control-label">Tempat Lahir Ibu</label>
+                                      <div class="col-sm-7">
+                                          <input type="text" value="<?php echo $editortu->TEMPAT_LAHIR_IBU;?>" name="tempat_lahir_ibu" class="form-control round-input">
+                                      </div>
+                                  </div>
+                                  
+                                  <div class="form-group">
+                                      <label class="col-sm-2 control-label">Tanggal Lahir Ibu</label>
+                                      <div class="col-sm-7">
+                                          <input type="text" value="<?php echo $editortu->TGL_LAHIR_IBU;?>" name="tgl_lahir_ibu" class="form-control round-input">
+                                      </div>
+                                  </div>
+                                  
+                                  <div class="form-group">
+                                      <label class="col-sm-2 control-label">Pekerjaan Ibu</label>
+                                      <div class="col-sm-7">
+                                          <input type="text" value="<?php echo $editortu->PEKERJAAN_IBU;?>" name="pekerjaan_ibu" class="form-control round-input">
                                       </div>
                                   </div>
                                   
@@ -55,14 +111,6 @@
                                           <input type="text" value="<?php echo $editortu->ALAMAT;?>" name="alamat" class="form-control round-input">
                                       </div>
                                   </div>
-                                  
-                                  <div class="form-group">
-                                      <label class="col-sm-2 control-label">Pekerjaan</label>
-                                      <div class="col-sm-7">
-                                          <input type="text" value="<?php echo $editortu->PEKERJAAN;?>" name="pekerjaan" class="form-control round-input">
-                                      </div>
-                                  </div>
-                                  
                                   <!--<div class="form-group">
                                       <label class="col-sm-2 control-label">Password</label>
                                       <div class="col-sm-7">

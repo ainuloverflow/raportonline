@@ -37,19 +37,19 @@
                                       </div>
                                   </div>
                                   
-                                  <div class="form-group">
-                                      <label class="col-sm-2 control-label">Nilai Praktikum</label>
+                                 <div class="form-group">
+                                      <label class="col-sm-2 control-label">Nilai Kopetensi Pengetahuan</label>
                                       <div class="col-sm-7">
-                                           <p><?php echo $validasi->errorMessages('nilai_prak', '<p style="color:red">', '</p>');?></p>
-                                          <input type="text" value="<?php echo $validasi->value('nilai_prak');?>" name="nilai_prak" class="form-control round-input">
+                                          <p><?php echo $validasi->errorMessages('nilai_kop_pengetahuan', '<p style="color:red">', '</p>');?></p>
+                                          <input type="text" value="<?php echo $validasi->value('nilai_kop_pengetahuan');?>" name="nilai_kop_pengetahuan" class="form-control round-input">
                                       </div>
                                   </div>
                                   
                                   <div class="form-group">
-                                      <label class="col-sm-2 control-label">Nilai Kopetensi</label>
+                                      <label class="col-sm-2 control-label">Nilai Kopetensi Keterampilan</label>
                                       <div class="col-sm-7">
-                                          <p><?php echo $validasi->errorMessages('nilai_kop', '<p style="color:red">', '</p>');?></p>
-                                          <input type="text" value="<?php echo $validasi->value('nilai_kop');?>" name="nilai_kop" class="form-control round-input">
+                                          <p><?php echo $validasi->errorMessages('nilai_kop_keterampilan', '<p style="color:red">', '</p>');?></p>
+                                          <input type="text" value="<?php echo $validasi->value('nilai_kop_keterampilan');?>" name="nilai_kop_keterampilan" class="form-control round-input">
                                       </div>
                                   </div>
                                   

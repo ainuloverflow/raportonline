@@ -6,7 +6,7 @@
 				<div class="col-lg-12">
 					<h3 class="page-header"><i class="icon_document_alt"></i><?php echo $namaCTRL;?></h3>
 					<ol class="breadcrumb">
-                                            <li><i class="icon_documents"></i><a href="<?php echo $url;?>listortu"><?php echo $breadcrumb;?></a></li>					
+                                            <li><i class="icon_documents"></i><a href="<?php echo $url;?>datanilai"><?php echo $breadcrumb;?></a></li>					
                                         </ol>
 				</div>
 			</div>
@@ -18,7 +18,7 @@
                             <?php echo $namaCTRL;?> 
                           </header>
                           <div class="panel-body">
-                              <form class="form-horizontal" action="<?php echo $url;?>validasieditortu" method="post">
+                              <form class="form-horizontal" action="<?php echo $url;?>validasieditnilai" method="post">
                                   <!--<div class="form-group">
                                       <label class="col-sm-2 control-label">Default</label>
                                       <div class="col-sm-10">
@@ -33,33 +33,76 @@
                                       </div>
                                   </div>-->
                              
-                                  <input type="text" value="<?php echo $editortu->ID_ORANGTUA;?>" name="id_orangtua" class="form-control round-input hidden">
+                                  <input type="text" value="<?php echo $editnilai->ID_NILAI;?>" name="id_nilai" class="form-control round-input hidden">
                                   
                                   <div class="form-group">
                                       <label class="col-sm-2 control-label">NIS atau Nama Siswa</label>
                                       <div class="col-sm-7">
-                                          <input id="id_siswa" name="id_siswa" type="text" value="<?php echo $editortu->ID_SISWA;?>" placeholder="Ketikan Nama atau NIK Siswa" class="form-control round-input">
+                                          <input id="id_siswa" name="id_siswa" type="text" value="<?php echo $editnilai->ID_SISWA." - " .$editnilai->NIS_SISWA." - ".$editnilai->NAMA_SISWA;?>" placeholder="Ketikan Nama atau NIK Siswa" class="form-control round-input">
                                       </div>
                                   </div>
                                   
                                   <div class="form-group">
-                                      <label class="col-sm-2 control-label">Nama Orang Tua</label>
+                                      <label class="col-sm-2 control-label">Nama Mata Pelajaran</label>
                                       <div class="col-sm-7">
-                                          <input type="text" value="<?php echo $editortu->NAMA;?>" name="nama_ortu" class="form-control round-input">
+                                          <input type="text" id="id_mapel" value="<?php echo $editnilai->ID_MAPEL." - ".$editnilai->NAMA_MAPEL;?>" name="id_mapel" class="form-control round-input">
+                                      </div>
+                                  </div>
+                                  
+                                  <!-- <div class="form-group">
+                                      <label class="col-sm-2 control-label">Nama Semua Mata Pelajaran</label>
+                                      <div class="col-sm-7">
+                                          <input type="checkbox" id="other" name="other" class="other">
+                                          <input type="text" id="id_mapel2" value="<?php //echo $editnilai->ID_MAPEL." - ".$editnilai->NAMA_MAPEL;?>" name="id_mapel2" class="form-control round-input">
+                                      </div>
+                                  </div>-->
+                                  
+                                  <div class="form-group">
+                                      <label class="col-sm-2 control-label">Nilai Kopetensi Pengetahuan</label>
+                                      <div class="col-sm-7">
+                                          <input type="text" value="<?php echo $editnilai->NILAI_KOP_PENGETAHUAN;?>" name="nilai_kop_pengetahuan" class="form-control round-input">
                                       </div>
                                   </div>
                                   
                                   <div class="form-group">
-                                      <label class="col-sm-2 control-label">Alamat</label>
+                                      <label class="col-sm-2 control-label">Nilai Kopetensi Keterampilan</label>
                                       <div class="col-sm-7">
-                                          <input type="text" value="<?php echo $editortu->ALAMAT;?>" name="alamat" class="form-control round-input">
+                                          <input type="text" value="<?php echo $editnilai->NILAI_KOP_KETERAMPILAN;?>" name="nilai_kop_keterampilan" class="form-control round-input">
                                       </div>
                                   </div>
                                   
                                   <div class="form-group">
-                                      <label class="col-sm-2 control-label">Pekerjaan</label>
+                                      <label class="col-sm-2 control-label">Nilai Sikap</label>
                                       <div class="col-sm-7">
-                                          <input type="text" value="<?php echo $editortu->PEKERJAAN;?>" name="pekerjaan" class="form-control round-input">
+                                          <input type="text" value="<?php echo $editnilai->NILAI_SIKAP;?>" name="nilai_sikap" class="form-control round-input">
+                                      </div>
+                                  </div>
+                                  
+                                  <div class="form-group">
+                                      <label class="col-sm-2 control-label">Nilai Tugas</label>
+                                      <div class="col-sm-7">
+                                          <input type="text" value="<?php echo $editnilai->NILAI_TUGAS;?>" name="nilai_tugas" class="form-control round-input">
+                                      </div>
+                                  </div>
+                                  
+                                  <div class="form-group">
+                                      <label class="col-sm-2 control-label">Nilai UTS</label>
+                                      <div class="col-sm-7">
+                                          <input type="text" value="<?php echo $editnilai->NILAI_UTS;?>" name="nilai_uts" class="form-control round-input">
+                                      </div>
+                                  </div>
+                                  
+                                  <div class="form-group">
+                                      <label class="col-sm-2 control-label">Nilai UAS</label>
+                                      <div class="col-sm-7">
+                                          <input type="text" value="<?php echo $editnilai->NILAI_UAS;?>" name="nilai_uas" class="form-control round-input">
+                                      </div>
+                                  </div>
+                                  
+                                  <div class="form-group">
+                                      <label class="col-sm-2 control-label">Nilai Ahkir</label>
+                                      <div class="col-sm-7">
+                                          <input type="text" value="<?php echo $editnilai->NILAI_AHKIR;?>" name="nilai_ahkir" class="form-control round-input">
                                       </div>
                                   </div>
                                   

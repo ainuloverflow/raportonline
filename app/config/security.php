@@ -2,6 +2,6 @@
 
 return array(
 
-    'secretKey' => '_put_your_random_string_here_',
+    'secretKey' => 'mantapjaya',
     'requestFilterType' => FILTER_SANITIZE_STRING
 );

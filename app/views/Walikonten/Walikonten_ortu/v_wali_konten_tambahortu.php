@@ -20,20 +20,83 @@
                           <div class="panel-body">
                           
                               <form class="form-horizontal" action="<?php echo $url;?>tambahortu" method="post">
-                  
+                                  
                                   <div class="form-group">
-                                      <label class="col-sm-2 control-label">Nis atau Nama Siswa</label>
+                                      <label class="col-sm-2 control-label">NIK Ayah</label>
                                       <div class="col-sm-7">
-                                          <p><?php echo $validasi->errorMessages('id_siswa', '<p style="color:red">', '</p>');?></p>
-                                          <input id="id_siswa" name="id_siswa" type="text" placeholder="Ketikan Nama atau NIK Siswa" class="form-control round-input">
+                                           <p><?php echo $validasi->errorMessages('nik_ayah', '<p style="color:red">', '</p>');?></p>
+                                          <input type="text" value="<?php echo $validasi->value('nik_ayah');?>" name="nik_ayah" class="form-control round-input">
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
+                                      <label class="col-sm-2 control-label">Nama Ayah</label>
+                                      <div class="col-sm-7">
+                                           <p><?php echo $validasi->errorMessages('nama_ayah', '<p style="color:red">', '</p>');?></p>
+                                          <input type="text" value="<?php echo $validasi->value('nama_ayah');?>" name="nama_ayah" class="form-control round-input">
                                       </div>
                                   </div>
                                   
                                   <div class="form-group">
-                                      <label class="col-sm-2 control-label">Nama</label>
+                                      <label class="col-sm-2 control-label">Tempat Lahir Ayah</label>
                                       <div class="col-sm-7">
-                                           <p><?php echo $validasi->errorMessages('nama_ortu', '<p style="color:red">', '</p>');?></p>
-                                          <input type="text" value="<?php echo $validasi->value('nama_ortu');?>" name="nama_ortu" class="form-control round-input">
+                                           <p><?php echo $validasi->errorMessages('tempat_lahir_ayah', '<p style="color:red">', '</p>');?></p>
+                                          <input id="tgl_lahir_ibu" type="text" value="<?php echo $validasi->value('tempat_lahir_ayah');?>" name="tempat_lahir_ayah" class="form-control round-input">
+                                      </div>
+                                  </div>
+                                  
+                                  <div class="form-group">
+                                      <label class="col-sm-2 control-label">Tanggal Lahir Ayah</label>
+                                      <div class="col-sm-7">
+                                           <p><?php echo $validasi->errorMessages('tgl_lahir_ayah', '<p style="color:red">', '</p>');?></p>
+                                          <input id="tgl_lahir_ayah" type="text" value="<?php echo $validasi->value('tgl_lahir_ayah');?>" name="tgl_lahir_ayah" class="form-control round-input">
+                                      </div>
+                                  </div>
+                                  
+                                  <div class="form-group">
+                                      <label class="col-sm-2 control-label">Pekerjaan Ayah </label>
+                                      <div class="col-sm-7">
+                                          <p><?php echo $validasi->errorMessages('pekerjaan_ayah', '<p style="color:red">', '</p>');?></p>
+                                          <input type="text" value="<?php echo $validasi->value('pekerjaan_ayah');?>" name="pekerjaan_ayah" class="form-control round-input">
+                                      </div>
+                                  </div>
+                                  
+                                  <div class="form-group">
+                                      <label class="col-sm-2 control-label">NIK Ibu</label>
+                                      <div class="col-sm-7">
+                                           <p><?php echo $validasi->errorMessages('nik_ibu', '<p style="color:red">', '</p>');?></p>
+                                          <input type="text" value="<?php echo $validasi->value('nik_ibu');?>" name="nik_ibu" class="form-control round-input">
+                                      </div>
+                                  </div>
+                                  
+                                  <div class="form-group">
+                                      <label class="col-sm-2 control-label">Nama Ibu</label>
+                                      <div class="col-sm-7">
+                                           <p><?php echo $validasi->errorMessages('nama_ibu', '<p style="color:red">', '</p>');?></p>
+                                          <input type="text" value="<?php echo $validasi->value('nama_ibu');?>" name="nama_ibu" class="form-control round-input">
+                                      </div>
+                                  </div>
+                                  
+                                  <div class="form-group">
+                                      <label class="col-sm-2 control-label">Tempat Lahir Ibu</label>
+                                      <div class="col-sm-7">
+                                           <p><?php echo $validasi->errorMessages('tempat_lahir_ibu', '<p style="color:red">', '</p>');?></p>
+                                          <input id="tgl_lahir_ibu" type="text" value="<?php echo $validasi->value('tempat_lahir_ibu');?>" name="tempat_lahir_ibu" class="form-control round-input">
+                                      </div>
+                                  </div>
+                                  
+                                  <div class="form-group">
+                                      <label class="col-sm-2 control-label">Tanggal Lahir Ibu</label>
+                                      <div class="col-sm-7">
+                                           <p><?php echo $validasi->errorMessages('tgl_lahir_ibu', '<p style="color:red">', '</p>');?></p>
+                                          <input id="tgl_lahir_ibu" type="text" value="<?php echo $validasi->value('tgl_lahir_ibu');?>" name="tgl_lahir_ibu" class="form-control round-input">
+                                      </div>
+                                  </div>
+                                  
+                                  <div class="form-group">
+                                      <label class="col-sm-2 control-label">Pekerjaan Ibu</label>
+                                      <div class="col-sm-7">
+                                          <p><?php echo $validasi->errorMessages('pekerjaan_ibu', '<p style="color:red">', '</p>');?></p>
+                                          <input type="text" value="<?php echo $validasi->value('pekerjaan_ibu');?>" name="pekerjaan_ibu" class="form-control round-input">
                                       </div>
                                   </div>
                                   
@@ -46,10 +109,10 @@
                                   </div>
                                   
                                   <div class="form-group">
-                                      <label class="col-sm-2 control-label">Pekerjaan</label>
+                                      <label class="col-sm-2 control-label">Username</label>
                                       <div class="col-sm-7">
-                                          <p><?php echo $validasi->errorMessages('pekerjaan', '<p style="color:red">', '</p>');?></p>
-                                          <input type="text" value="<?php echo $validasi->value('pekerjaan');?>" name="pekerjaan" class="form-control round-input">
+                                          <p><?php echo $validasi->errorMessages('username_ortu', '<p style="color:red">', '</p>');?></p>
+                                          <input type="text" value="<?php echo $validasi->value('username_ortu');?>" name="username_ortu" class="form-control round-input">
                                       </div>
                                   </div>
                                   

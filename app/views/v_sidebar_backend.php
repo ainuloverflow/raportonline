@@ -9,13 +9,13 @@
                           <span>Home</span>
                       </a>
                   </li>
-                  <li>                     
+                  <!--<li>                     
                       <a class="" href="chart-chartjs.html">
                           <i class="icon_piechart"></i>
                           <span>Profil</span>
                           
                       </a>
-                  </li>
+                  </li>-->
                   <li class="sub-menu">
                       <a href="javascript:;" class="">
                           <i class="icon_document_alt"></i>
@@ -23,12 +23,12 @@
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
                       <ul class="sub">
-                          <li><a class="" href="<?php echo $url;?>listsiswa">Data Siswa</a></li>
-                          <li><a class="" href="<?php echo $url;?>listortu">Data Orang Tua Siswa</a></li>
-                          <li><a class="" href="<?php echo $url;?>datanilai">Data Nilai Siswa</a></li>
-                          <li><a class="" href="">Data Mata Pelajaran</a></li>
+                          <li><a class="" href="<?php echo $url;?>listsiswa">Data siswa</a></li>
+                          <li><a class="" href="<?php echo $url;?>listortu">Data orang tua siswa</a></li>
+                          <li><a class="" href="<?php echo $url;?>datanilai">Data nilai siswa</a></li>
+                          <!--<li><a class="" href="">Data Mata Pelajaran</a></li>
                           <li><a class="" href="">Data Ekstra kurikuler</a></li>
-                          <li><a class="" href="">Data Guru Mapel</a></li>
+                          <li><a class="" href="">Data Guru Mapel</a></li>-->
                       </ul>
                   </li>
                   <li class="sub-menu">
