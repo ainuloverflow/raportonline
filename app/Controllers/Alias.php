@@ -12,27 +12,27 @@ class Alias
             'method' => 'index'
         ],
                        
-        'listortu' => [
+        'list-ortu' => [
             'class' => '\\Controllers\Wali',
             'method' => 'data_orangtua'
         ],
         
-        'listsiswa' => [
+        'list-siswa' => [
             'class' => '\\Controllers\Wali',
             'method' => 'datasiswa'
         ],
         
-        'datanilai' => [
+        'data-nilai' => [
             'class' => '\\Controllers\Wali',
             'method' => 'tampil_nilai'
         ],
         
-        'tambahsiswa' => [
+        'tambah-siswa' => [
             'class' => '\\Controllers\Wali',
             'method' => 'tambah_siswa_kelas'
         ],
         
-        'resetpass-siswa' => [
+        'reset-pass-siswa' => [
             'class' => '\\Controllers\Wali',
             'method' => 'reset_password_siswa'
         ],
@@ -42,27 +42,27 @@ class Alias
             'method' => 'reset_password_ortu'
         ],
         
-        'tambahortu' => [
+        'tambah-ortu' => [
             'class' => '\\Controllers\Wali',
             'method' => 'tambah_ortusiswa_kelas'
         ],
         
-        'tambahnilai' => [
+        'tambah-nilai' => [
             'class' => '\\Controllers\Wali',
             'method' => 'input_nilai'
         ],
         
-        'editsiswa' => [
+        'edit-siswa' => [
             'class' => '\\Controllers\Wali',
             'method' => 'edit_siswa_kelas'
         ],
         
-        'editnilai' => [
+        'edit-nilai' => [
             'class' => '\\Controllers\Wali',
             'method' => 'edit_nilai'
         ],
         
-        'editortu' => [
+        'edit-ortu' => [
             'class' => '\\Controllers\Wali',
             'method' => 'edit_ortusiswa_kelas'
         ],
@@ -72,27 +72,27 @@ class Alias
             'method' => 'hapus_siswa_kelas'
         ],
         
-        'hapusortu' => [
+        'hapus-ortu' => [
             'class' => '\\Controllers\Wali',
             'method' => 'hapus_ortusiswa_kelas'
         ],
         
-        'hapusnilai' => [
+        'hapus-nilai' => [
             'class' => '\\Controllers\Wali',
             'method' => 'hapus_nilai'
         ],
         
-        'validasieditsiswa' => [
+        'validasi-edit-siswa' => [
             'class' => '\\Controllers\Wali',
             'method' => 'validate_edit_siswa_kelas'
         ],
         
-        'validasieditortu' => [
+        'validasi-edit-ortu' => [
             'class' => '\\Controllers\Wali',
             'method' => 'validate_edit_ortusiswa_kelas'
         ],
         
-        'validasieditnilai' => [
+        'validasi-edit-nilai' => [
             'class' => '\\Controllers\Wali',
             'method' => 'validate_edit_nilai'
         ],
@@ -136,22 +136,22 @@ class Alias
             'method' => 'index'
         ],
         
-        'datanilai-as-guru' => [
+        'data-nilai-as-guru' => [
             'class' => '\\Controllers\Guru',
             'method' => 'data_nilai'
         ],
         
-        'tambahnilai-as-guru' => [
+        'tambah-nilai-as-guru' => [
             'class' => '\\Controllers\Guru',
             'method' => 'tambah_nilai'
         ],
         
-        'editnilai-as-guru' => [
+        'edit-nilai-as-guru' => [
             'class' => '\\Controllers\Guru',
             'method' => 'edit_nilai'
         ],
         
-        'validasieditnilai-as-guru' => [
+        'validasi-edit-nilai-as-guru' => [
             'class' => '\\Controllers\Guru',
             'method' => 'validate_edit_nilai'
         ],
@@ -176,9 +176,9 @@ class Alias
 
     if( in_array($args[0], [
         /*Wali routing**/ 
-       'dashboard_wali', 'listortu' ,'listsiswa', 'datanilai', 'tambahsiswa', 'resetpass-siswa', 'resetpass-ortu', 'tambahnilai', 'getsiswa', 
-       'tambahortu', 'editsiswa', 'editnilai', 'hapusiswa', 'hapusnilai', 'editortu', 'hapusortu', 'validasieditsiswa', 
-       'validasieditortu', 'validasieditnilai', 'rapot-siswa-as-wali', 'grafik-nilai', 'data-grafik-nilai', 
+       'dashboard_wali', 'list-ortu' ,'list-siswa', 'data-nilai', 'tambah-siswa', 'reset-pass-siswa', 'reset-pass-ortu', 'tambah-nilai',
+       'tambah-ortu', 'edit-siswa', 'edit-nilai', 'hapusiswa', 'hapus-nilai', 'edit-ortu', 'hapus-ortu', 'validasi-edit-siswa', 
+       'validasi-edit-ortu', 'validasi-edit-nilai', 'rapot-siswa-as-wali', 'grafik-nilai', 'data-grafik-nilai', 
         /*End wali routing**/
         
         //Home Routing
@@ -186,7 +186,8 @@ class Alias
         //End Home Routing
         
         /*Guru Routing **/
-        'dashboard_guru', 'datanilai-as-guru', 'tambahnilai-as-guru', 'editnilai-as-guru', 'validasieditnilai-as-guru', 'grafik-nilai-guru', 'data-grafik-nilai-guru', 'rapot-siswa-as-guru' 
+        'dashboard_guru', 'data-nilai-as-guru', 'tambah-nilai-as-guru', 'editnilai-as-guru', 'validasi-edit-nilai-as-guru', 'grafik-nilai-guru', 
+        'data-grafik-nilai-guru', 'rapot-siswa-as-guru' 
         /*End guru routing **/])) {
 
         try {
