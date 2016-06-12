@@ -202,7 +202,7 @@ class Wali extends Resources\Controller
         $where = array('ID_SISWA' => $value);
         
         $this->walimodel->hapus_siswakelas($where);
-        $this->redirect('listsiswa');
+        $this->redirect('list-siswa');
     }
     /** end hapus siswa */
     
@@ -219,7 +219,7 @@ class Wali extends Resources\Controller
         );
         
         $this->walimodel->reset_password_siswa($value, $where);
-        $this->redirect('listsiswa');
+        $this->redirect('list-siswa');
     }
     /** end hapus siswa */
     
@@ -388,7 +388,7 @@ class Wali extends Resources\Controller
         $where = array('ID_ORANGTUA' => $value);
         
         $this->walimodel->hapus_ortusiswa_kelas($where);
-        $this->redirect('listortu');
+        $this->redirect('list-ortu');
     }
     /** end hapus orangtua siswa */
     
@@ -405,7 +405,7 @@ class Wali extends Resources\Controller
         );
         
         $this->walimodel->reset_password_ortu($value, $where);
-        $this->redirect('listortu');
+        $this->redirect('list-ortu');
     }
     /** end reset password orangtua */
     
@@ -558,7 +558,7 @@ class Wali extends Resources\Controller
         $where = array('ID_NILAI' => $value);
         
         $this->walimodel->hapus_nilai_siswa($where);
-        $this->redirect('datanilai');
+        $this->redirect('data-nilai');
     }
     
     public function rapot_siswa($page = 1) {
@@ -568,7 +568,7 @@ class Wali extends Resources\Controller
         
         $nama_kelas = $this->nama_kelas();
             $data = array (
-                'nilaisiswa' => $this->walimodel->bacanilaisiswa($page, $limit), 
+                'rapot_siswa' => $this->walimodel->bacanilaisiswa($page, $limit), 
                 'namaCTRL' => 'Rapot Siswa '."<strong>$nama_kelas</strong>",
                 'mapelall' => $this->walimodel->getmapelall(),
                 'sisall' => $this->walimodel->getnamasiswall(),
@@ -695,14 +695,14 @@ class Wali extends Resources\Controller
         if($results==null) {
             $tambahnilai = $this->walimodel->tambahnilai($value);
             if($tambahnilai) {
-                    echo "<script>alert('Data berhasil dimasukan'); window.location = 'datanilai' </script>";
+                    echo "<script>alert('Data berhasil dimasukan'); window.location = 'data-nilai' </script>";
                 }
                 else {
-                    echo "<script>alert('Data gagal dimasukan'); window.location = 'datanilai' </script>";
+                    echo "<script>alert('Data gagal dimasukan'); window.location = 'data-nilai' </script>";
                 }
             return true;
         } else {
-            echo "<script>alert('Error!! Nilai sudah ada'); window.location = 'datanilai' </script>";
+            echo "<script>alert('Error!! Nilai sudah ada'); window.location = 'data-nilai' </script>";
             return false;
         }        
     }
@@ -714,15 +714,15 @@ class Wali extends Resources\Controller
         if($results ==null){
             $tambahsiswa = $this->walimodel->tambahsiswakelas($value);
             if($tambahsiswa){
-                    echo "<script>alert('Data berhasil dimasukan'); window.location = 'datanilai' </script>";
+                    echo "<script>alert('Data berhasil dimasukan'); window.location = 'data-nilai' </script>";
                 }
                 else {
-                    echo "<script>alert('Data gagal dimasukan'); window.location = 'datanilai' </script>";
+                    echo "<script>alert('Data gagal dimasukan'); window.location = 'data-nilai' </script>";
                 }   
             return true;    
         }
         else {
-           echo "<script>alert('Error!! Siswa dengan NIS tersebut sudah ada'); window.location = 'datanilai' </script>";
+           echo "<script>alert('Error!! Siswa dengan NIS tersebut sudah ada'); window.location = 'data-nilai' </script>";
            return false; 
         }
     }
@@ -731,11 +731,11 @@ class Wali extends Resources\Controller
         $this->cek();
         $update = $this->walimodel->validate_edit_nilai($value, $where);
         if($update) {
-            echo "<script>alert('Data berhasil diperbarui'); window.location = 'datanilai' </script>";
+            echo "<script>alert('Data berhasil diperbarui'); window.location = 'data-nilai' </script>";
             return true;
         }
         else {
-             echo "<script>alert('Data gagal diperbarui'); window.location = 'datanilai' </script>";
+             echo "<script>alert('Data gagal diperbarui'); window.location = 'data-nilai' </script>";
         }
     }
     
