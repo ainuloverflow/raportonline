@@ -22,14 +22,14 @@
                                  <th><i class="icon_cogs"></i> Aksi</th>
                               </tr>
                               <tr>
-                            <?php if($nilaisiswa) : $no=1;?>
-                                <?php foreach ($nilaisiswa as $datasiswasiswi) :?>
+                            <?php if($rapot_siswa) : $no=1;?>
+                                <?php foreach ($rapot_siswa as $rapot) :?>
                                  <td><?php echo $no++.'.';?></td>
-                                 <td><?php echo $datasiswasiswi->NIS_SISWA;?></td>
-                                 <td><?php echo $datasiswasiswi->NAMA_SISWA;?></td>
+                                 <td><?php echo $rapot->NIS_SISWA;?></td>
+                                 <td><?php echo $rapot->NAMA_SISWA;?></td>
                                  <td>
                                   <div class="btn-group">
-                                      <a class="btn btn-success" href="<?php echo $url;?>editsiswa/<?php echo $this->enkripsi->safe_b64encode($datasiswasiswi->ID_SISWA);?>"><i class="icon_check_alt2"></i></a>
+                                      <a class="btn btn-info" href="<?php echo $url;?>cetak-rapot/<?php echo $this->enkripsi->safe_b64encode($rapot->ID_SISWA);?>"><i class="icon_check_alt2"></i>Cetak Rapot</a>
                                   </div>
                                  </td>
                               </tr>
