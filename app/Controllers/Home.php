@@ -15,7 +15,7 @@ class Home extends Resources\Controller
 	
     public function direct() {
         $this->redirect('login');
-        //kghjghj
+        //kghj
     }
 	
     public function login() {
