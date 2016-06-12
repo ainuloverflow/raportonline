@@ -46,7 +46,7 @@ class Wali extends Resources\Controller
             'url' => $this->uri->baseUri
             );
         $this->output('Walikonten/Walikonten_home/v_header_backend', $data);
-        $this->output('Walikonten/v_sidebar_backend', $data);
+        $this->output('Walikonten/v_wali_konten_sidebar', $data);
         $this->output('Walikonten/Walikonten_home/v_home_wali', $data);   
         $this->output('Walikonten/Walikonten_home/v_footer_backend', $data);
         
@@ -77,7 +77,7 @@ class Wali extends Resources\Controller
         );
 
         $this->output('Walikonten/Walikonten_siswa/v_wali_konten_header', $data);
-        $this->output('Walikonten/Walikonten_siswa/v_wali_konten_sidebar', $data);
+        $this->output('Walikonten/v_wali_konten_sidebar', $data);
         $this->output('Walikonten/Walikonten_siswa/v_wali_konten_listsiswa', $data);
         $this->output('Walikonten/Walikonten_siswa/v_wali_konten_footer_siswa', $data);   
     }
@@ -118,7 +118,7 @@ class Wali extends Resources\Controller
         );
 
         $this->output('Walikonten/Walikonten_siswa/v_wali_konten_header', $data);
-        $this->output('Walikonten/Walikonten_siswa/v_wali_konten_sidebar', $data);
+        $this->output('Walikonten/v_wali_konten_sidebar', $data);
         $this->output('Walikonten/Walikonten_siswa/v_wali_konten_tambahsiswa', $data);
         $this->output('Walikonten/Walikonten_siswa/v_wali_konten_footer_siswa', $data);   
     }
@@ -139,7 +139,7 @@ class Wali extends Resources\Controller
             'url' => $this->uri->baseUri
         );
         $this->output('Walikonten/Walikonten_siswa/v_wali_konten_header', $data);
-        $this->output('Walikonten/Walikonten_siswa/v_wali_konten_sidebar', $data);
+        $this->output('Walikonten/v_wali_konten_sidebar', $data);
         $this->output('Walikonten/Walikonten_siswa/v_wali_konten_editsiswa', $data);
         $this->output('Walikonten/Walikonten_siswa/v_wali_konten_footer_siswa', $data);
     }
@@ -172,10 +172,10 @@ class Wali extends Resources\Controller
                 $update = $this->walimodel->validate_edit_siswakelas($value, $where);
 
                 if($update) {
-                    echo "<script>alert('Data berhasil diperbarui'); window.location = 'listsiswa' </script>";
+                    echo "<script>alert('Data berhasil diperbarui'); window.location = 'list-siswa' </script>";
                 }
                 else {
-                    echo "<script>alert('Data gagal diperbarui'); window.location = 'listsiswa' </script>";
+                    echo "<script>alert('Data gagal diperbarui'); window.location = 'list-siswa' </script>";
                 }
             }
         }
@@ -189,7 +189,7 @@ class Wali extends Resources\Controller
             'url' => $this->uri->baseUri
         );
         $this->output('Walikonten/Walikonten_siswa/v_wali_konten_header', $data);
-        $this->output('Walikonten/Walikonten_siswa/v_wali_konten_sidebar', $data);
+        $this->output('Walikonten/v_wali_konten_sidebar', $data);
         $this->output('Walikonten/Walikonten_siswa/v_wali_konten_validasieditsiswa', $data);
         $this->output('Walikonten/Walikonten_siswa/v_wali_konten_footer_siswa', $data);
     }
@@ -253,14 +253,14 @@ class Wali extends Resources\Controller
                 'pageLinks' => $this->pagination->setOption(
                 array (
                     'limit' => $limit,
-                    'base' =>  $this->uri->baseUri."listortu/%#%",
+                    'base' =>  $this->uri->baseUri."list-ortu/%#%",
                     'total' => $this->walimodel->totalsiswa_kelas(),
                     'current' => $page
                     )
                 ) ->getUrl()
             );
         $this->output('Walikonten/Walikonten_ortu/v_wali_konten_header', $data);
-        $this->output('Walikonten/Walikonten_ortu/v_wali_konten_sidebar', $data);
+        $this->output('Walikonten/v_wali_konten_sidebar', $data);
         $this->output('Walikonten/Walikonten_ortu/v_wali_konten_listortu', $data);
         $this->output('Walikonten/Walikonten_ortu/v_wali_konten_footer_ortu', $data);  
     }
@@ -289,10 +289,10 @@ class Wali extends Resources\Controller
 
                 $tambahortu = $this->walimodel->tambahortusiswakelas($value);
                 if($tambahortu) {
-                    echo "<script>alert('Data berhasil dimasukan'); window.location = 'listortu' </script>";
+                    echo "<script>alert('Data berhasil dimasukan'); window.location = 'list-ortu' </script>";
                 }
                 else {
-                    echo "<script>alert('Data gagal dimasukan'); window.location = 'listortu' </script>";
+                    echo "<script>alert('Data gagal dimasukan'); window.location = 'list-ortu' </script>";
                 }
             }
         }
@@ -307,7 +307,7 @@ class Wali extends Resources\Controller
         );
 
         $this->output('Walikonten/Walikonten_ortu/v_wali_konten_header', $data);
-        $this->output('Walikonten/Walikonten_ortu/v_wali_konten_sidebar', $data);
+        $this->output('Walikonten/v_wali_konten_sidebar', $data);
         $this->output('Walikonten/Walikonten_ortu/v_wali_konten_tambahortu');
         $this->output('Walikonten/Walikonten_ortu/v_wali_konten_footer_ortu', $data);   
     }
@@ -328,7 +328,7 @@ class Wali extends Resources\Controller
                 
         );
         $this->output('Walikonten/Walikonten_ortu/v_wali_konten_header', $data);
-        $this->output('Walikonten/Walikonten_ortu/v_wali_konten_sidebar', $data);
+        $this->output('Walikonten/v_wali_konten_sidebar', $data);
         $this->output('Walikonten/Walikonten_ortu/v_wali_konten_editortu', $data);
         $this->output('Walikonten/Walikonten_ortu/v_wali_konten_footer_ortu', $data);
     }
@@ -359,9 +359,9 @@ class Wali extends Resources\Controller
                 $update = $this->walimodel->validate_edit_ortusiswa($value, $where);
                 
                 if($update) {
-                    echo "<script>alert('Data berhasil diperbarui'); window.location = 'listortu' </script>";
+                    echo "<script>alert('Data berhasil diperbarui'); window.location = 'list-ortu' </script>";
                 } else {
-                    echo "<script>alert('Data gagal diperbarui'); window.location = 'listortu' </script>";
+                    echo "<script>alert('Data gagal diperbarui'); window.location = 'list-ortu' </script>";
                 }
             }
         }
@@ -375,7 +375,7 @@ class Wali extends Resources\Controller
             'url' => $this->uri->baseUri
         );
         $this->output('Walikonten/Walikonten_ortu/v_wali_konten_header', $data);
-        $this->output('Walikonten/Walikonten_ortu/v_wali_konten_sidebar', $data);
+        $this->output('Walikonten/v_wali_konten_sidebar', $data);
         $this->output('Walikonten/Walikonten_ortu/v_wali_konten_validasieditortu', $data);
         $this->output('Walikonten/Walikonten_ortu/v_wali_konten_footer_ortu', $data);
     }
@@ -427,7 +427,7 @@ class Wali extends Resources\Controller
                 'pageLinks' => $this->pagination->setOption(
                 array (
                     'limit' => $limit,
-                    'base' =>  $this->uri->baseUri."listortu/%#%",
+                    'base' =>  $this->uri->baseUri."data-nilai/%#%",
                     'total' => $this->walimodel->totalsiswa_kelas(),
                     'current' => $page
                     )
@@ -435,7 +435,7 @@ class Wali extends Resources\Controller
             );
 
         $this->output('Walikonten/Walikonten_nilai/v_wali_konten_header', $data);
-        $this->output('Walikonten/Walikonten_nilai/v_wali_konten_sidebar', $data);
+        $this->output('Walikonten/v_wali_konten_sidebar', $data);
         $this->output('Walikonten/Walikonten_nilai/v_wali_konten_listnilai', $data);
         $this->output('Walikonten/Walikonten_nilai/v_wali_konten_footer_nilai');
     }
@@ -479,7 +479,7 @@ class Wali extends Resources\Controller
             'url' => $this->uri->baseUri
         );
         $this->output('Walikonten/Walikonten_nilai/v_wali_konten_header', $data);
-        $this->output('Walikonten/Walikonten_nilai/v_wali_konten_sidebar', $data);
+        $this->output('Walikonten/v_wali_konten_sidebar', $data);
         $this->output('Walikonten/Walikonten_nilai/v_wali_konten_tambahnilai');
         $this->output('Walikonten/Walikonten_nilai/v_wali_konten_footer_nilai', $data);  
     }
@@ -502,7 +502,7 @@ class Wali extends Resources\Controller
             'url' => $this->uri->baseUri
         );
         $this->output('Walikonten/Walikonten_nilai/v_wali_konten_header', $data);
-        $this->output('Walikonten/Walikonten_nilai/v_wali_konten_sidebar', $data);
+        $this->output('Walikonten/v_wali_konten_sidebar', $data);
         $this->output('Walikonten/Walikonten_nilai/v_wali_konten_editnilai', $data);
         $this->output('Walikonten/Walikonten_nilai/v_wali_konten_footer_nilai', $data);
     }
@@ -547,7 +547,7 @@ class Wali extends Resources\Controller
             'url' => $this->uri->baseUri
         );
         $this->output('Walikonten/Walikonten_nilai/v_wali_konten_header', $data);
-        $this->output('Walikonten/Walikonten_nilai/v_wali_konten_sidebar', $data);
+        $this->output('Walikonten/v_wali_konten_sidebar', $data);
         $this->output('Walikonten/Walikonten_nilai/v_wali_konten_validasieditnilai', $data);
         $this->output('Walikonten/Walikonten_nilai/v_wali_konten_footer_nilai', $data);
     }
@@ -586,7 +586,7 @@ class Wali extends Resources\Controller
             );
 
         $this->output('Walikonten/Walikonten_rapot/v_wali_konten_header', $data);
-        $this->output('Walikonten/Walikonten_rapot/v_wali_konten_sidebar', $data);
+        $this->output('Walikonten/v_wali_konten_sidebar', $data);
         $this->output('Walikonten/Walikonten_rapot/v_wali_konten_rapotsiswa', $data);
         $this->output('Walikonten/Walikonten_rapot/v_wali_konten_footer_rapot', $data);
     }
@@ -626,7 +626,7 @@ class Wali extends Resources\Controller
         );
         
         $this->output('Walikonten/Walikonten_grafik/v_wali_konten_header', $data);
-        $this->output('Walikonten/Walikonten_grafik/v_wali_konten_sidebar', $data);
+        $this->output('Walikonten/v_wali_konten_sidebar', $data);;
         $this->output('Walikonten/Walikonten_grafik/v_wali_konten_grafik', $data);
         $this->output('Walikonten/Walikonten_grafik/v_wali_konten_footer_grafik', $data);
     }
