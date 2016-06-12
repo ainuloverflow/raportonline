@@ -36,7 +36,7 @@
                         </a>
                   </li>  
                   <li>
-                        <a class="sub-menu" href="<?php echo $url;?>rapot-siswa-as-wali">
+                        <a class="sub-menu" href="<?php echo $url;?>grafik-nilai">
                             <i class="icon_piechart"></i>
                             <span>Grafik Nilai Kelas</span>
                         </a>
