@@ -46,7 +46,7 @@ class Wali extends Resources\Controller
             'url' => $this->uri->baseUri
             );
         $this->output('Walikonten/Walikonten_home/v_header_backend', $data);
-        $this->output('Walikonten/Walikonten_home/v_sidebar_backend', $data);
+        $this->output('Walikonten/v_sidebar_backend', $data);
         $this->output('Walikonten/Walikonten_home/v_home_wali', $data);   
         $this->output('Walikonten/Walikonten_home/v_footer_backend', $data);
         
