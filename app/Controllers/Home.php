@@ -40,7 +40,7 @@ class Home extends Resources\Controller
                     'username' => $usersiswa->NAMA_SISWA
                     );
                 $this->session->setValue($data);
-                $this->redirect('siswa');
+                $this->redirect('dashboard_siswa');
             }
 
             else if($userwali) {
@@ -77,7 +77,7 @@ class Home extends Resources\Controller
                     'username' => $userortu->USERNAME
                 );
                 $this->session->setValue($data);
-                $this->redirect('orangtua');
+                $this->redirect('dashboard_orangtua');
             }
             else {
                 $salah = "Maaf username dan password anda tidak terdaftar !!";
