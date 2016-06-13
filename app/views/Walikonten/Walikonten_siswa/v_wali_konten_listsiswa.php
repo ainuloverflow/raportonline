@@ -39,11 +39,11 @@
                                  <td><?php echo $datasiswasiswi->JENIS_KELAMIN;?></td>
                                  <td>
                                   <div class="btn-group">
-                                      <a class="btn btn-success" href="<?php echo $url;?>editsiswa/<?php echo $this->enkripsi->safe_b64encode($datasiswasiswi->ID_SISWA);?>"><i class="icon_check_alt2"></i></a>
+                                      <a class="btn btn-success" href="<?php echo $url;?>edit-siswa/<?php echo $this->enkripsi->safe_b64encode($datasiswasiswi->ID_SISWA);?>"><i class="icon_check_alt2"></i></a>
                                       <a class="btn btn-danger" href="<?php echo $url;?>hapusiswa/<?php echo $this->enkripsi->safe_b64encode($datasiswasiswi->ID_SISWA);?>"
                                       data-toggle="tooltip" value="delete" class="btn btn-danger" onclick="javascript: return confirm('<?php echo "Hapus ".$datasiswasiswi->NAMA_SISWA." ?";?>')"><i class="icon_close_alt2"></i></a>
                                       </div>
-                                        <a class="btn btn-primary" href="<?php echo $url;?>resetpass-siswa/<?php echo $this->enkripsi->safe_b64encode($datasiswasiswi->ID_SISWA);?>
+                                        <a class="btn btn-primary" href="<?php echo $url;?>reset-pass-siswa/<?php echo $this->enkripsi->safe_b64encode($datasiswasiswi->ID_SISWA);?>
                                         "data-toggle="tooltip" value="delete" class="btn btn-danger" onclick="javascript: return confirm('<?php echo "Reset Password ".$datasiswasiswi->NAMA_SISWA." ?";?>')"><i class="icon_circle-slelected"></i></a>
                                       </div>
                                   </div>

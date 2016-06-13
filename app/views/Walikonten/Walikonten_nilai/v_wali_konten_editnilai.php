@@ -6,7 +6,7 @@
 				<div class="col-lg-12">
 					<h3 class="page-header"><i class="icon_document_alt"></i><?php echo $namaCTRL;?></h3>
 					<ol class="breadcrumb">
-                                            <li><i class="icon_documents"></i><a href="<?php echo $url;?>datanilai"><?php echo $breadcrumb;?></a></li>					
+                                            <li><i class="icon_documents"></i><a href="<?php echo $url;?>data-nilai"><?php echo $breadcrumb;?></a></li>					
                                         </ol>
 				</div>
 			</div>
@@ -18,7 +18,7 @@
                             <?php echo $namaCTRL;?> 
                           </header>
                           <div class="panel-body">
-                              <form class="form-horizontal" action="<?php echo $url;?>validasieditnilai" method="post">
+                              <form class="form-horizontal" action="<?php echo $url;?>validasi-edit-nilai" method="post">
                                   <!--<div class="form-group">
                                       <label class="col-sm-2 control-label">Default</label>
                                       <div class="col-sm-10">

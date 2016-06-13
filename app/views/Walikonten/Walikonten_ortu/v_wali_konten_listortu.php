@@ -9,7 +9,7 @@
                         </div>
               <!-- project team & activity end -->
 
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="btn btn-primary" href="<?php echo $url;?>tambahortu"><i class="icon_plus_alt2"></i></a>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="btn btn-primary" href="<?php echo $url;?>tambah-ortu"><i class="icon_plus_alt2"></i></a>
               <br>
               <br>
               <div class="col-lg-12">
@@ -37,12 +37,12 @@
                                  <td>
                                   <div class="btn-group">
                                       <!--<a class="btn btn-primary" href="#"><i class="icon_plus_alt2"></i></a>-->
-                                      <a class="btn btn-success" href="<?php echo $url;?>editortu/<?php echo $this->enkripsi->safe_b64encode($dataorangtua->ID_ORANGTUA);?>"><i class="icon_check_alt2"></i></a>
-                                      <a class="btn btn-danger" href="<?php echo $url;?>hapusortu/<?php echo $this->enkripsi->safe_b64encode($dataorangtua->ID_ORANGTUA);?>"
+                                      <a class="btn btn-success" href="<?php echo $url;?>edit-ortu/<?php echo $this->enkripsi->safe_b64encode($dataorangtua->ID_ORANGTUA);?>"><i class="icon_check_alt2"></i></a>
+                                      <a class="btn btn-danger" href="<?php echo $url;?>hapus-ortu/<?php echo $this->enkripsi->safe_b64encode($dataorangtua->ID_ORANGTUA);?>"
                                       data-toggle="tooltip" value="delete" class="btn btn-danger" onclick="javascript: return confirm('Hapus data ?')">
                                       <i class="icon_close_alt2"></i></a>
                                       </div>
-                                            <a class="btn btn-primary" href="<?php echo $url;?>resetpass-ortu/<?php echo $this->enkripsi->safe_b64encode($dataorangtua->ID_ORANGTUA);?>
+                                            <a class="btn btn-primary" href="<?php echo $url;?>reset-pass-ortu/<?php echo $this->enkripsi->safe_b64encode($dataorangtua->ID_ORANGTUA);?>
                                             "data-toggle="tooltip" value="delete" class="btn btn-danger" onclick="javascript: return confirm('<?php echo "Reset Password ?";?>')"><i class="icon_circle-slelected"></i></a>
                                       </div>
                                   </div>

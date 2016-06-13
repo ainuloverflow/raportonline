@@ -69,7 +69,7 @@ class Wali extends Resources\Controller
             'pageLinks' => $this->pagination->setOption(
                 array (
                     'limit' => $limit,
-                    'base' =>  $this->uri->baseUri."listsiswa/%#%",
+                    'base' =>  $this->uri->baseUri."list-siswa/%#%",
                     'total' => $this->walimodel->totalsiswa_kelas(),
                     'current' => $page
                 )
