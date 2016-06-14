@@ -37,7 +37,11 @@ class Home extends Resources\Controller
                 // Username dan password sudah benar, simpan nilai ke dalam session
                 $data = array(
                     'isLoginSiswa' => true,
-                    'username' => $usersiswa->NAMA_SISWA
+                    'username' => $usersiswa->NAMA_SISWA,
+                    'ID_KELAS' => $usersiswa->ID_KELAS,
+                    'ID_MAPEL' => $usersiswa->ID_MAPEL,
+                    'ID_NILAI' => $usersiswa->ID_NILAI,
+                    'ID_KKM' => $usersiswa->ID_KKM
                     );
                 $this->session->setValue($data);
                 $this->redirect('dashboard_siswa');

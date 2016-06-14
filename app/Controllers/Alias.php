@@ -102,6 +102,11 @@ class Alias
             'method' => 'rapot_siswa'
         ],
         
+        'cetak-rapot-siswa-as-wali' => [
+            'class' => '\\Controllers\Wali',
+            'method' => 'cetak_rapot_siswa'
+        ],
+        
         'grafik-nilai' => [
             'class' => '\\Controllers\Wali',
             'method' => 'grafik_nilai'
@@ -156,10 +161,10 @@ class Alias
             'method' => 'validate_edit_nilai'
         ],
         
-        'rapot-siswa-as-guru' => [
-            'class' => '\\Controllers\Guru',
-            'method' => 'rapot_siswa'
-        ],
+//        'rapot-siswa-as-guru' => [
+//            'class' => '\\Controllers\Guru',
+//            'method' => 'rapot_siswa'
+//        ],
         
         'grafik-nilai-guru' => [
             'class' => '\\Controllers\Guru',
@@ -169,16 +174,22 @@ class Alias
         'data-grafik-nilai-guru' => [
             'class' => '\\Controllers\Guru',
             'method' => 'data_grafik_nilai'
-        ]
+        ],
         //End routing untuk guru
         
+        //Routing siswa
+        'dashboard_siswa' => [
+            'class' => '\\Controllers\Siswa',
+            'method' => 'index'
+        ],
+    
     ];
 
     if( in_array($args[0], [
         /*Wali routing**/ 
        'dashboard_wali', 'list-ortu' ,'list-siswa', 'data-nilai', 'tambah-siswa', 'reset-pass-siswa', 'reset-pass-ortu', 'tambah-nilai',
        'tambah-ortu', 'edit-siswa', 'edit-nilai', 'hapusiswa', 'hapus-nilai', 'edit-ortu', 'hapus-ortu', 'validasi-edit-siswa', 
-       'validasi-edit-ortu', 'validasi-edit-nilai', 'rapot-siswa-as-wali', 'grafik-nilai', 'data-grafik-nilai', 
+       'validasi-edit-ortu', 'validasi-edit-nilai', 'rapot-siswa-as-wali', 'cetak-rapot-siswa-as-wali', 'grafik-nilai', 'data-grafik-nilai', 
         /*End wali routing**/
         
         //Home Routing
@@ -187,8 +198,14 @@ class Alias
         
         /*Guru Routing **/
         'dashboard_guru', 'data-nilai-as-guru', 'tambah-nilai-as-guru', 'editnilai-as-guru', 'validasi-edit-nilai-as-guru', 'grafik-nilai-guru', 
-        'data-grafik-nilai-guru', 'rapot-siswa-as-guru' 
-        /*End guru routing **/])) {
+        'data-grafik-nilai-guru', //'rapot-siswa-as-guru' 
+        /*End guru routing **/
+        
+        /*Siswa routing**/
+        'dashboard_siswa'        
+        /*End siswa routing**/
+        
+        ])) {
 
         try {
             $route[$args[0]]['class'] = new $route[$args[0]]['class'];

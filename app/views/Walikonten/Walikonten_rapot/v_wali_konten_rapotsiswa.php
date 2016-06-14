@@ -29,7 +29,7 @@
                                  <td><?php echo $rapot->NAMA_SISWA;?></td>
                                  <td>
                                   <div class="btn-group">
-                                      <a class="btn btn-info" href="<?php echo $url;?>cetak-rapot/<?php echo $this->enkripsi->safe_b64encode($rapot->ID_SISWA);?>"><i class="icon_check_alt2"></i>Cetak Rapot</a>
+                                      <a class="btn btn-info" href="<?php echo $url;?>cetak-rapot-siswa-as-wali/<?php //echo //$this->enkripsi->safe_b64encode($rapot->ID_SISWA);?>"><i class="icon_check_alt2"></i>Cetak Rapot</a>
                                   </div>
                                  </td>
                               </tr>

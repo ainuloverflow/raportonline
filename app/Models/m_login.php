@@ -8,7 +8,11 @@ class M_login {
     }
     
     public function loginsiswa($username, $password){
-    	Return $result = $this->db->row("SELECT * FROM table_siswa WHERE ID_SISWA = '$username' AND PASSWORD = '$password' ");
+    	Return $result = $this->db->row("SELECT * FROM table_siswa AS a "
+                . "INNER JOIN table_kelas AS b ON a.ID_KELAS = b.ID_KELAS "
+                . "INNER JOIN table_nilai AS c ON a.ID_SISWA = c.ID_SISWA "
+                . "WHERE NIS_SISWA = '$username' "
+                . "AND PASSWORD = '$password' ");
     }
     
     public function loginwali($username, $password){
