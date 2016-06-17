@@ -66,7 +66,7 @@
                                   <div class="form-group">
                                       <label class="col-sm-2 control-label">Taggal Lahir</label>
                                       <div class="col-sm-7">
-                                            <input type="text" value="<?php echo $editsiswa->TGL_LAHIR_SISWA;?>" name="tgl_lahir_siswa" placeholder="Contoh format tanggal yang benar 1969-03-16" class="form-control round-input">
+                                            <input type="text" value="<?php echo $editsiswa->TGL_LAHIR_SISWA;?>" name="tgl_lahir_siswa" placeholder="Contoh format tanggal yang benar 1994-03-16" class="form-control round-input">
                                       </div>
                                   </div>
                                   

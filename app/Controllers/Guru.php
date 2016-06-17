@@ -47,7 +47,7 @@ class Guru extends Resources\Controller
         );
         
         $this->output('Gurukonten/Gurukonten_home/v_header_backend', $data);
-        $this->output('Gurukonten/Gurukonten_home/v_sidebar_backend', $data);
+        $this->output('Gurukonten/v_guru_konten_sidebar', $data);
         $this->output('Gurukonten/Gurukonten_home/v_home_guru', $data);   
         $this->output('Gurukonten/Gurukonten_home/v_footer_backend', $data);
     }
@@ -69,7 +69,7 @@ class Guru extends Resources\Controller
         );
                 
         $this->output('Gurukonten/Gurukonten_nilai/v_guru_konten_header', $data);
-        $this->output('Gurukonten/Gurukonten_nilai/v_guru_konten_sidebar', $data);
+        $this->output('Gurukonten/v_guru_konten_sidebar', $data);;
         $this->output('Gurukonten/Gurukonten_nilai/v_guru_konten_listnilai', $data);   
         $this->output('Gurukonten/Gurukonten_nilai/v_guru_konten_footer_nilai', $data);
     }
@@ -112,7 +112,7 @@ class Guru extends Resources\Controller
             'url' => $this->uri->baseUri
         );
         $this->output('Gurukonten/Gurukonten_nilai/v_guru_konten_header', $data);
-        $this->output('Gurukonten/Gurukonten_nilai/v_guru_konten_sidebar', $data);
+        $this->output('Gurukonten/v_guru_konten_sidebar', $data);
         $this->output('Gurukonten/Gurukonten_nilai/v_guru_konten_tambahnilai', $data);
         $this->output('Gurukonten/Gurukonten_nilai/v_guru_konten_footer_nilai', $data);
     }
@@ -120,10 +120,8 @@ class Guru extends Resources\Controller
     public function edit_nilai(){
         $this->cek();
         $nama_mapel = $this->nama_mapel();
-        $page = (int) $page;
-        $limit = 10;
         
-        $hasil = addslashes($this->resource->uri->path(1));
+        $hasil = $this->enkripsi->safe_b64decode(addslashes($this->resource->uri->path(1)));
         
          $data = array (
             'editnilai' => $this->gurumodel->get_edit_nilaisiswa($hasil),
@@ -136,7 +134,7 @@ class Guru extends Resources\Controller
             'url' => $this->uri->baseUri
         );
         $this->output('Gurukonten/Gurukonten_nilai/v_guru_konten_header', $data);
-        $this->output('Gurukonten/Gurukonten_nilai/v_guru_konten_sidebar', $data);
+        $this->output('Gurukonten/v_guru_konten_sidebar', $data);
         $this->output('Gurukonten/Gurukonten_nilai/v_guru_konten_editnilai', $data);
         $this->output('Gurukonten/Gurukonten_nilai/v_guru_konten_footer_nilai', $data);
     }
@@ -182,11 +180,21 @@ class Guru extends Resources\Controller
             'url' => $this->uri->baseUri
         );
         $this->output('Gurukonten/Gurukonten_nilai/v_guru_konten_header', $data);
-        $this->output('Gurukonten/Gurukonten_nilai/v_guru_konten_sidebar', $data);
+        $this->output('Gurukonten/v_guru_konten_sidebar', $data);
         $this->output('Gurukonten/Gurukonten_nilai/v_guru_konten_validasieditnilai', $data);
         $this->output('Gurukonten/Gurukonten_nilai/v_guru_konten_footer_nilai', $data);
     }
     
+    /** hapus nilai siswa*/
+    public function hapus_nilai() {
+        $this->cek();
+        $value = $this->enkripsi->safe_b64decode(addslashes($this->resource->uri->path(1)));
+        $where = array('ID_SISWA' => $value);
+        
+        $this->gurumodel->hapus_nilai($where);
+        $this->redirect('data-nilai-as-guru');
+    }
+    /** end hapus nilai siswa */
     
 //    public function cetak_rapot_siswa(){
 //       // Column headings
@@ -222,7 +230,7 @@ class Guru extends Resources\Controller
         );
         
         $this->output('Gurukonten/Gurukonten_grafik/v_guru_konten_header', $data);
-        $this->output('Gurukonten/Gurukonten_grafik/v_guru_konten_sidebar', $data);
+        $this->output('Gurukonten/v_guru_konten_sidebar', $data);
         $this->output('Gurukonten/Gurukonten_grafik/v_guru_konten_grafik', $data);
         $this->output('Gurukonten/Gurukonten_grafik/v_guru_konten_footer_grafik', $data);
     }
@@ -287,14 +295,14 @@ class Guru extends Resources\Controller
         if($results==null) {
             $tambahnilai = $this->gurumodel->tambahnilai($value);
             if($tambahnilai) {
-                    echo "<script>alert('Data berhasil dimasukan'); window.location = 'datanilai-as-guru' </script>";
+                    echo "<script>alert('Data berhasil dimasukan'); window.location = 'data-nilai-as-guru' </script>";
                 }
                 else {
-                    echo "<script>alert('Data gagal dimasukan'); window.location = 'datanilai-as-guru' </script>";
+                    echo "<script>alert('Data gagal dimasukan'); window.location = 'data-nilai-as-guru' </script>";
                 }
             return true;
         } else {
-            echo "<script>alert('Error!! Nilai sudah ada'); window.location = 'datanilai-as-guru' </script>";
+            echo "<script>alert('Error!! Nilai sudah ada'); window.location = 'data-nilai-as-guru' </script>";
             return false;
         }        
     }
@@ -303,11 +311,11 @@ class Guru extends Resources\Controller
         $this->cek();
         $update = $this->gurumodel->validate_edit_nilai($value, $where);
         if ($update){
-            echo "<script>alert('Data berhasil diperbarui'); window.location = 'datanilai-as-guru' </script>";
+            echo "<script>alert('Data berhasil diperbarui'); window.location = 'data-nilai-as-guru' </script>";
             return true;
         }
         else {
-            echo "<script>alert('Data gagal diperbarui'); window.location = 'datanilai-as-guru' </script>";
+            echo "<script>alert('Data gagal diperbarui'); window.location = 'data-nilai-as-guru' </script>";
             return false;
         }
     }

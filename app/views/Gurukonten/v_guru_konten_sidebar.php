@@ -9,15 +9,9 @@
                           <span>Home</span>
                       </a>
                   </li>
-                  <!--<li>                     
-                      <a class="" href="chart-chartjs.html">
-                          <i class="icon_piechart"></i>
-                          <span>Profil</span>
-                          
-                      </a>
-                  </li>-->
+
                   <li class="sub-menu">
-                          <a class="" href="<?php echo $url;?>datanilai-as-guru">
+                          <a class="" href="<?php echo $url;?>data-nilai-as-guru">
                               <i class="icon_document_alt"></i>
                               <span>Data Nilai</span>
     
@@ -26,18 +20,21 @@
                   </li>
                   
                   <li class="sub-menu">
-                        <a href="javascript:;" class="">
-                            <i class="icon_document_alt"></i>
-                            <span>Rapot Siswa</span>
-                        </a>
-                  </li>  
+                          <a class="" href="">
+                              <i class="icon_document_alt"></i>
+                              <span>Rapot Siswa</span>
+    
+                          </a>
+                      </a>
+                  </li>
+                  
                   <li>
-                        <a class="" href="">
+                        <a class="" href="<?php echo $url;?>grafik-nilai-guru">
                             <i class="icon_piechart"></i>
                             <span>Grafik Nilai Kelas</span>
                         </a>
                   </li>      
-                  </ul>
+              </ul>
               <!-- sidebar menu end-->
           </div>
       </aside>

@@ -48,6 +48,10 @@ class M_guru {
         Return $this->db->update('table_nilai', $value, $where);
     }
     
+    public function hapus_nilai($value) { //query hapus siswa kelas
+        Return $this->db->delete('table_nilai', $value);
+    }
+    
     public function getnamasiswall() { //query get all namasiswa sesuai id kelas
         $id_kelas = $this->session->getValue("ID_KELAS");
         Return $this->db->results("SELECT * FROM table_siswa WHERE ID_KELAS = '$id_kelas'");

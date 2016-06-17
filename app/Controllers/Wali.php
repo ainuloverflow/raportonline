@@ -642,16 +642,16 @@ class Wali extends Resources\Controller
         $this->fpdf->SetX(95);
         $this->fpdf->Cell(25,8,'Ketrampilan',1,0,'C',1);
         $this->fpdf->SetX(120);
-        $this->fpdf->Cell(25,8,'Sikap',1,0,'C',1);
-        $this->fpdf->SetX(170);
-        $this->fpdf->Cell(10,8,'UTS',1,0,'C',1);
-        $this->fpdf->SetX(200);
+        $this->fpdf->Cell(8,8,'Sikap',1,0,'C',1);
+        $this->fpdf->SetX(150);//170);
+        $this->fpdf->Cell(8,8,'UTS',1,1,'L',1);
+        $this->fpdf->SetX(155);//200);
         $this->fpdf->Ln();
 //        $this->fpdf->Cell(10,8,'UAS',1,0,'C',1);
 //        $this->fpdf->Ln();
         
         ////Table position, under Fields Name
-        $Y_Table_Position = 63;
+        $Y_Table_Position = 100;//63;
         //
         //Now show the columns
         $this->fpdf->SetFont('Arial','',8);
@@ -675,9 +675,9 @@ class Wali extends Resources\Controller
         $this->fpdf->SetX(120);
         $this->fpdf->MultiCell(25,6,'Sikap',1,'C');
 
-        $this->fpdf->SetY($Y_Table_Position);
-        $this->fpdf->SetX(14);
-        $this->fpdf->MultiCell(8,6,'UTS',1,'C');
+//        $this->fpdf->SetY($Y_Table_Position);
+//        $this->fpdf->SetX(145);
+//        $this->fpdf->MultiCell(25,6,'UTS',1,'C');
 //
 //        $this->fpdf->SetY($Y_Table_Position);
 //        $this->fpdf->SetX(170);
@@ -711,6 +711,24 @@ class Wali extends Resources\Controller
         $this->output('Walikonten/v_wali_konten_sidebar', $data);;
         $this->output('Walikonten/Walikonten_grafik/v_wali_konten_grafik', $data);
         $this->output('Walikonten/Walikonten_grafik/v_wali_konten_footer_grafik', $data);
+    }
+    
+    public function data_kkm(){
+        $this->cek();
+        $data = array (
+            'nama' => $this->session->getValue('username'),
+            'nama_kelas' => $this->nama_kelas(),
+            'nama_mapel' => $this->nama_mapel(),
+            'title' => 'Dashboard Wali Kelas',
+            'header' => 'Dashboard Wali Kelas',
+            'kontendash' => 'Dashboard Wali Kelas',
+            'url' => $this->uri->baseUri
+        );
+        
+        $this->output('Walikonten/Walikonten_kkm/v_wali_konten_header', $data);
+        $this->output('Walikonten/v_wali_konten_sidebar', $data);;
+        $this->output('Walikonten/Walikonten_kkm/v_wali_konten_grafik', $data);
+        $this->output('Walikonten/Walikonten_kkm/v_wali_konten_footer_grafik', $data);
     }
     
 //    public function data_kkm(){
@@ -796,15 +814,15 @@ class Wali extends Resources\Controller
         if($results ==null){
             $tambahsiswa = $this->walimodel->tambahsiswakelas($value);
             if($tambahsiswa){
-                    echo "<script>alert('Data berhasil dimasukan'); window.location = 'data-nilai' </script>";
+                    echo "<script>alert('Data berhasil dimasukan'); window.location = 'list-siswa' </script>";
                 }
                 else {
-                    echo "<script>alert('Data gagal dimasukan'); window.location = 'data-nilai' </script>";
+                    echo "<script>alert('Data gagal dimasukan'); window.location = 'list-siswa' </script>";
                 }   
             return true;    
         }
         else {
-           echo "<script>alert('Error!! Siswa dengan NIS tersebut sudah ada'); window.location = 'data-nilai' </script>";
+           echo "<script>alert('Error!! Siswa dengan NIS tersebut sudah ada'); window.location = 'list-siswa' </script>";
            return false; 
         }
     }

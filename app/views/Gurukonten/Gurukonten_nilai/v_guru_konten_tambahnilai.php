@@ -6,7 +6,7 @@
 				<div class="col-lg-12">
 					<h3 class="page-header"><i class="icon_document_alt"></i><?php echo $namaCTRL;?></h3>
 					<ol class="breadcrumb">
-                                            <li><i class="icon_documents"></i><a href="<?php echo $url;?>datanilai-as-guru"><?php echo $breadcrumb;?></a></li>						  	
+                                            <li><i class="icon_documents"></i><a href="<?php echo $url;?>data-nilai-as-guru"><?php echo $breadcrumb;?></a></li>						  	
 					</ol>
 				</div>
 			</div>
@@ -19,7 +19,7 @@
                           </header>
                           <div class="panel-body">
                           
-                              <form class="form-horizontal" action="<?php echo $url;?>tambahnilai-as-guru" method="post">
+                              <form class="form-horizontal" action="<?php echo $url;?>tambah-nilai-as-guru" method="post">
                   
                                   <div class="form-group">
                                       <label class="col-sm-2 control-label">NIS atau Nama Siswa</label>

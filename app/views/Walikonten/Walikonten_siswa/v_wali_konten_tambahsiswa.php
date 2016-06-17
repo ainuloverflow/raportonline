@@ -18,7 +18,7 @@
                             <?php echo $namaCTRL;?> 
                           </header>
                           <div class="panel-body">
-                              <form class="form-horizontal" action="<?php echo $url;?>tambahsiswa" method="post">
+                              <form class="form-horizontal" action="<?php echo $url;?>tambah-siswa" method="post">
                                   <!--<div class="form-group">
                                       <label class="col-sm-2 control-label">Default</label>
                                       <div class="col-sm-10">
@@ -68,7 +68,7 @@
                                       <label class="col-sm-2 control-label">Taggal Lahir</label>
                                       <div class="col-sm-7">
                                           <p><?php echo $validasi->errorMessages('tgl_lahir_siswa', '<p style="color:red">', '</p>');?></p>
-                                          <input type="text" value="<?php echo $validasi->value('tgl_lahir_siswa');?>" name="tgl_lahir_siswa" placeholder="Contoh format tanggal yang benar 1969-03-16" class="form-control round-input">
+                                          <input type="text" value="<?php echo $validasi->value('tgl_lahir_siswa');?>" name="tgl_lahir_siswa" placeholder="Contoh format tanggal yang benar 1994-03-16" class="form-control round-input">
                                       </div>
                                   </div>
                                   

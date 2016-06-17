@@ -63,7 +63,7 @@
                                       <label class="col-sm-2 control-label">Tanggal Lahir Ayah</label>
                                       <div class="col-sm-7">
                                            <p><?php echo $validasi->errorMessages('tgl_lahir_ayah', '<p style="color:red">', '</p>');?></p>
-                                          <input type="text" value="<?php echo $validasi->value('tgl_lahir_ayah');?>" name="tgl_lahir_ayah" class="form-control round-input">
+                                          <input type="text" value="<?php echo $validasi->value('tgl_lahir_ayah');?>" name="tgl_lahir_ayah" placeholder="Contoh format tanggal yang benar 1967-03-16" class="form-control round-input">
                                       </div>
                                   </div>
                                   
@@ -103,7 +103,7 @@
                                       <label class="col-sm-2 control-label">Tanggal Lahir Ibu</label>
                                       <div class="col-sm-7">
                                           <p><?php echo $validasi->errorMessages('tgl_lahir_ibu', '<p style="color:red">', '</p>');?></p>
-                                          <input type="text" value="<?php echo $validasi->value('tgl_lahir_ibu');?>" name="tgl_lahir_ibu" class="form-control round-input">
+                                          <input type="text" value="<?php echo $validasi->value('tgl_lahir_ibu');?>" name="tgl_lahir_ibu" placeholder="Contoh format tanggal yang benar 1967-03-16" class="form-control round-input">
                                       </div>
                                   </div>
                                   

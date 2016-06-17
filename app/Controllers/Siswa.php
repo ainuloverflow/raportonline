@@ -12,9 +12,9 @@ class Siswa extends Resources\Controller
     
     private function cek(){ //Cek Session Login
         $ceklogin = $this->session->getValue('isLoginSiswa');
-//        $cekwali = $this->session->getValue('ID_SISWA');
-//        $cekelas = $this->session->getValue('ID_KELAS');
-        if ($ceklogin == true) { //&& $cekwali && $cekelas/*/
+        $ceksiswa = $this->session->getValue('ID_SISWA');
+        $cekelas = $this->session->getValue('ID_KELAS');
+        if ($ceklogin == true && $ceksiswa && $cekelas) {
     
             return true;
         } else {

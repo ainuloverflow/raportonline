@@ -175,6 +175,11 @@ class Alias
             'class' => '\\Controllers\Guru',
             'method' => 'data_grafik_nilai'
         ],
+        
+        'hapus-nilai-as-guru' => [
+            'class' => '\\Controllers\Guru',
+            'method' => 'hapus_nilai'
+        ],
         //End routing untuk guru
         
         //Routing siswa
@@ -197,8 +202,8 @@ class Alias
         //End Home Routing
         
         /*Guru Routing **/
-        'dashboard_guru', 'data-nilai-as-guru', 'tambah-nilai-as-guru', 'editnilai-as-guru', 'validasi-edit-nilai-as-guru', 'grafik-nilai-guru', 
-        'data-grafik-nilai-guru', //'rapot-siswa-as-guru' 
+        'dashboard_guru', 'data-nilai-as-guru', 'tambah-nilai-as-guru', 'edit-nilai-as-guru', 'validasi-edit-nilai-as-guru', 'grafik-nilai-guru', 
+        'data-grafik-nilai-guru', 'hapus-nilai-as-guru', //'rapot-siswa-as-guru' 
         /*End guru routing **/
         
         /*Siswa routing**/

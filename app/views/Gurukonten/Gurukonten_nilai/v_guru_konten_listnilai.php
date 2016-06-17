@@ -9,7 +9,7 @@
                         </div>
               <!-- project team & activity end -->
 
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="btn btn-primary" href="<?php echo $url;?>tambahnilai-as-guru"><i class="icon_plus_alt2"></i></a>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="btn btn-primary" href="<?php echo $url;?>tambah-nilai-as-guru"><i class="icon_plus_alt2"></i></a>
               <br>
               <br>
               <div class="col-lg-12">
@@ -40,8 +40,8 @@
                                  <td>
                                   <div class="btn-group">
                                       <!--<a class="btn btn-primary" href="#"><i class="icon_plus_alt2"></i></a>-->
-                                      <a class="btn btn-success" href="<?php echo $url;?>editnilai-as-guru/<?php echo $nilai->ID_NILAI;?>"><i class="icon_check_alt2"></i></a>
-                                      <a class="btn btn-danger" href="<?php echo $url;?>hapusnilai-as-guru/<?php echo $nilai->ID_NILAI;?>"
+                                      <a class="btn btn-success" href="<?php echo $url;?>edit-nilai-as-guru/<?php echo $this->enkripsi->safe_b64encode($nilai->ID_NILAI);?>"><i class="icon_check_alt2"></i></a>
+                                      <a class="btn btn-danger" href="<?php echo $url;?>hapus-nilai-as-guru/<?php echo $this->enkripsi->safe_b64encode($nilai->ID_NILAI);?>"
                                       data-toggle="tooltip" value="delete" class="btn btn-danger" onclick="javascript: return confirm('<?php echo "Hapus Nilai";?>')">
                                       <i class="icon_close_alt2"></i></a>
                                   </div>
