@@ -33,7 +33,7 @@ class Siswa extends Resources\Controller
             'url' => $this->uri->baseUri
             );
         $this->output('Siswakonten/Siswakonten_home/v_header_backend', $data);
-        $this->output('Siswakonten/v_sidebar_backend', $data);
+        $this->output('Siswakonten/v_siswa_konten_sidebar', $data);
         $this->output('Siswakonten/Siswakonten_home/v_home_siswa', $data);   
         $this->output('Siswakonten/Siswakonten_home/v_footer_backend', $data);
         
