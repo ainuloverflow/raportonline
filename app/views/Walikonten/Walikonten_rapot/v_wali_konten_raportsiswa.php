@@ -21,7 +21,7 @@
  <div class="container">
      
       <div class="row pad-top-botm ">
-         <div class="col-lg-6 col-md-6 col-sm-6 ">
+         <div class="col-lg-6 col-md-6 col-sm-6">
             <img src="<?php echo $url;?>invoice/assets/img/sman1krembung.png" style="padding-bottom:20px;" /> 
          </div>
      </div>
@@ -59,40 +59,37 @@
                                 <table class="table table-striped table-bordered table-hover">
                             <thead>
                                 <tr>
-                                    <th rowspan="2">S. No.</th>
-                                    <th colspan="4" "text-align: center;">Perticulars</th>
+                                    <th rowspan="3" width="25" style="vertical-align: middle; text-align: center;">No.</th>
+                                    <th rowspan="3" width="300"style="vertical-align: middle; text-align: center;">Komponen Mata Pelajaran</th>
+                                    <th rowspan="3" width="25" style="vertical-align: middle; text-align: center;">KKM</th>
+                                    <th colspan="5" style="text-align: center;">Nilai Hasil Belajar</th>
                                 </tr>
                                 <tr>  
-                                    
-                                    <th>Quantity.</th>
-                                    <th>Unit Price</th>
-                                    <th>Sub Total</th>
-                                    <th>Haha</th>
+                                    <th colspan="2" width="10" style="text-align: center;">Pengetahuan</th>
+                                    <th colspan="2" width="10" style="text-align: center;">Pratikum</th>
+                                    <th width="50" style="text-align: center;">Sikap/Efektif</th>              
+                                </tr>
+                                <tr>
+                                    <th style="text-align: center;">Angka</th>
+                                    <th style="text-align: center;">Huruf</th>
+                                    <th style="text-align: center;">Angka</th>
+                                    <th style="text-align: center;">Huruf</th>
+                                    <th style="text-align: center;">Huruf</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>1</td>
+<!--                                    <td>1</td>
                                     <td>Website Design</td>
                                     <td>1</td>
                                     <td>300 USD</td>
                                     <td>300 USD</td>
+                                    <td>Website Design</td>
+                                    <td>1</td>
+                                    <td>300 USD</td>
+                                    <td>300 USD</td>
+                                    <td>300 USD</td>-->
                                 </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Plugin Dev.</td>
-                                    <td>2</td>
-                                    <td>200 USD</td>
-                                    <td>400 USD</td>
-                                </tr>
-                                <tr>
-                                     <td>3</td>
-                                    <td>Hosting Domains</td>
-                                    <td>2</td>
-                                    <td>100 USD</td>
-                                    <td>200 USD</td>
-                                </tr>
-                                
                             </tbody>
                         </table>
                </div>
