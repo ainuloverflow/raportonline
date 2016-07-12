@@ -592,105 +592,112 @@ class Wali extends Resources\Controller
     }
     
     public function cetak_rapot_siswa(){
-        $nis = '125623212';
-        $nama = 'Ainul Yaqin';
-        $kelas = 'XII';
-        $semester = '2';
-
-        $this->fpdf->AddPage();
-
-        $this->fpdf->SetFont('Arial','B',13);
-        $this->fpdf->Cell(80);
-        $this->fpdf->Cell(30,8,'RAPOT SISWA',0,0,'C');
-        $this->fpdf->Ln();
-        $this->fpdf->Cell(80);
-        $this->fpdf->Cell(30,10,'SMA NEGERI 1 KREMBUNG',0,0,'C');
-        $this->fpdf->Ln();
-        $this->fpdf->Ln();
-
-        $this->fpdf->SetFont('Arial','',11);
-        $this->fpdf->Cell(20); //Atur cel kanan
-        $this->fpdf->Cell(20,5,'NIS : '.$nis,0,0,'C');
-        //$this->fpdf->Ln();
-
-        $this->fpdf->Cell(108); //Atur cel kanan
-        $this->fpdf->Cell(20,5,'Kelas : '.$kelas,0,0,'C');
-        $this->fpdf->Ln();
-
-        $this->fpdf->Cell(28); //Atur cel kanan
-        $this->fpdf->Cell(20,5,'Nama Siswa : '.$nama,0,0,'C');
-        //$this->fpdf->Ln();
-
-        $this->fpdf->Cell(102); //Atur cel kanan
-        $this->fpdf->Cell(20,5,'Semester : '.$semester,0,0,'C');
-        $this->fpdf->Ln();
-
-        $Y_Fields_Name_position = 55;
-
-        //First create each Field Name
-        //Gray color filling each Field Name box
-        $this->fpdf->SetFillColor(110,180,230);
-        //Bold Font for Field Name
-        $this->fpdf->SetFont('Arial','B',8);
-        $this->fpdf->SetY($Y_Fields_Name_position);
-        $this->fpdf->SetX(5);
-        $this->fpdf->Cell(25,8,'No. Mapel',1,0,'C',1);
-        $this->fpdf->SetX(30);
-        $this->fpdf->Cell(40,8,'Mata Pelajaran',1,0,'C',1);
-        $this->fpdf->SetX(70);
-        $this->fpdf->Cell(25,8,'Keahlian',1,0,'C',1);
-        $this->fpdf->SetX(95);
-        $this->fpdf->Cell(25,8,'Ketrampilan',1,0,'C',1);
-        $this->fpdf->SetX(120);
-        $this->fpdf->Cell(8,8,'Sikap',1,0,'C',1);
-        $this->fpdf->SetX(150);//170);
-        $this->fpdf->Cell(8,8,'UTS',1,1,'L',1);
-        $this->fpdf->SetX(155);//200);
-        $this->fpdf->Ln();
-//        $this->fpdf->Cell(10,8,'UAS',1,0,'C',1);
+//        $nis = '125623212';
+//        $nama = 'Ainul Yaqin';
+//        $kelas = 'XII';
+//        $semester = '2';
+//
+//        $this->fpdf->AddPage();
+//
+//        $this->fpdf->SetFont('Arial','B',13);
+//        $this->fpdf->Cell(80);
+//        $this->fpdf->Cell(30,8,'RAPOT SISWA',0,0,'C');
 //        $this->fpdf->Ln();
-        
-        ////Table position, under Fields Name
-        $Y_Table_Position = 100;//63;
-        //
-        //Now show the columns
-        $this->fpdf->SetFont('Arial','',8);
-        $this->fpdf->SetY($Y_Table_Position);
-        $this->fpdf->SetX(5);
-        $this->fpdf->MultiCell(25,6,'No. Mapel',1,'C');
-
-        $this->fpdf->SetY($Y_Table_Position);
-        $this->fpdf->SetX(30);
-        $this->fpdf->MultiCell(40,6,'Mata Pelajaran',1,'L');
-
-        $this->fpdf->SetY($Y_Table_Position);
-        $this->fpdf->SetX(70);
-        $this->fpdf->MultiCell(25,6,'Keahlian',1,'C');
-
-        $this->fpdf->SetY($Y_Table_Position);
-        $this->fpdf->SetX(95);
-        $this->fpdf->MultiCell(25,6,'Keterampilan',1,'C');
-        
-        $this->fpdf->SetY($Y_Table_Position);
-        $this->fpdf->SetX(120);
-        $this->fpdf->MultiCell(25,6,'Sikap',1,'C');
-
+//        $this->fpdf->Cell(80);
+//        $this->fpdf->Cell(30,10,'SMA NEGERI 1 KREMBUNG',0,0,'C');
+//        $this->fpdf->Ln();
+//        $this->fpdf->Ln();
+//
+//        $this->fpdf->SetFont('Arial','',11);
+//        $this->fpdf->Cell(20); //Atur cel kanan
+//        $this->fpdf->Cell(20,5,'NIS : '.$nis,0,0,'C');
+//        //$this->fpdf->Ln();
+//
+//        $this->fpdf->Cell(108); //Atur cel kanan
+//        $this->fpdf->Cell(20,5,'Kelas : '.$kelas,0,0,'C');
+//        $this->fpdf->Ln();
+//
+//        $this->fpdf->Cell(28); //Atur cel kanan
+//        $this->fpdf->Cell(20,5,'Nama Siswa : '.$nama,0,0,'C');
+//        //$this->fpdf->Ln();
+//
+//        $this->fpdf->Cell(102); //Atur cel kanan
+//        $this->fpdf->Cell(20,5,'Semester : '.$semester,0,0,'C');
+//        $this->fpdf->Ln();
+//
+//        $Y_Fields_Name_position = 55;
+//
+//        //First create each Field Name
+//        //Gray color filling each Field Name box
+//        $this->fpdf->SetFillColor(110,180,230);
+//        //Bold Font for Field Name
+//        $this->fpdf->SetFont('Arial','B',8);
+//        $this->fpdf->SetY($Y_Fields_Name_position);
+//        $this->fpdf->SetX(5);
+//        $this->fpdf->Cell(25,8,'No. Mapel',1,0,'C',1);
+//        $this->fpdf->SetX(30);
+//        $this->fpdf->Cell(40,8,'Mata Pelajaran',1,0,'C',1);
+//        $this->fpdf->SetX(70);
+//        $this->fpdf->Cell(25,8,'Keahlian',1,0,'C',1);
+//        $this->fpdf->SetX(95);
+//        $this->fpdf->Cell(25,8,'Ketrampilan',1,0,'C',1);
+//        $this->fpdf->SetX(120);
+//        $this->fpdf->Cell(8,8,'Sikap',1,0,'C',1);
+//        $this->fpdf->SetX(150);//170);
+//        $this->fpdf->Cell(8,8,'UTS',1,1,'L',1);
+//        $this->fpdf->SetX(155);//200);
+//        $this->fpdf->Ln();
+////        $this->fpdf->Cell(10,8,'UAS',1,0,'C',1);
+////        $this->fpdf->Ln();
+//        
+//        ////Table position, under Fields Name
+//        $Y_Table_Position = 100;//63;
+//        //
+//        //Now show the columns
+//        $this->fpdf->SetFont('Arial','',8);
 //        $this->fpdf->SetY($Y_Table_Position);
-//        $this->fpdf->SetX(145);
-//        $this->fpdf->MultiCell(25,6,'UTS',1,'C');
+//        $this->fpdf->SetX(5);
+//        $this->fpdf->MultiCell(25,6,'No. Mapel',1,'C');
 //
 //        $this->fpdf->SetY($Y_Table_Position);
-//        $this->fpdf->SetX(170);
-//        $this->fpdf->MultiCell(25,6,'UAS',1,'C');
-
-//        $this->fpdf->SetY($Y_Table_Position);
-//        $this->fpdf->SetX(235);
-//        $this->fpdf->MultiCell(25,6,'',1,'C');
+//        $this->fpdf->SetX(30);
+//        $this->fpdf->MultiCell(40,6,'Mata Pelajaran',1,'L');
 //
 //        $this->fpdf->SetY($Y_Table_Position);
-//        $this->fpdf->SetX(260);
-//        $this->fpdf->MultiCell(32,6,'',1,'C');
-        $this->fpdf->Output();
+//        $this->fpdf->SetX(70);
+//        $this->fpdf->MultiCell(25,6,'Keahlian',1,'C');
+//
+//        $this->fpdf->SetY($Y_Table_Position);
+//        $this->fpdf->SetX(95);
+//        $this->fpdf->MultiCell(25,6,'Keterampilan',1,'C');
+//        
+//        $this->fpdf->SetY($Y_Table_Position);
+//        $this->fpdf->SetX(120);
+//        $this->fpdf->MultiCell(25,6,'Sikap',1,'C');
+//
+////        $this->fpdf->SetY($Y_Table_Position);
+////        $this->fpdf->SetX(145);
+////        $this->fpdf->MultiCell(25,6,'UTS',1,'C');
+////
+////        $this->fpdf->SetY($Y_Table_Position);
+////        $this->fpdf->SetX(170);
+////        $this->fpdf->MultiCell(25,6,'UAS',1,'C');
+//
+////        $this->fpdf->SetY($Y_Table_Position);
+////        $this->fpdf->SetX(235);
+////        $this->fpdf->MultiCell(25,6,'',1,'C');
+////
+////        $this->fpdf->SetY($Y_Table_Position);
+////        $this->fpdf->SetX(260);
+////        $this->fpdf->MultiCell(32,6,'',1,'C');
+//        $this->fpdf->Output();
+        
+        $this->cek();
+        $data = array(
+            'url' => $this->uri->baseUri
+        );
+        
+        $this->output('Walikonten/Walikonten_rapot/v_wali_konten_raportsiswa', $data);
 
     }
     
@@ -708,7 +715,7 @@ class Wali extends Resources\Controller
         );
         
         $this->output('Walikonten/Walikonten_grafik/v_wali_konten_header', $data);
-        $this->output('Walikonten/v_wali_konten_sidebar', $data);;
+        $this->output('Walikonten/v_wali_konten_sidebar', $data);
         $this->output('Walikonten/Walikonten_grafik/v_wali_konten_grafik', $data);
         $this->output('Walikonten/Walikonten_grafik/v_wali_konten_footer_grafik', $data);
     }
