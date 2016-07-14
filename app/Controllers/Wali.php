@@ -719,7 +719,7 @@ class Wali extends Resources\Controller
         $this->output('Walikonten/Walikonten_grafik/v_wali_konten_grafik', $data);
         $this->output('Walikonten/Walikonten_grafik/v_wali_konten_footer_grafik', $data);
     }
-    
+           
     public function data_kkm(){
         $this->cek();
         $data = array (
@@ -736,6 +736,39 @@ class Wali extends Resources\Controller
         $this->output('Walikonten/v_wali_konten_sidebar', $data);;
         $this->output('Walikonten/Walikonten_kkm/v_wali_konten_grafik', $data);
         $this->output('Walikonten/Walikonten_kkm/v_wali_konten_footer_grafik', $data);
+    }
+    
+    public function tambah_kkm(){
+        $this->cek();
+        $data = array(
+            
+        );
+        $this->output();
+        $this->output();
+        $this->output();
+        $this->output();
+    }
+    
+    public function edit_kkm(){
+        $this->cek();
+        $data = array(
+            
+        );
+        $this->output();
+        $this->output();
+        $this->output();
+        $this->output();
+    }
+    
+    public function hapus_kkm(){
+        $this->cek();
+        $data = array(
+            
+        );
+        $this->output();
+        $this->output();
+        $this->output();
+        $this->output();
     }
     
 //    public function data_kkm(){

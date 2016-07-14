@@ -116,6 +116,11 @@ class Alias
             'class' => '\\Controllers\Wali',
             'method' => 'data_grafik_nilai'
         ],
+        
+        'data-kkm' =>[
+            'class' => '\\Controllers\Wali',
+            'method' => 'data_kkm'
+        ],
         //end routing untuk wali
         
         //Routing untuk Home

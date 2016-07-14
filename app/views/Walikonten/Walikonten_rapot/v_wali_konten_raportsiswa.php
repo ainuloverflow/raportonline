@@ -21,9 +21,9 @@
  <div class="container">
      
       <div class="row pad-top-botm ">
-         <div class="col-lg-6 col-md-6 col-sm-6">
-            <img src="<?php echo $url;?>invoice/assets/img/sman1krembung.png" style="padding-bottom:20px;" /> 
-         </div>
+         <!--<div class="col-lg-6 col-md-6 col-sm-6">-->
+            <img src="<?php echo $url;?>invoice/assets/img/sman1krembung.png" /> 
+         <!--</div>-->
      </div>
      
      <div  class="row pad-top-botm client-info">
@@ -59,23 +59,27 @@
                                 <table class="table table-striped table-bordered table-hover">
                             <thead>
                                 <tr>
-                                    <th rowspan="3" width="25" style="vertical-align: middle; text-align: center;">No.</th>
-                                    <th rowspan="3" width="300"style="vertical-align: middle; text-align: center;">Komponen Mata Pelajaran</th>
-                                    <th rowspan="3" width="25" style="vertical-align: middle; text-align: center;">KKM</th>
-                                    <th colspan="5" style="text-align: center;">Nilai Hasil Belajar</th>
+                                    <th rowspan="2" width="25" style="vertical-align: middle; text-align: center;">No.</th>
+                                    <th rowspan="2" width="300"style="vertical-align: middle; text-align: center;">Komponen Mata Pelajaran</th>
+                                    <th rowspan="2" width="25" style="vertical-align: middle; text-align: center;">KKM</th>
+                                    <th colspan="7" style="text-align: center;">Nilai Hasil Belajar</th>
                                 </tr>
                                 <tr>  
-                                    <th colspan="2" width="10" style="text-align: center;">Pengetahuan</th>
-                                    <th colspan="2" width="10" style="text-align: center;">Pratikum</th>
-                                    <th width="50" style="text-align: center;">Sikap/Efektif</th>              
+                                    <th  style="vertical-align: middle; text-align: center;">Nilai KI-3 (Rerata NH)</th>
+                                    <th  style="vertical-align: middle; text-align: center;">Predikat</th>
+                                    <th  style="vertical-align: middle; text-align: center;">Rerata Nilai Harian</th>
+                                    <th  style="vertical-align: middle; text-align: center;">UTS</th>   
+                                    <th  style="vertical-align: middle; text-align: center;">UAS</th>   
+                                    <th  style="vertical-align: middle; text-align: center;">Nilai Ahkir</th>
+                                    <th  style="vertical-align: middle; text-align: center;">Nilai Sikap</th>
                                 </tr>
-                                <tr>
+<!--                                <tr>
                                     <th style="text-align: center;">Angka</th>
                                     <th style="text-align: center;">Huruf</th>
                                     <th style="text-align: center;">Angka</th>
                                     <th style="text-align: center;">Huruf</th>
                                     <th style="text-align: center;">Huruf</th>
-                                </tr>
+                                </tr>-->
                             </thead>
                             <tbody>
                                 <tr>
