@@ -26,7 +26,7 @@
                           <li><a class="" href="<?php echo $url;?>list-siswa">Data Siswa</a></li>
                           <li><a class="" href="<?php echo $url;?>list-ortu">Data Orang Tua Siswa</a></li>
                           <li><a class="" href="<?php echo $url;?>data-nilai">Data Nilai Siswa</a></li>
-                          <li><a class="" href="<?php echo $url;?>data-kkm">Data KKM</a></li>
+                          <li><a class="" href="<?php echo $url;?>data-kkm-kd">Data KKM dan KD</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">

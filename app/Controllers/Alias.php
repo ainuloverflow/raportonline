@@ -117,9 +117,9 @@ class Alias
             'method' => 'data_grafik_nilai'
         ],
         
-        'data-kkm' =>[
+        'data-kkm-kd' =>[
             'class' => '\\Controllers\Wali',
-            'method' => 'data_kkm'
+            'method' => 'data_kkm_kd'
         ],
         //end routing untuk wali
         
@@ -197,9 +197,11 @@ class Alias
 
     if( in_array($args[0], [
         /*Wali routing**/ 
-       'dashboard_wali', 'list-ortu' ,'list-siswa', 'data-nilai', 'tambah-siswa', 'reset-pass-siswa', 'reset-pass-ortu', 'tambah-nilai',
-       'tambah-ortu', 'edit-siswa', 'edit-nilai', 'hapusiswa', 'hapus-nilai', 'edit-ortu', 'hapus-ortu', 'validasi-edit-siswa', 
-       'validasi-edit-ortu', 'validasi-edit-nilai', 'rapot-siswa-as-wali', 'cetak-rapot-siswa-as-wali', 'grafik-nilai', 'data-grafik-nilai', 
+       'dashboard_wali', 'list-ortu' ,'list-siswa', 'data-nilai', 'tambah-siswa', 
+       'reset-pass-siswa', 'reset-pass-ortu', 'tambah-nilai','tambah-ortu', 'edit-siswa', 
+       'edit-nilai', 'hapusiswa', 'hapus-nilai', 'edit-ortu', 'hapus-ortu', 'validasi-edit-siswa', 
+       'validasi-edit-ortu', 'validasi-edit-nilai', 'rapot-siswa-as-wali', 'cetak-rapot-siswa-as-wali', 
+       'grafik-nilai', 'data-grafik-nilai', 'data-kkm-kd',
         /*End wali routing**/
         
         //Home Routing
@@ -207,7 +209,8 @@ class Alias
         //End Home Routing
         
         /*Guru Routing **/
-        'dashboard_guru', 'data-nilai-as-guru', 'tambah-nilai-as-guru', 'edit-nilai-as-guru', 'validasi-edit-nilai-as-guru', 'grafik-nilai-guru', 
+        'dashboard_guru', 'data-nilai-as-guru', 'tambah-nilai-as-guru', 'edit-nilai-as-guru', 
+        'validasi-edit-nilai-as-guru', 'grafik-nilai-guru', 
         'data-grafik-nilai-guru', 'hapus-nilai-as-guru', //'rapot-siswa-as-guru' 
         /*End guru routing **/
         
