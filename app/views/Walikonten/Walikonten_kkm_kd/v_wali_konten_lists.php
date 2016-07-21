@@ -26,26 +26,26 @@
                                  <th> Aksi</th>
                               </tr>
                               <tr>
-                            <?php if($datakkm) : $no = 1?>
-                                <?php foreach ($datakkm as $data_kkm) :?>
-                                 <td><?php echo $no++ ;?></td>
-                                 <td><?php echo $data_kkm->ID_MAPEL;?></td>
-                                 <td><?php echo $data_kkm->TINGKAT_KELAS;?></td>
-                                 <td><?php echo $data_kkm->TAHUN_AJARAN;?></td>
-                                 <td><?php echo $data_kkm->SEMESTER;?></td>
-                                 <td><?php echo $data_kkm->NILAI_KKM;?></td>
+                            <?php //if($datakkm) : $no = 1?>
+                                <?php //foreach ($datakkm as $data_kkm) :?>
+                                 <td><?php //echo $no++ ;?></td>
+                                 <td><?php //echo $data_kkm->ID_MAPEL;?></td>
+                                 <td><?php //echo $data_kkm->TINGKAT_KELAS;?></td>
+                                 <td><?php //echo $data_kkm->TAHUN_AJARAN;?></td>
+                                 <td><?php //echo $data_kkm->SEMESTER;?></td>
+                                 <td><?php //echo $data_kkm->NILAI_KKM;?></td>
                                  <td>
                                   <div class="btn-group">
-                                      <a class="btn btn-success" href="<?php echo $url;?>edit-data-kkm/<?php echo $data_kkm->ID_KKM;?>"><i class="icon_check_alt2"></i></a>
-                                      <a class="btn btn-danger" href="<?php echo $url;?>hapus-data-kkm/<?php echo $data_kkm->ID_KKM;?>"
-                                      data-toggle="tooltip" value="delete" class="btn btn-danger" onclick="javascript: return confirm('<?php echo "Hapus data ?";?>')"><i class="icon_close_alt2"></i></a>
+                                      <a class="btn btn-success" href="<?php //echo $url;?>edit-data-kkm/<?php //echo $data_kkm->ID_KKM;?>"><i class="icon_check_alt2"></i></a>
+                                      <a class="btn btn-danger" href="<?php //echo $url;?>hapus-data-kkm/<?php// echo $data_kkm->ID_KKM;?>"
+                                      data-toggle="tooltip" value="delete" class="btn btn-danger" onclick="javascript: return confirm('<?php //echo "Hapus data ?";?>')"><i class="icon_close_alt2"></i></a>
                                   </div>
                                   </td>
                               </tr>
-                                <?php endforeach;?>
-                                <?php else : ?>
+                                <?php //endforeach;?>
+                                <?php //else : ?>
                                     <tr><td colspan='7'>Tidak ada data.</td></tr>
-                                <?php endif;?>                  
+                                <?php //endif;?>                  
                            </tbody>
                         </table>
                       </section>
