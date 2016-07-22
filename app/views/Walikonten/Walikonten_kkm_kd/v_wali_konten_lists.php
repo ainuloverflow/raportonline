@@ -9,7 +9,7 @@
                         </div>
               <!-- project team & activity end -->
 
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="btn btn-primary" href="<?php echo $url;?>tambah-data-kkm"><i class="icon_plus_alt2"></i></a>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="btn btn-primary" href="<?php echo $url;?>tambah-data-kkm"><i class="icon_plus_alt2"></i> Tambah KKM</a>
               <br>
               <br>
               <div class="col-lg-12">
@@ -36,9 +36,9 @@
                                  <td><?php //echo $data_kkm->TINGKAT_KELAS;?></td>
                                  <td>
                                   <div class="btn-group">
-                                      <a class="btn btn-success" href="<?php //echo $url;?>edit-data-kkm/<?php //echo $data_kkm->ID_KKM;?>"><i class="icon_check_alt2"></i></a>
+                                      <a class="btn btn-success" href="<?php //echo $url;?>edit-data-kkm/<?php //echo $data_kkm->ID_KKM;?>"><i class="icon_check_alt2"></i> Edit</a>
                                       <a class="btn btn-danger" href="<?php //echo $url;?>hapus-data-kkm/<?php //echo $data_kkm->ID_KKM;?>"
-                                      data-toggle="tooltip" value="delete" class="btn btn-danger" onclick="javascript: return confirm('<?php //echo "Hapus data ?";?>')"><i class="icon_close_alt2"></i></a>
+                                      data-toggle="tooltip" value="delete" class="btn btn-danger" onclick="javascript: return confirm('<?php //echo "Hapus data ?";?>')"><i class="icon_close_alt2"></i> Hapus</a>
                                   </div>
                                   </td>
                               </tr>
@@ -51,6 +51,9 @@
                       </section>
                   </div>
               
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="btn btn-primary" href="<?php echo $url;?>tambah-kd"><i class="icon_plus_alt2"></i> Tambah KD</a>
+              <br>
+              <br>
               <div class="col-lg-12">
                       <section class="panel">         
                           <table class="table table-striped table-advance table-hover">
@@ -69,9 +72,9 @@
                                  <td><?php //echo $data_kkm->TINGKAT_KELAS;?></td>
                                  <td>
                                   <div class="btn-group">
-                                      <a class="btn btn-success" href="<?php //echo $url;?>edit-data-kkm/<?php //echo $data_kkm->ID_KKM;?>"><i class="icon_check_alt2"></i></a>
+                                      <a class="btn btn-success" href="<?php //echo $url;?>edit-data-kkm/<?php //echo $data_kkm->ID_KKM;?>"><i class="icon_check_alt2"></i> Edit</a>
                                       <a class="btn btn-danger" href="<?php //echo $url;?>hapus-data-kkm/<?php //echo $data_kkm->ID_KKM;?>"
-                                      data-toggle="tooltip" value="delete" class="btn btn-danger" onclick="javascript: return confirm('<?php //echo "Hapus data ?";?>')"><i class="icon_close_alt2"></i></a>
+                                      data-toggle="tooltip" value="delete" class="btn btn-danger" onclick="javascript: return confirm('<?php //echo "Hapus data ?";?>')"><i class="icon_close_alt2"></i> Hapus</a>
                                   </div>
                                   </td>
                               </tr>

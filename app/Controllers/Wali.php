@@ -637,7 +637,7 @@ class Wali extends Resources\Controller
         $this->output('Walikonten/Walikonten_kkm_kd/v_wali_konten_footer', $data);
     }
     
-    public function tambah_kkm_kd(){
+    public function tambah_kd(){
         $this->cek();
         $data = array(
             
