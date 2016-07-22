@@ -640,12 +640,21 @@ class Wali extends Resources\Controller
     public function tambah_kd(){
         $this->cek();
         $data = array(
-            
+            'validasi' =>$this->validasi,
+            'nama' => $this->session->getValue('username'),
+            'nama_kelas' => $this->nama_kelas(),
+            'nama_mapel' => $this->nama_mapel(),
+            'namaCTRL' => 'TAMBAH DATA KOPETENSI DASAR',
+            'breadcrumb' => 'Data KKM dan KD',
+            'title' => 'Dashboard Wali Kelas',
+            'header' => 'Dashboard Wali Kelas',
+            'kontendash' => 'Dashboard Wali Kelas',
+            'url' => $this->uri->baseUri
         );
-        $this->output();
-        $this->output();
-        $this->output();
-        $this->output();
+        $this->output('Walikonten/Walikonten_kkm_kd/v_wali_konten_header', $data);
+        $this->output('Walikonten/v_wali_konten_sidebar', $data);
+        $this->output('Walikonten/Walikonten_kkm_kd/v_wali_konten_tambah_kd', $data);
+        $this->output('Walikonten/Walikonten_kkm_kd/v_wali_konten_footer');
     }
     
     public function edit_kkm_kd(){

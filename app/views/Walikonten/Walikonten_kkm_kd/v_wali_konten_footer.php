@@ -42,23 +42,6 @@
     <script src="<?php echo $url;?>assets/js/charts.js"></script>
     <script src="<?php echo $url;?>assets/js/jquery.slimscroll.min.js"></script>
     
-    <script>
-        var cariortu = [
-	<?php
-	foreach($getortuall as $dataortu)
-	{
-            echo "\"";
-            echo $dataortu->ID_ORANGTUA.' - '.$dataortu->NIK_AYAH.' - '.$dataortu->NAMA_AYAH.' - '.$dataortu->NIK_IBU.' - '.$dataortu->NAMA_IBU;
-            echo "\",";							   
-        }
-	?>
-        ];
-        
-        $("#id_orangtua").autocomplete({
-	 source: cariortu
-	});
-    </script>
-    
     <!--<script>
         $('#nama_siswa').autocomplete({
 	source: function( request, response ) {
