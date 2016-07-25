@@ -147,6 +147,71 @@ public $cekHP = true;
                 'filter' => array('trim')
             ),
             
+            'ki-3' => array( 
+                'rules' => array(
+                    'required',
+                ),
+                'label' => 'Kopetensi dasar KI-3',
+                'filter' => array('trim')
+            ),
+            
+            'deskripsiki-3' => array( 
+                'rules' => array(
+                    'required',
+                ),
+                'label' => 'Deskripsi singkat KI-3',
+                'filter' => array('trim')
+            ),
+            
+//            'ki-4' => array( 
+//                'rules' => array(
+//                    'required',
+//                ),
+//                'label' => 'Kopetensi dasar KI-4',
+//                'filter' => array('trim')
+//            ),
+//            
+//            'deskripsiki-4' => array( 
+//                'rules' => array(
+//                    'required',
+//                ),
+//                'label' => 'Deskripsi singkat KI-4',
+//                'filter' => array('trim')
+//            ),
+            
+            'ki-1' => array( 
+                'rules' => array(
+                    'required',
+                ),
+                'label' => 'Kopetensi dasar KI-1',
+                'filter' => array('trim')
+            ),
+            
+            'deskripsiki-1' => array( 
+                'rules' => array(
+                    'required',
+                ),
+                'label' => 'Deskripsi singkat KI-1',
+                'filter' => array('trim')
+            ),
+            
+            'ki-2' => array( 
+                'rules' => array(
+                    'required',
+                ),
+                'label' => 'Kopetensi dasar KI-2',
+                'filter' => array('trim')
+            ),
+            
+            'deskripsiki-2' => array( 
+                'rules' => array(
+                    'required',
+                ),
+                'label' => 'Deskripsi singkat KI-2',
+                'filter' => array('trim')
+            ),
+          
+            
             /** End Validasi orangtua oleh controller Wali */
             
             /** Validasi nilai oleh controller Wali */ 

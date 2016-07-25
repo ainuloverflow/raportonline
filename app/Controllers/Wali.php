@@ -639,11 +639,29 @@ class Wali extends Resources\Controller
     
     public function tambah_kd(){
         $this->cek();
+        
+         if($_SERVER['REQUEST_METHOD'] == 'POST') {
+            if($this->validasi->validate()) {                                                         
+                $value = array (
+                    'ID_MAPEL' => $this->session->getValue('ID_MAPEL'),
+                    'KI_3' => $this->post->POST('ki-3',FILTER_SANITIZE_MAGIC_QUOTES),
+                    'DESKRIPSI_KD_KI_3' => $this->post->POST('deskripsiki-3',FILTER_SANITIZE_MAGIC_QUOTES),
+                    'KI_4' => $this->post->POST('ki-4',FILTER_SANITIZE_MAGIC_QUOTES),
+                    'DESKRIPSI_KD_KI_4' => $this->post->POST('deskripsiki-4',FILTER_SANITIZE_MAGIC_QUOTES),
+                    'KI_1' => $this->post->POST('ki-1',FILTER_SANITIZE_MAGIC_QUOTES),
+                    'DESKRIPSI_KD_KI_1' => $this->post->POST('deskripsiki-1',FILTER_SANITIZE_MAGIC_QUOTES),
+                    'KI_2' => $this->post->POST('ki-2',FILTER_SANITIZE_MAGIC_QUOTES),
+                    'DESKRIPSI_KD_KI_2' => $this->post->POST('deskripsiki-2',FILTER_SANITIZE_MAGIC_QUOTES),
+                );
+            $this->cekKI_4($value);
+            }   
+        }
+                   
         $data = array(
             'validasi' =>$this->validasi,
             'nama' => $this->session->getValue('username'),
-            'nama_kelas' => $this->nama_kelas(),
-            'nama_mapel' => $this->nama_mapel(),
+            //'nama_kelas' => $this->nama_kelas(),
+            //'nama_mapel' => $this->nama_mapel(),
             'namaCTRL' => 'TAMBAH DATA KOPETENSI DASAR',
             'breadcrumb' => 'Data KKM dan KD',
             'title' => 'Dashboard Wali Kelas',
@@ -655,6 +673,34 @@ class Wali extends Resources\Controller
         $this->output('Walikonten/v_wali_konten_sidebar', $data);
         $this->output('Walikonten/Walikonten_kkm_kd/v_wali_konten_tambah_kd', $data);
         $this->output('Walikonten/Walikonten_kkm_kd/v_wali_konten_footer');
+    }
+    
+    private function cekKI_4($value){
+        $this->cek();
+        if ($value['KI_4'] == NULL && $value['DESKRIPSI_KD_KI_4'] == NULL){
+            $this->eksekusiKI_4($value);
+        }
+//        echo "<script> "
+//            . "if (window.confirm('Anda yakin parameter kopetensi dasar KI-4 dan "
+//            . "deskripsinya dibiarkan kosong sesuai kopetensi dasar mapel?')) { "
+//            . "document.location = 'eksekusi-ki-4' "
+//            . "} "
+//            . "else { "
+//            .       "document.location = 'tambah-kd' "        
+//            . " } "
+//            . "</script>";    
+        
+        
+        else {
+            
+        }
+    }
+    
+    private function eksekusiKI_4($value){
+        $this->cek();
+        $this->walimodel->tambah_kd($value);
+        echo "<script>alert('Sipp!!'); window.location = 'tambah-kd'</script>";
+        //return $value;
     }
     
     public function edit_kkm_kd(){

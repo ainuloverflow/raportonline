@@ -126,6 +126,11 @@ class Alias
             'class' => '\\Controllers\Wali',
             'method' => 'tambah_kd'
         ],
+        
+        'eksekusi-ki-4' =>[
+            'class' => '\\Controllers\Wali',
+            'method' => 'eksekusiKI_4'
+        ],
         //end routing untuk wali
         
         //Routing untuk Home
@@ -206,7 +211,7 @@ class Alias
        'reset-pass-siswa', 'reset-pass-ortu', 'tambah-nilai','tambah-ortu', 'edit-siswa', 
        'edit-nilai', 'hapusiswa', 'hapus-nilai', 'edit-ortu', 'hapus-ortu', 'validasi-edit-siswa', 
        'validasi-edit-ortu', 'validasi-edit-nilai', 'rapot-siswa-as-wali', 'cetak-rapot-siswa-as-wali', 
-       'grafik-nilai', 'data-grafik-nilai', 'data-kkm-kd', 'tambah-kd',
+       'grafik-nilai', 'data-grafik-nilai', 'data-kkm-kd', 'tambah-kd', 'eksekusi-ki-4',
         /*End wali routing**/
         
         //Home Routing

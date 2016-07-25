@@ -149,7 +149,11 @@ class M_wali {
     /**public function query($idwali) {
         Return $this->db->row("SELECT ID_KELAS FROM table_wali_kelas AS wali INNER JOIN table_guru_mapel AS guru "
                 . "ON wali.ID_WALI = guru.ID_GURU WHERE wali.ID_WALI = $idwali");
-    }**/
+    }**/    
+    
+    public function tambah_kd($value) {
+        Return $this->db->insert("table_kompetensi_dasar", $value);
+    }
     public function ceknilaidobel($ID_SISWA, $ID_MAPEL) { //query cek nilai dobel
         Return $this->db->row("SELECT ID_SISWA FROM table_nilai WHERE ID_SISWA = '$ID_SISWA' AND ID_MAPEL = '$ID_MAPEL'");
     }
