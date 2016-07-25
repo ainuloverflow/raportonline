@@ -163,6 +163,10 @@ class M_wali {
         Return $this->db->row("SELECT ID_MAPEL FROM table_kompetensi_dasar WHERE ID_MAPEL = '$value'");
     }
     
+    public function edit_kd($edit) {
+        Return $this->db->row("SELECT * FROM table_kompetensi_dasar WHERE ID_KOPDAR = $edit");
+    }
+    
     public function ceknilaidobel($ID_SISWA, $ID_MAPEL) { //query cek nilai dobel
         Return $this->db->row("SELECT ID_SISWA FROM table_nilai WHERE ID_SISWA = '$ID_SISWA' AND ID_MAPEL = '$ID_MAPEL'");
     }

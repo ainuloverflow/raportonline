@@ -76,8 +76,8 @@
                                  <td><?php echo $data_kd->KI_2;?></td>
                                  <td>
                                   <div class="btn-group">
-                                      <a class="btn btn-success" href="<?php echo $url;?>edit-kd/<?php echo $data_kd->ID_KOPDAR;?>"><i class="icon_check_alt2"></i> Edit</a>
-                                      <a class="btn btn-danger" href="<?php echo $url;?>hapus-kd/<?php echo $data_kd->ID_KOPDAR;?>"
+                                      <a class="btn btn-success" href="<?php echo $url;?>edit-kd/<?php echo $this->enkripsi->safe_b64encode($data_kd->ID_KOPDAR);?>"><i class="icon_check_alt2"></i> Edit</a>
+                                      <a class="btn btn-danger" href="<?php echo $url;?>hapus-kd/<?php echo $this->enkripsi->safe_b64encode($data_kd->ID_KOPDAR);?>"
                                       data-toggle="tooltip" value="delete" class="btn btn-danger" onclick="javascript: return confirm('<?php echo "Hapus data ?";?>')"><i class="icon_close_alt2"></i> Hapus</a>
                                   </div>
                                   </td>
