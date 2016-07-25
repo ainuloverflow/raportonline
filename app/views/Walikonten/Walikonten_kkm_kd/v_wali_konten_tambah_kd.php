@@ -19,8 +19,9 @@
                           </header>
                           <div class="panel-body">
                               <form class="form-horizontal" action="<?php echo $url;?>tambah-kd" method="post">
-                                                                                                      
-                                   <div class="form-group">
+                                  <h4 style="color:red">(NB : Saat penambahan Kopetensi Dasar parameter <strong>Mata Pelajaran</strong> otomatis sudah ditambahkan sesuai yang Anda ampu.</h4>                                                                    
+                                  <br> 
+                                  <div class="form-group">
                                         <label class="col-sm-2 control-label">Pilih KI-3(Pengetahuan)</label>
                                         <div class="col-sm-5">
                                             <p><?php echo $validasi->errorMessages('ki-3', '<p style="color:red">', '</p>');?></p>
@@ -73,7 +74,7 @@
                                   <div class="form-group">
                                         <label class="col-sm-2 control-label">Pilih KI-4(Keterampilan)</label>
                                         <div class="col-sm-5">
-                                            <p><?php echo $validasi->errorMessages('ki-4', '<p style="color:red">', '</p>');?></p>
+                                            <p style="color:green">Kopetensi dasar KI-4 boleh dikosongi dan disesuaikan dengan mapel yang bersangkutan</p>
                                             <select name="ki-4" value="" class="btn btn-default dropdown-toggle">
                                                 <option></option>
                                                 <option value="4.1a">4.1a</option>                                 
@@ -115,13 +116,13 @@
                                   <div class="form-group ">
                                           <label for="deskripsi" class="control-label col-lg-2">Deskripsi singkat KI-4(Keterampilan)</label>
                                           <div class="col-lg-10">
-                                              <p><?php echo $validasi->errorMessages('deskripsiki-4', '<p style="color:red">', '</p>');?></p>
+                                              <p style="color:green">Deskripsi kopetensi dasar KI-4 boleh dikosongi dan disesuaikan dengan mapel yang bersangkutan</p>
                                               <textarea class="form-control " id="deskripsi" name="deskripsiki-4"></textarea>
                                           </div>
                                   </div>
                                   
                                   <div class="form-group">
-                                        <label class="col-sm-2 control-label">Pilih KI-1(Kopetensi Dasar yang dikembangkan oleh sekolah)</label>
+                                        <label class="col-sm-2 control-label">Pilih KI-1 (Kopetensi Dasar yang dikembangkan oleh sekolah)</label>
                                         <div class="col-sm-5">
                                             <p><?php echo $validasi->errorMessages('ki-1', '<p style="color:red">', '</p>');?></p>
                                             <select name="ki-1" value="" class="btn btn-default dropdown-toggle">
@@ -135,7 +136,7 @@
                                   </div>
                                   
                                   <div class="form-group ">
-                                          <label for="deskripsi" class="control-label col-lg-2">Deskripsi singkat KI-1</label>
+                                          <label for="deskripsi" class="control-label col-lg-2">Deskripsi singkat KI-1 (Deskripsi Kopetensi Dasar yang dikembangkan oleh sekolah)</label>
                                           <div class="col-lg-10">
                                               <p><?php echo $validasi->errorMessages('deskripsiki-1', '<p style="color:red">', '</p>');?></p>
                                               <textarea class="form-control " id="deskripsi" name="deskripsiki-1"></textarea>
@@ -143,7 +144,7 @@
                                   </div>
                                   
                                   <div class="form-group">
-                                        <label class="col-sm-2 control-label">Pilih KI-2(Kopetensi Dasar yang dikembangkan oleh sekolah)</label>
+                                        <label class="col-sm-2 control-label">Pilih KI-2 (Kopetensi Dasar yang dikembangkan oleh sekolah)</label>
                                         <div class="col-sm-5">
                                             <p><?php echo $validasi->errorMessages('ki-2', '<p style="color:red">', '</p>');?></p>
                                             <select name="ki-2" value="" class="btn btn-default dropdown-toggle">
@@ -157,7 +158,7 @@
                                   </div>
                                   
                                   <div class="form-group ">
-                                          <label for="deskripsi" class="control-label col-lg-2">Deskripsi singkat KI-2</label>
+                                          <label for="deskripsi" class="control-label col-lg-2">Deskripsi singkat KI-2 (Deskripsi Kopetensi Dasar yang dikembangkan oleh sekolah)</label>
                                           <div class="col-lg-10">
                                               <p><?php echo $validasi->errorMessages('deskripsiki-2', '<p style="color:red">', '</p>');?></p>
                                               <textarea class="form-control " id="deskripsi" name="deskripsiki-2"></textarea>

@@ -60,28 +60,32 @@
                             <tbody>
                               <tr>
                                  <th> No. </th>
-                                 <th> Jenis KD </th>
-                                 <th> Nomor KD </th>
+                                 <th> KI-3 (Pengetahuan)</th>
+                                 <th> KI-4 (Keterampilan) </th>
+                                 <th> KI-1 (Aspek kembangan dari sekolah)</th>
+                                 <th> KI-2 (Aspek kembangan dari sekolah)</th>
                                  <th> Aksi </th>
                               </tr>
                               <tr>
-                            <?php //if($datakkm_kd) : $no = 1?>
-                                <?php //foreach ($datakkm as $data_kkm) :?>
-                                 <td><?php //echo $no++ ;?></td>
-                                 <td><?php //echo $data_kkm->ID_MAPEL;?></td>
-                                 <td><?php //echo $data_kkm->TINGKAT_KELAS;?></td>
+                            <?php if($kd_data) : $no = 1?>
+                                <?php foreach ($kd_data as $data_kd) :?>
+                                 <td><?php echo $no++ ;?></td>
+                                 <td><?php echo $data_kd->KI_3;?></td>
+                                 <td><?php echo $data_kd->KI_4;?></td>
+                                 <td><?php echo $data_kd->KI_1;?></td>
+                                 <td><?php echo $data_kd->KI_2;?></td>
                                  <td>
                                   <div class="btn-group">
-                                      <a class="btn btn-success" href="<?php //echo $url;?>edit-data-kkm/<?php //echo $data_kkm->ID_KKM;?>"><i class="icon_check_alt2"></i> Edit</a>
-                                      <a class="btn btn-danger" href="<?php //echo $url;?>hapus-data-kkm/<?php //echo $data_kkm->ID_KKM;?>"
-                                      data-toggle="tooltip" value="delete" class="btn btn-danger" onclick="javascript: return confirm('<?php //echo "Hapus data ?";?>')"><i class="icon_close_alt2"></i> Hapus</a>
+                                      <a class="btn btn-success" href="<?php echo $url;?>edit-kd/<?php echo $data_kd->ID_KOPDAR;?>"><i class="icon_check_alt2"></i> Edit</a>
+                                      <a class="btn btn-danger" href="<?php echo $url;?>hapus-kd/<?php echo $data_kd->ID_KOPDAR;?>"
+                                      data-toggle="tooltip" value="delete" class="btn btn-danger" onclick="javascript: return confirm('<?php echo "Hapus data ?";?>')"><i class="icon_close_alt2"></i> Hapus</a>
                                   </div>
                                   </td>
                               </tr>
-                                <?php //endforeach;?>
-                                <?php //else : ?>
+                                <?php endforeach;?>
+                                <?php else : ?>
                                     <tr><td colspan='7'>Tidak ada data.</td></tr>
-                                <?php //endif;?>                  
+                                <?php endif;?>                  
                            </tbody>
                         </table>
                       </section>

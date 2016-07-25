@@ -151,9 +151,18 @@ class M_wali {
                 . "ON wali.ID_WALI = guru.ID_GURU WHERE wali.ID_WALI = $idwali");
     }**/    
     
+    public function data_kd() {
+        Return $this->db->results("SELECT * FROM table_kompetensi_dasar");
+    }
+    
     public function tambah_kd($value) {
         Return $this->db->insert("table_kompetensi_dasar", $value);
     }
+    
+    public function cek_exist_id_mapel_kd($value) {
+        Return $this->db->row("SELECT ID_MAPEL FROM table_kompetensi_dasar WHERE ID_MAPEL = '$value'");
+    }
+    
     public function ceknilaidobel($ID_SISWA, $ID_MAPEL) { //query cek nilai dobel
         Return $this->db->row("SELECT ID_SISWA FROM table_nilai WHERE ID_SISWA = '$ID_SISWA' AND ID_MAPEL = '$ID_MAPEL'");
     }

@@ -622,8 +622,7 @@ class Wali extends Resources\Controller
         $this->cek();
         $data = array (
             'nama' => $this->session->getValue('username'),
-            'nama_kelas' => $this->nama_kelas(),
-            'nama_mapel' => $this->nama_mapel(),
+            'kd_data' => $this->walimodel->data_kd(),
             'namaCTRL' => 'DATA KKM DAN KOMPETENSI DASAR',
             'title' => 'Dashboard Wali Kelas',
             'header' => 'Dashboard Wali Kelas',
@@ -639,8 +638,7 @@ class Wali extends Resources\Controller
     
     public function tambah_kd(){
         $this->cek();
-        
-         if($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if($_SERVER['REQUEST_METHOD'] == 'POST') {
             if($this->validasi->validate()) {                                                         
                 $value = array (
                     'ID_MAPEL' => $this->session->getValue('ID_MAPEL'),
@@ -653,7 +651,7 @@ class Wali extends Resources\Controller
                     'KI_2' => $this->post->POST('ki-2',FILTER_SANITIZE_MAGIC_QUOTES),
                     'DESKRIPSI_KD_KI_2' => $this->post->POST('deskripsiki-2',FILTER_SANITIZE_MAGIC_QUOTES),
                 );
-            $this->cekKI_4($value);
+                $this->cekKI_4($value);
             }   
         }
                    
@@ -678,29 +676,39 @@ class Wali extends Resources\Controller
     private function cekKI_4($value){
         $this->cek();
         if ($value['KI_4'] == NULL && $value['DESKRIPSI_KD_KI_4'] == NULL){
-            $this->eksekusiKI_4($value);
-        }
-//        echo "<script> "
-//            . "if (window.confirm('Anda yakin parameter kopetensi dasar KI-4 dan "
-//            . "deskripsinya dibiarkan kosong sesuai kopetensi dasar mapel?')) { "
-//            . "document.location = 'eksekusi-ki-4' "
-//            . "} "
-//            . "else { "
-//            .       "document.location = 'tambah-kd' "        
-//            . " } "
-//            . "</script>";    
-        
-        
-        else {
+            $cekid_mapel = $this->walimodel->cek_exist_id_mapel_kd($value['ID_MAPEL']);            
             
+            if ($cekid_mapel == NULL){
+                $hasil = $this->walimodel->tambah_kd($value);
+                if($hasil) {
+                    echo "<script>alert('Data Kopetensi Dasar berhasil dimasukan!')</script>";
+                }
+                else {
+                    echo "<script>alert('Data Kopetensi Dasar berhasil dimasukan!')</script>";
+                }
+            }
+            else {
+                echo "<script>alert('Data sudah ada!')</script>"; 
+            }    
+            return $value;
+        }  
+        else {
+            $cekid_mapel = $this->walimodel->cek_exist_id_mapel_kd($value['ID_MAPEL']);
+                
+            if ($cekid_mapel == NULL){
+                $hasil = $this->walimodel->tambah_kd($value);
+                if($hasil) {
+                    echo "<script>alert('Data Kopetensi Dasar berhasil dimasukan')</script>";
+                }
+                else {
+                    echo "<script>alert('Data Kopetensi Dasar berhasil dimasukan')</script>";
+                    }
+            }
+            else {
+                echo "<script>alert('Data sudah ada!')</script>";
+            }
+            return $value;
         }
-    }
-    
-    private function eksekusiKI_4($value){
-        $this->cek();
-        $this->walimodel->tambah_kd($value);
-        echo "<script>alert('Sipp!!'); window.location = 'tambah-kd'</script>";
-        //return $value;
     }
     
     public function edit_kkm_kd(){
