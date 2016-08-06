@@ -733,35 +733,32 @@ class Wali extends Resources\Controller
         if($_SERVER['REQUEST_METHOD'] === 'POST') {    
             if($this->validasi->validate()) {
                 $value = array (
-                    'ID_MAPEL' => $id_mapel[0],
-                    'ID_SISWA' => $id_siswa[0],
-                    'ID_KKM' => 1,
-                    'NILAI_KOP_PENGETAHUAN' => $this->post->POST('nilai_kop_pengetahuan',FILTER_SANITIZE_NUMBER_FLOAT),
-                    'NILAI_KOP_KETERAMPILAN' => $this->post->POST('nilai_kop_keterampilan',FILTER_SANITIZE_NUMBER_FLOAT),
-                    'NILAI_SIKAP' => $this->post->POST('nilai_sikap',FILTER_SANITIZE_MAGIC_QUOTES),
-                    'NILAI_TUGAS' => $this->post->POST('nilai_tugas',FILTER_SANITIZE_NUMBER_FLOAT),
-                    'NILAI_UTS' => $this->post->POST('nilai_uts',FILTER_SANITIZE_MAGIC_QUOTES),
-                    'NILAI_UAS' => $this->post->POST('nilai_uas',FILTER_SANITIZE_NUMBER_FLOAT),
-                    'NILAI_AHKIR' => $this->hitung_nilai_ahkir()
+                    'DESKRIPSI_KD_KI_3' => $this->post->POST('deskripsiki-3',FILTER_SANITIZE_MAGIC_QUOTES),
+                    'KI_4' => $this->post->POST('ki-4',FILTER_SANITIZE_MAGIC_QUOTES),
+                    'DESKRIPSI_KD_KI_4' => $this->post->POST('deskripsiki-4',FILTER_SANITIZE_MAGIC_QUOTES),
+                    'KI_1' => $this->post->POST('ki-1',FILTER_SANITIZE_MAGIC_QUOTES),
+                    'DESKRIPSI_KD_KI_1' => $this->post->POST('deskripsiki-1',FILTER_SANITIZE_MAGIC_QUOTES),
+                    'KI_2' => $this->post->POST('ki-2',FILTER_SANITIZE_MAGIC_QUOTES),
+                    'DESKRIPSI_KD_KI_2' => $this->post->POST('deskripsiki-2',FILTER_SANITIZE_MAGIC_QUOTES),
                 );
                 $where = array(
-                    'ID_NILAI' => $this->post->POST('id_nilai',FILTER_SANITIZE_NUMBER_INT)
+                    'ID_MAPEL' => $this->session->getValue('ID_MAPEL')
                 );
-                $this->eksekusi_edit_nilai($value, $where);
+                $this->eksekusi_edit_kd($value, $where);
             }
         }
         $data = array (
             'validasi' =>$this->validasi,
-            'namaCTRL' => 'EDIT DATA NILAI SISWA',
-            'breadcrumb' => 'Edit Data Nilai Siswa',
+            'namaCTRL' => 'EDIT KOPETENSI DASAR',
+            'breadcrumb' => 'Data KKM dan KD',
             'title' => 'Halaman Wali Kelas',
             'nama' => $this->session->getValue('username'),
             'url' => $this->uri->baseUri
         );
-        $this->output('Walikonten/Walikonten_nilai/v_wali_konten_header', $data);
+        $this->output('Walikonten/Walikonten_kkm_kd/v_wali_konten_header', $data);
         $this->output('Walikonten/v_wali_konten_sidebar', $data);
-        $this->output('Walikonten/Walikonten_nilai/v_wali_konten_validasieditnilai', $data);
-        $this->output('Walikonten/Walikonten_nilai/v_wali_konten_footer_nilai', $data);
+        $this->output('Walikonten/Walikonten_kkm_kd/v_wali_konten_validasi_kd', $data);
+        $this->output('Walikonten/Walikonten_kkm_kd/v_wali_konten_footer', $data);
     }
     
     public function hapus_kd(){

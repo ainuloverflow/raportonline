@@ -147,6 +147,14 @@ public $cekHP = true;
                 'filter' => array('trim')
             ),
             
+            'id_kopdar' => array( 
+                'rules' => array(
+                    'required',
+                ),
+                'label' => 'ID Kopetensi dasar',
+                'filter' => array('trim')
+            ),
+            
             'ki-3' => array( 
                 'rules' => array(
                     'required',
