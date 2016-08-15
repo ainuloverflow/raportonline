@@ -6,7 +6,7 @@
 				<div class="col-lg-12">
 					<h3 class="page-header"><i class="icon_document_alt"></i><?php echo $namaCTRL;?></h3>
 					<ol class="breadcrumb">
-                                            <li><i class="icon_documents"></i><a href="<?php echo $url;?>listsiswa"><?php echo $breadcrumb;?></a></li>					  	
+                                            <li><i class="icon_documents"></i><a href="<?php echo $url;?>data-kkm-kd"><?php echo $breadcrumb;?></a></li>					  	
 					</ol>
 				</div>
 			</div>
@@ -18,33 +18,20 @@
                             <?php echo $namaCTRL;?> 
                           </header>
                           <div class="panel-body">
-                              <form class="form-horizontal" action="<?php echo $url;?>tambahsiswa" method="post">
-                                  <!--<div class="form-group">
-                                      <label class="col-sm-2 control-label">Default</label>
-                                      <div class="col-sm-10">
-                                          <input type="text" class="form-control">
-                                      </div>
-                                  </div>
+                              <form class="form-horizontal" action="<?php echo $url;?>tambah-kkm" method="post">
                                   <div class="form-group">
-                                      <label class="col-sm-2 control-label">Help text</label>
-                                      <div class="col-sm-10">
-                                          <input type="text" class="form-control">
-                                          <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
-                                      </div>
-                                  </div>-->
-                                  <div class="form-group">
-                                      <label class="col-sm-2 control-label">NIS Siswa</label>
+                                      <label class="col-sm-2 control-label">Tingkat Kelas</label>
                                       <div class="col-sm-7">
-                                          <p><?php echo $validasi->errorMessages('nissiswa', '<p style="color:red">', '</p>');?></p>
-                                          <input type="text" value="<?php echo $validasi->value('nissiswa');?>" name="nissiswa" class="form-control round-input">
+                                          <p><?php echo $validasi->errorMessages('tingkatkelas', '<p style="color:red">', '</p>');?></p>
+                                          <input type="text" value="<?php echo $validasi->value('tingkatkelas');?>" name="tingkatkelas" class="form-control round-input">
                                       </div>
                                   </div>
                                   
                                   <div class="form-group">
-                                      <label class="col-sm-2 control-label">NIK Ayah/Ibu Siswa</label>
+                                      <label class="col-sm-2 control-label">Tahun Ajaran</label>
                                       <div class="col-sm-7">
                                           <p><?php echo $validasi->errorMessages('id_orangtua', '<p style="color:red">', '</p>');?></p>
-                                          <input id="id_orangtua" name="id_orangtua" type="text" placeholder="Masukan NIK Ayah atau Ibu Siswa" class="form-control round-input">
+                                          <input type="text" placeholder="Masukan NIK Ayah atau Ibu Siswa" class="form-control round-input">
                                       </div>
                                   </div>
                                   

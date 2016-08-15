@@ -623,6 +623,7 @@ class Wali extends Resources\Controller
         $data = array (
             'nama' => $this->session->getValue('username'),
             'kd_data' => $this->walimodel->data_kd(),
+            'kkm_data' => $this->walimodel->data_kkm(),
             'namaCTRL' => 'DATA KKM DAN KOMPETENSI DASAR',
             'title' => 'Dashboard Wali Kelas',
             'header' => 'Dashboard Wali Kelas',

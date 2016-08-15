@@ -155,6 +155,10 @@ class M_wali {
         Return $this->db->results("SELECT * FROM table_kompetensi_dasar");
     }
     
+    public function data_kkm(){
+        Return $this->db->results("SELECT * FROM table_kkm");
+    }
+    
     public function tambah_kd($value) {
         Return $this->db->insert("table_kompetensi_dasar", $value);
     }
