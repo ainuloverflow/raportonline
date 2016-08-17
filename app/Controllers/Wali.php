@@ -637,6 +637,41 @@ class Wali extends Resources\Controller
         $this->output('Walikonten/Walikonten_kkm_kd/v_wali_konten_footer', $data);
     }
     
+    public function tambah_kkm(){
+        $this->cek();
+        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+            if($this->validasi->validate()) {                                                         
+                $value = array (
+                    'ID_KKM' => $this->session->getValue('ID_MAPEL'),
+                    'KI_3' => $this->post->POST('ki-3',FILTER_SANITIZE_MAGIC_QUOTES),
+                    'DESKRIPSI_KD_KI_3' => $this->post->POST('deskripsiki-3',FILTER_SANITIZE_MAGIC_QUOTES),
+                    'KI_4' => $this->post->POST('ki-4',FILTER_SANITIZE_MAGIC_QUOTES),
+                    'DESKRIPSI_KD_KI_4' => $this->post->POST('deskripsiki-4',FILTER_SANITIZE_MAGIC_QUOTES),
+                    'KI_1' => $this->post->POST('ki-1',FILTER_SANITIZE_MAGIC_QUOTES),
+                    'DESKRIPSI_KD_KI_1' => $this->post->POST('deskripsiki-1',FILTER_SANITIZE_MAGIC_QUOTES),
+                    'KI_2' => $this->post->POST('ki-2',FILTER_SANITIZE_MAGIC_QUOTES),
+                    'DESKRIPSI_KD_KI_2' => $this->post->POST('deskripsiki-2',FILTER_SANITIZE_MAGIC_QUOTES),
+                );
+                $this->cekKI_4($value);
+            }   
+        }
+                   
+        $data = array(
+            'validasi' =>$this->validasi,
+            'nama' => $this->session->getValue('username'),
+            'namaCTRL' => 'TAMBAH DATA KOPETENSI DASAR',
+            'breadcrumb' => 'Data KKM dan KD',
+            'title' => 'Dashboard Wali Kelas',
+            'header' => 'Dashboard Wali Kelas',
+            'kontendash' => 'Dashboard Wali Kelas',
+            'url' => $this->uri->baseUri
+        );
+        $this->output('Walikonten/Walikonten_kkm_kd/v_wali_konten_header', $data);
+        $this->output('Walikonten/v_wali_konten_sidebar', $data);
+        $this->output('Walikonten/Walikonten_kkm_kd/v_wali_konten_tambah_kd', $data);
+        $this->output('Walikonten/Walikonten_kkm_kd/v_wali_konten_footer');
+    }
+    
     public function tambah_kd(){
         $this->cek();
         if($_SERVER['REQUEST_METHOD'] == 'POST') {

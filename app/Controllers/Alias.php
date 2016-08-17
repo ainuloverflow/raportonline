@@ -137,9 +137,29 @@ class Alias
             'method' => 'validasi_edit_kd'
         ],
         
-        'hapus-kd' =>[
+        'hapus-kkm' =>[
             'class' => '\\Controllers\Wali',
             'method' => 'hapus_kd'
+        ],
+        
+        'tambah-kkm' =>[
+            'class' => '\\Controllers\Wali',
+            'method' => 'tambah_kkm'
+        ],
+        
+        'edit-kkm' =>[
+            'class' => '\\Controllers\Wali',
+            'method' => 'edit_kkm'
+        ],
+        
+        'validasi-edit-kkm' =>[
+            'class' => '\\Controllers\Wali',
+            'method' => 'validasi_edit_kkm'
+        ],
+        
+        'hapus-kd' =>[
+            'class' => '\\Controllers\Wali',
+            'method' => 'hapus_kkm'
         ],
         //end routing untuk wali
         
@@ -222,6 +242,7 @@ class Alias
        'edit-nilai', 'hapusiswa', 'hapus-nilai', 'edit-ortu', 'hapus-ortu', 'validasi-edit-siswa', 
        'validasi-edit-ortu', 'validasi-edit-nilai', 'rapot-siswa-as-wali', 'cetak-rapot-siswa-as-wali', 
        'grafik-nilai', 'data-grafik-nilai', 'data-kkm-kd', 'tambah-kd', 'edit-kd', 'validasi-edit-kd', 'hapus-kd',
+       'tambah-kkm', 'edit-kkm', 'validasi-edit-kkm', 'hapus-kkm',
         /*End wali routing**/
         
         //Home Routing

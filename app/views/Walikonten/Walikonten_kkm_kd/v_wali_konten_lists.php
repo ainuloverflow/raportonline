@@ -9,7 +9,7 @@
                         </div>
               <!-- project team & activity end -->
 
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="btn btn-primary" href="<?php echo $url;?>tambah-data-kkm"><i class="icon_plus_alt2"></i> Tambah KKM</a>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="btn btn-primary" href="<?php echo $url;?>tambah-kkm"><i class="icon_plus_alt2"></i> Tambah KKM</a>
               <br>
               <br>
               <div class="col-lg-12">
